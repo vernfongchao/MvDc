@@ -19,9 +19,6 @@ function App() {
     <>
       <Navigation isLoaded={isLoaded} />
       <Switch>
-        <Route path='/signup'>
-          <SignupForm />
-        </Route>
       </Switch>
     </>
   );
