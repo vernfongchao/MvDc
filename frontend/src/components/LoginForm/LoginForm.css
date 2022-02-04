@@ -1,0 +1,66 @@
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title {
+  margin: 0px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  height: 40px;
+  border-bottom: 1px rgba(0, 0, 0, 0.302) solid;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.login-title-text {
+  margin-top: 21px;
+  margin-bottom: 0px;
+}
+
+.login-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 10px;
+  height: 150px;
+}
+.login-text:focus {
+  border-color: #b6c5e8;
+  outline: 0;
+}
+.login-text {
+  border-radius: 5px;
+  background-color: transparent;
+  padding-left: 10px;
+  width: 284px;
+  height: 22px;
+}
+.login-text-font {
+  padding-bottom: 5px;
+  padding-left: 10px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.login-button-container {
+  margin-top: 15px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: end;
+}
+
+#login-button {
+  border: 1px #97b4ff solid;
+  color: white;
+  background-color: #97b4ff;
+  border-radius: 10px;
+  width: 75px;
+  height: 30px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.error-text {
+  color: red;
+}

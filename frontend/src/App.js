@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from 'react-router-dom'
-import SignupForm from './components/SignupForm'
 import Navigation from "./components/Navigation";
 import { useDispatch } from 'react-redux'
 import * as sessionActions from "./store/session";
