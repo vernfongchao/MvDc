@@ -1,0 +1,58 @@
+.signup-form-container {
+  display: flex;
+  flex-direction: column;
+}
+.signup-title {
+  margin: 0px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px rgba(0, 0, 0, 0.302) solid;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.signup-title-text {
+  margin-top: 21px;
+  margin-bottom: 0px;
+}
+
+.signup-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 10px;
+  height: 200px;
+}
+
+.signup-text-input {
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: transparent;
+  padding-left: 10px;
+  width: 284px;
+  height: 22px;
+}
+
+.signup-text-input:focus {
+  background-color: white;
+  border: 1px #b6c5e8 solid;
+  border-color: #b6c5e8;
+  outline: 0;
+}
+
+.sign-button-container {
+  margin-right: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#sign-button {
+  border: 1px #97b4ff solid;
+  color: white;
+  background-color: #97b4ff;
+  border-radius: 15px;
+  width: 75px;
+  height: 30px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}

@@ -26,52 +26,71 @@ const SignupForm = () => {
                     if (data && data.errors) setValidationErrors(data.errors);
                 });
         }
+        reset()
         return setValidationErrors(['Confirm Password field must be the same as the Password field']);
     };
 
+    const reset = () => {
+        setPassword('')
+        setConfirmPassword('')
+    }
+
     return (
-        <form onSubmit={handleSubmit}>
-            <ul>
-                {validationErrors.map((error, idx) => <li key={idx}>{error}</li>)}
-            </ul>
-            <label>
-                Email
-                <input
-                    type="text"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-            </label>
-            <label>
-                Username
-                <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                />
-            </label>
-            <label>
-                Password
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-            </label>
-            <label>
-                Confirm Password
-                <input
-                    type="password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    required
-                />
-            </label>
-            <button type="submit">Sign Up</button>
-        </form>
+        <div className='signup-container'>
+            <form className="signup-form-container" onSubmit={handleSubmit}>
+                <div className='signup-title'>
+                    <h4 className='signup-title-text'>Sign Up</h4>
+                </div>
+                <ul>
+                    {validationErrors.map((error, idx) => <li className='error-text' key={idx}>{error}</li>)}
+                </ul>
+                <div className='signup-text-container'>
+                    <label >
+                        <input
+                            className='signup-text-input'
+                            type="text"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                            placeholder='Email'
+                        />
+                    </label>
+                    <label>
+                        <input
+                            className='signup-text-input'
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                            placeholder='Username'
+                        />
+                    </label>
+                    <label>
+                        <input
+                            className='signup-text-input'
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            placeholder='Password'
+                        />
+                    </label>
+                    <label>
+                        <input
+                            className='signup-text-input'
+                            type="password"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                            required
+                            placeholder='Confirm Password'
+                        />
+                    </label>
+                    <div className="sign-button-container">
+                        <button id='sign-button' type="submit">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     );
 }
 

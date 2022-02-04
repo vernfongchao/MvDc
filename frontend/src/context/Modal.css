@@ -19,10 +19,22 @@
 }
 
 #modal-content {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   background-color: white;
   border-radius: 7px;
   border: 1px black solid;
   width: 325px;
-  height: 260px;
+  height: 350px;
+}
+
+.modal-background-img {
+  border-radius: 7px;
+  z-index: -1;
+  opacity: 0.5;
+  position: absolute;
+  width: 325px;
+  height: 350px;
 }

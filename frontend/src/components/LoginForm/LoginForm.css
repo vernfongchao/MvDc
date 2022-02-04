@@ -23,13 +23,16 @@
   flex-direction: column;
   justify-content: space-evenly;
   padding-left: 10px;
-  height: 150px;
+  height: 200px;
 }
-.login-text:focus {
+.login-text-input:focus {
+  background-color: white;
+  border: 1px #b6c5e8 solid;
   border-color: #b6c5e8;
   outline: 0;
 }
-.login-text {
+.login-text-input {
+  font-weight: bold;
   border-radius: 5px;
   background-color: transparent;
   padding-left: 10px;
@@ -37,6 +40,7 @@
   height: 22px;
 }
 .login-text-font {
+  font-weight: bold;
   padding-bottom: 5px;
   padding-left: 10px;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -47,15 +51,15 @@
   margin-top: 15px;
   margin-right: 15px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 #login-button {
   border: 1px #97b4ff solid;
   color: white;
   background-color: #97b4ff;
-  border-radius: 10px;
-  width: 75px;
+  border-radius: 15px;
+  width: 60px;
   height: 30px;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -63,4 +67,28 @@
 
 .error-text {
   color: red;
+  padding-right: 15px;
+}
+.login-footer-container {
+  display: flex;
+  margin-top: auto;
+}
+.login-footer {
+  padding-right: 15px;
+  padding-bottom: 5px;
+  margin-top: auto;
+  margin-left: auto;
+  font-size: 10px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.login-text-font::-webkit-input-placeholder {
+  font-weight: bold;
+}
+
+::placeholder {
+  font-weight: bold;
+  color: black;
+  font-weight: bold;
 }

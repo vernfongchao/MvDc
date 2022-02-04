@@ -1,0 +1,43 @@
+.nav-ul {
+  display: flex;
+  list-style-type: none;
+}
+.nav-session {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+#nav-login-button {
+  border: 1px #97b4ff solid;
+  color: white;
+  background-color: #97b4ff;
+  border-radius: 20px;
+  width: 60px;
+  height: 30px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+#nav-signup-button {
+  border: 1px #97b4ff solid;
+  color: white;
+  background-color: #97b4ff;
+  border-radius: 20px;
+  width: 65px;
+  height: 30px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.nav-signup-button {
+  padding-right: 20px;
+}
+
+.fas.fa-meteor {
+  border: 1px #97b4ff solid;
+  color: white;
+  background-color: #97b4ff;
+  border-radius: 20px;
+}
