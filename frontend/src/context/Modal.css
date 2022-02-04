@@ -30,6 +30,12 @@
   height: 350px;
 }
 
+.modal-cancel {
+  z-index: 1;
+  color: white;
+  margin-top: 400px;
+}
+
 .modal-background-img {
   border-radius: 7px;
   z-index: -1;

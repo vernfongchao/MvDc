@@ -33,6 +33,9 @@ export function Modal({ onClose, children }) {
                 <img className="modal-background-img" src="https://estaticos.megainteresting.com/media/cache/1140x_thumb/uploads/images/gallery/5da5a5fa5bafe827843c9877/marvel-heroes_0.jpg" />
                 {children}
             </div>
+            <div className="modal-cancel">
+                <p>Click out to cancel</p>
+            </div>
         </div>,
         modalNode
     );
