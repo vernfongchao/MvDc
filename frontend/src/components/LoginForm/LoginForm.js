@@ -63,7 +63,7 @@ const LoginForm = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
-                                placeholder='Email'
+                                placeholder='Password'
                             />
                         </label>
                         <div className="login-button-container">
