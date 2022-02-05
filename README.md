@@ -8,7 +8,7 @@
 
 3. Cerate a `PostgreSQL` user with `CREATEDB` and `Password` 
 
-`CREATE USER <name> with CREATEDB PASSWORD <'password'>`
+- `CREATE USER <name> with CREATEDB PASSWORD <'password'>`
 
 4. Create a `.env` in the backend directory based on the `.env.example` found within the backend directory
 
