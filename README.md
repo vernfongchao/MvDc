@@ -26,7 +26,7 @@
 
 7b. You can also run this script that will run all the commands above
 
-   - `npm run db:setup`
+    - `npm run db:setup`
 
 8. Start the server in the backend terminal
 
