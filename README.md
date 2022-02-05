@@ -16,7 +16,7 @@
 
 6. Add the following proxy to your frontend `package.json` file replace to match the `PORT` configuration found in your `.env` file
 
-   - `"proxy": "http://localhost:<NEW PORT NUMBER>"
+   - `"proxy": "http://localhost:<NEW PORT NUMBER>"`
 
 7. CREATE Database,Migrate, and Seed models in your backend terminal 
 
