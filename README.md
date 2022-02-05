@@ -26,9 +26,8 @@
    - `npx dotenv sequelize db:migrate`
    - `npx dotenv sequelize db:seed:all`
 
-Method 2
-You can also run this script that will run all the commands above
-
+   Method 2
+   
    - `npm run db:setup`
 
 8. Start the server in the backend terminal
