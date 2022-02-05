@@ -32,10 +32,10 @@ which will run a script that will run all the commands above
 
 Start the server in the backend terminal
 
-   - `npm start`
+- `npm start`
 
 Start the server in the frontend terminal
 
-   - `npm start`
+- `npm start`
 
 10. There is a Demo user or create an account to begin using MvDc
