@@ -1,6 +1,7 @@
 import React from 'react'
 import YoutubeBackground from 'react-youtube-background'
 import LoginForm from '../LoginForm/LoginForm'
+import SignupForm from '../SignupForm/SignupForm'
 
 import './LandingPage.css'
 
@@ -14,10 +15,13 @@ const LandingPage = () => {
             videoId={'UKZ7vxvbOuE'}
         >   
             <div className='home-page-container'>
-                <LoginForm />   
-
+                <div className='home-login-container'>
+                    <LoginForm />   
+                </div>
+                <div className='home-signup-container'>
+                    <SignupForm />   
+                </div>
             </div>
-            <p>This is working fine</p>
         </YoutubeBackground>
     )
 }
