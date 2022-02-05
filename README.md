@@ -24,18 +24,18 @@
    - `npx dotenv sequelize db:migrate`
    - `npx dotenv sequelize db:seed:all`
 
-or 
+7b. or 
 
-   - `npm run db:setup`
+    - `npm run db:setup`
 
 which will run a script that will run all the commands above
 
-Start the server in the backend terminal
+8. Start the server in the backend terminal
 
-- `npm start`
+   - `npm start`
 
-Start the server in the frontend terminal
+9. Start the server in the frontend terminal
 
-- `npm start`
+   - `npm start`
 
 10. There is a Demo user or create an account to begin using MvDc
