@@ -20,13 +20,16 @@
 
 7. CREATE Database,Migrate, and Seed models in your backend terminal
 
+Method 1
+
    - `npx dotenv sequelize db:create`
    - `npx dotenv sequelize db:migrate`
    - `npx dotenv sequelize db:seed:all`
 
-7b. You can also run this script that will run all the commands above
+Method 2
+You can also run this script that will run all the commands above
 
-    - `npm run db:setup`
+   - `npm run db:setup`
 
 8. Start the server in the backend terminal
 
