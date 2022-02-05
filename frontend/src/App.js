@@ -31,6 +31,9 @@ function App() {
 
           {sessionUser && <Navigation isLoaded={isLoaded} />}
         </Route>
+        <Route path={'/login'}>
+          <Navigation isLoaded={isLoaded} />
+        </Route>
       </Switch>
     </>
   );

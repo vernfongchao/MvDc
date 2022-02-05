@@ -17,9 +17,11 @@ div.Player__container___f3NHe {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  background-color: white;
-  border-radius: 7px;
-  border: 1px black solid;
+  /* background-color: rgba(255, 255, 255, 0.926); */
+  background-color: rgba(173, 216, 230, 0.95);
+  border: 5px black solid;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
   width: 325px;
   height: 350px;
 }
@@ -28,9 +30,10 @@ div.Player__container___f3NHe {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  background-color: white;
-  border-radius: 7px;
-  border: 1px black solid;
+  background-color: rgba(173, 216, 230, 0.95);
+  border: 5px black solid;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   width: 325px;
   height: 350px;
 }
