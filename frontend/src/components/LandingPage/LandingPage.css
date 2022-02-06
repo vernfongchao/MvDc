@@ -3,7 +3,8 @@ body {
 }
 
 div.Player__container___f3NHe {
-  overflow-y: hidden;
+  position: relative;
+  overflow: hidden;
   height: 975px;
   margin: 0px;
   width: auto;
