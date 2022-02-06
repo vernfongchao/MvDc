@@ -27,6 +27,15 @@ const validateSignup = [
     handleValidationErrors
 ];
 
+router.get('/demo', asyncHandler(async (req, res) => {
+    const user = await User.getCurrentUserById(1)
+    await setTokenCookie(res, user);
+    console.log(user)
+    return res.json({
+        user
+    });
+}))
+
 router.post(
     '/',
     validateSignup,

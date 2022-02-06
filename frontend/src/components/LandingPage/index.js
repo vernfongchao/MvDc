@@ -14,7 +14,7 @@ const LandingPage = () => {
         >
             <div className='landing-page-container'>
                 <div className='landing-title'>
-                    <img src='../../images/MvDc2.png'></img>
+                    <img src='../../images/MvDc2.png' alt='MvDc Logo'></img>
                 </div>
                 <div className='landing-login-container'>
                     <LoginForm />

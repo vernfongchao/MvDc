@@ -25,9 +25,10 @@ const LoginForm = () => {
                 if (data && data.errors) setValidationErrors(data.errors);
             });
     }
+
     const handleClick = (e) => {
         e.stopPropagation()
-
+        return dispatch(sessionActions.loginDemo())
     }
 
 
@@ -67,6 +68,7 @@ const LoginForm = () => {
                             />
                         </label>
                         <div className="login-button-container">
+                            <button id='demo-button' onClick={handleClick}>Demo</button>
                             <button id='login-button' type="submit">Login</button>
                         </div>
                     </div>

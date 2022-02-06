@@ -27,7 +27,7 @@ function Navigation({ isLoaded }) {
         <ul className='nav-ul'>
             <li>
                 <NavLink exact to="/">
-                    <img className='nav-logo' src='../../images/MvDc2.png'></img>
+                    <img className='nav-logo' src='../../images/MvDc2.png' alt='MvDc Logo'></img>
                 </NavLink>
             </li>
             <li className='nav-session' >
