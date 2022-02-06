@@ -16,10 +16,10 @@
 }
 
 #nav-login-button {
-  border: 1px #97b4ff solid;
-  color: white;
-  background-color: #97b4ff;
-  border-radius: 20px;
+  border: 2px #97b4ff solid;
+  color: red;
+  font-weight: bold;
+  background-color: white;
   width: 60px;
   height: 30px;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -27,11 +27,11 @@
 }
 
 #nav-signup-button {
-  border: 1px #97b4ff solid;
-  color: white;
-  background-color: #97b4ff;
-  border-radius: 20px;
-  width: 65px;
+  border: 2px #97b4ff solid;
+  color: red;
+  font-weight: bold;
+  background-color: white;
+  width: 70px;
   height: 30px;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;

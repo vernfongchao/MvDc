@@ -48,9 +48,10 @@
 }
 
 #sign-button {
-  border: 1px #97b4ff solid;
-  color: white;
-  background-color: #97b4ff;
+  border: 2px #97b4ff solid;
+  color: red;
+  font-weight: bold;
+  background-color: white;
   border-radius: 15px;
   width: 75px;
   height: 30px;
