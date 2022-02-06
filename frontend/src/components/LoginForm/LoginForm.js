@@ -72,9 +72,6 @@ const LoginForm = () => {
                     </div>
                 </form>
             </div>
-            <div className='login-footer-container'>
-                <span className='login-footer'>img src: https://estaticos.megainteresting.com</span>
-            </div>
         </>
     );
 }

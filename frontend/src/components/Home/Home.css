@@ -1,0 +1,15 @@
+root {
+  margin: 0;
+}
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.home-page-background {
+  position: absolute;
+  z-index: -1;
+  object-fit: cover;
+  width: 100%;
+}

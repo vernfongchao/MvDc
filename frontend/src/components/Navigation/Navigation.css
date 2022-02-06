@@ -1,6 +1,14 @@
 .nav-ul {
+  position: fixed;
+  top: 0;
   display: flex;
   list-style-type: none;
+  align-items: center;
+  background-color: rgb(29, 29, 29);
+  box-sizing: border-box;
+  margin: 0;
+  height: 4rem;
+  width: 100%;
 }
 .nav-session {
   display: flex;
@@ -33,9 +41,18 @@
   padding-right: 20px;
 }
 
+.nav-login-button {
+  padding-right: 20px;
+}
+
 .fas.fa-meteor {
   border: 1px #97b4ff solid;
   color: white;
   background-color: #97b4ff;
   border-radius: 20px;
+}
+
+.nav-logo {
+  height: 50px;
+  width: 100px;
 }

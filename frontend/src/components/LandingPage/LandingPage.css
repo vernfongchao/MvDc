@@ -7,31 +7,39 @@ div.Player__container___f3NHe {
   margin: 0px;
 }
 
-.home-page-container {
+.landing-page-container {
   margin-top: 15%;
   display: flex;
   justify-content: center;
 }
 
-.home-login-container {
+.landing-login-container {
   z-index: 1;
   display: flex;
   flex-direction: column;
   /* background-color: rgba(255, 255, 255, 0.926); */
   background-color: rgba(173, 216, 230, 0.95);
-  border: 5px black solid;
+  /* border: 5px black solid; */
+  border-left: 5px black solid;
+  border-top: 5px black solid;
+  border-bottom: 5px black solid;
+  border-right: 2.5px black solid;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   width: 325px;
   height: 350px;
 }
 
-.home-signup-container {
+.landing-signup-container {
   z-index: 1;
   display: flex;
   flex-direction: column;
   background-color: rgba(173, 216, 230, 0.95);
-  border: 5px black solid;
+  /* border: 5px black solid; */
+  border-right: 5px black solid;
+  border-top: 5px black solid;
+  border-bottom: 5px black solid;
+  border-left: 2.5px black solid;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   width: 325px;

@@ -7,18 +7,16 @@ import './LandingPage.css'
 
 const LandingPage = () => {
 
-    const VIDEO_WIDTH = 1920;
-    const VIDEO_HEIGHT = 1080;
 
     return (
         <YoutubeBackground
             videoId={'UKZ7vxvbOuE'}
         >   
-            <div className='home-page-container'>
-                <div className='home-login-container'>
+            <div className='landing-page-container'>
+                <div className='landing-login-container'>
                     <LoginForm />   
                 </div>
-                <div className='home-signup-container'>
+                <div className='landing-signup-container'>
                     <SignupForm />   
                 </div>
             </div>
