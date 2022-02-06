@@ -11,13 +11,16 @@ const LandingPage = () => {
     return (
         <YoutubeBackground
             videoId={'UKZ7vxvbOuE'}
-        >   
+        >
             <div className='landing-page-container'>
+                <div className='landing-title'>
+                    <img src='../../images/MvDc2.png'></img>
+                </div>
                 <div className='landing-login-container'>
-                    <LoginForm />   
+                    <LoginForm />
                 </div>
                 <div className='landing-signup-container'>
-                    <SignupForm />   
+                    <SignupForm />
                 </div>
             </div>
         </YoutubeBackground>

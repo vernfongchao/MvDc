@@ -8,39 +8,61 @@ div.Player__container___f3NHe {
 }
 
 .landing-page-container {
+  box-sizing: border-box;
   margin-top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  width: 650px;
+  height: 900;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 325px;
+  grid-template-areas:
+    "first first"
+    "second third";
+}
+.landing-title {
+  grid-area: first;
+  background-color: white;
+  border-left: 5px black solid;
+  margin: 0px;
+  border-top: 5px black solid;
+  border-right: 5px black solid;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   display: flex;
   justify-content: center;
 }
 
 .landing-login-container {
+  grid-area: second;
   z-index: 1;
   display: flex;
   flex-direction: column;
   /* background-color: rgba(255, 255, 255, 0.926); */
-  background-color: rgba(173, 216, 230, 0.95);
+  /* background-color: rgba(173, 216, 230, 0.95); */
+  background-color: rgba(211, 211, 211, 0.95);
   /* border: 5px black solid; */
   border-left: 5px black solid;
-  border-top: 5px black solid;
   border-bottom: 5px black solid;
-  border-right: 2.5px black solid;
-  border-top-left-radius: 20px;
+  border-right: 0.5px black solid;
   border-bottom-left-radius: 20px;
   width: 325px;
   height: 350px;
 }
 
 .landing-signup-container {
+  grid-area: third;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  background-color: rgba(173, 216, 230, 0.95);
-  /* border: 5px black solid; */
+  /* background-color: rgba(173, 216, 230, 0.95); */
+  background-color: rgb(29, 29, 29);
+  background-color: rgba(211, 211, 211, 0.95);
   border-right: 5px black solid;
-  border-top: 5px black solid;
   border-bottom: 5px black solid;
-  border-left: 2.5px black solid;
-  border-top-right-radius: 20px;
+  border-left: 0.5px black solid;
   border-bottom-right-radius: 20px;
   width: 325px;
   height: 350px;
