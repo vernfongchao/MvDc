@@ -1,21 +1,14 @@
-html {
-  /* To make use of full height of page*/
-  min-height: 100%;
-  margin: 0;
-}
-body {
-  min-height: 100%;
-  margin: 0;
-}
-
 div.Player__container___f3NHe {
   position: relative;
   overflow-y: hidden;
-  height: 975px;
+  height: 100%;
   margin: 0px;
   width: auto;
 }
-
+.Player__container___f3NHe {
+  height: 100%;
+  width: 100%;
+}
 .landing-page-container {
   box-sizing: border-box;
   margin-top: 15%;
