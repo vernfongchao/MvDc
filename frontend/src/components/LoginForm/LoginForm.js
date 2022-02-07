@@ -40,7 +40,9 @@ const LoginForm = () => {
                         <h4 className='login-title-text'>Login</h4>
                     </div>
                     <ul className='login-error-ul'>
-                        {validationErrors.map((error, idx) => <li className='error-text' key={idx}>{error}</li>)}
+                        {validationErrors.map((error, idx) => 
+                            <li className='error-text' key={idx}>{error}
+                        </li>)}
                     </ul>
                     <div className='login-text-container'>
                         <span className='login-text-font'>Username or Email</span>

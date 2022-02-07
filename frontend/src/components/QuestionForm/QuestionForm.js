@@ -25,14 +25,17 @@ const QuestionForm = ({ user }) => {
                     </span>
                 </div>
                 <div className='question-title-input'>
-                    <input
-                        className='question-input-text'
-                        type='text'
-                        value={title}
-                        required
-                        placeholder='Question'
-                        onChange={(event) => setTitle(event.target.value)}
-                    />
+                    <label htmlFor='title'>
+                        <br />
+                        <textarea
+                            id='title'
+                            rows='3'
+                            cols='40'
+                            value={title}
+                            placeholder='Question'
+                            onChange={(event) => setContent(event.target.value)}
+                        ></textarea>
+                    </label>
                 </div>
                 <span>
                     Description

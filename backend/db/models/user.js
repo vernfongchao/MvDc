@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
     });
 
   User.prototype.toSafeObject = function () {
-    const { id, username, email } = this; 
+    const { id, username, email } = this;
     return { id, username, email };
   };
 
@@ -87,6 +87,7 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = function (models) {
     // associations can be defined here
+    User.hasMany(models.Question, { foreignKey: 'userId' });
   };
 
   return User;
