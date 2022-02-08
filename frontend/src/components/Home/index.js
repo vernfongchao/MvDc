@@ -1,8 +1,7 @@
-import React, { Component, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Route, Switch, NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { getQuestions } from '../../store/question';
-import QuestionDetail from '../QuestionDetail';
 
 
 import './Home.css'
@@ -12,7 +11,7 @@ const HomePage = () => {
     const dispatch = useDispatch()
     const questionsObj = useSelector((state) => state.questionState.questions)
     const questions = Object.values(questionsObj)
-    console.log(questions)
+    console.log(questionsObj)
 
     useEffect(() => {
         // 5. Dispatch the return value of the thunk creator instead (the thunk)
@@ -30,12 +29,6 @@ const HomePage = () => {
             <ol className='home-page-ul'>
 
                 {questions.map(({ id, title, content, userId }) => (
-                    // <Link>
-                    //     < Route path={`/question/${id}`}>
-                    //         <QuestionDetail content={content} title={title} />
-                    //     </Route>
-
-                    // </Link>
                     <Link content={content} title={title} to={`/questions/${id}`} >{title}
 
                     </Link>

@@ -30,7 +30,7 @@ function App() {
           <Navigation isLoaded={isLoaded} />
           <HomePage />
         </Route>
-        <Route path={`/question/:id`}>
+        <Route path={`/questions/:id`}>
           <QuestionDetail />
         </Route>
       </Switch>
