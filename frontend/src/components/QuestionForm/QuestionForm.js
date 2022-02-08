@@ -14,15 +14,22 @@ const QuestionForm = ({ user }) => {
     const [content, setContent] = useState('')
     const [validationErrors, setValidationErrors] = useState([])
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
+        e.preventDefault()
         setValidationErrors([])
         const newQuestion = {
             title,
             content,
             userId: sessionUser.id
         }
-        dispatch(createQuestion(newQuestion))
-    }
+        let createdQuestion = await dispatch(createQuestion(newQuestion))
+        if (createdQuestion) {
+            history.push(`/questions/${createdQuestion.id}`);
+        }
+    };
+
+
+    
     return (
         <div className='question-form-container'>
             <form className='' onSubmit={handleSubmit}>
