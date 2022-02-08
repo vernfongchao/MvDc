@@ -30,7 +30,7 @@ const HomePage = () => {
                     <li id={`home-page-${count++}`} className={`home-page-li`}>
                         <Link to={`/questions/${id}`} key={id} >{title}
                         </Link>
-                        <span>{User.username}</span>
+                        <span>{User?.username}</span>
                     </li>
                 ))}
             </ol>

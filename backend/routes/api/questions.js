@@ -55,7 +55,10 @@ router.post('', validateQuestion, asyncHandler(async (req, res) => {
         title,
         content,
         userId: parseUserId
+    }, {
+        include: { model: User }
     })
+
     return res.json(
         question
     );

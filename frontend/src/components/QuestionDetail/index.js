@@ -35,7 +35,7 @@ const QuestionDetail = () => {
   return (
     <div className='question-detail-container'>
       <span>{questionObj?.title}</span>
-      <span>{questionObj?.User.username}</span>
+      <span>{questionObj?.User?.username}</span>
       <span>{questionObj?.content}</span>
       {(!showEditForm && (user.id === questionObj?.userId)) &&
         (

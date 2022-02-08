@@ -48,10 +48,9 @@ export const createQuestion = (payload) => async (dispatch, getstate) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
     })
-    console.log(res)
     if (res.ok) {
         const questions = await res.json()
-        dispatch(loadQuestions(questions))
+        dispatch(addQuestion(questions))
         return questions
     }
 }

@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import { createQuestion } from '../../store/question'
+import QuestionDetail from '../QuestionDetail';
 
 
 import './QuestionForm.css'
 
-const QuestionForm = ({ user }) => {
+const QuestionForm = () => {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
     const history = useHistory()
@@ -22,14 +23,13 @@ const QuestionForm = ({ user }) => {
             content,
             userId: sessionUser.id
         }
-        let createdQuestion = await dispatch(createQuestion(newQuestion))
-        if (createdQuestion) {
-            history.push(`/questions/${createdQuestion.id}`);
-        }
+        const createdQuestion = await dispatch(createQuestion(newQuestion))
+        console.log('Newly CREATED QUESTION -----------------', createQuestion)
+        if (createdQuestion) return <Redirect to={`/questions/${createdQuestion.id}`} />;
     };
 
 
-    
+
     return (
         <div className='question-form-container'>
             <form className='' onSubmit={handleSubmit}>
