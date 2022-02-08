@@ -13,13 +13,15 @@ const QuestionEdit = ({ question, hideForm }) => {
     const [validationErrors, setValidationErrors] = useState([])
 
     const handleSubmit = async (e) => {
+        e.preventDefault()
         setValidationErrors([])
         const newQuestion = {
+            id: question.id,
             title,
             content,
             userId: sessionUser.id
         }
-        dispatch(editQuestion(newQuestion, question.id))
+        dispatch(editQuestion(newQuestion))
     }
 
     return (

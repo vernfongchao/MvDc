@@ -22,24 +22,26 @@ const validateQuestion = [
 
 router.get('', asyncHandler(async (req, res) => {
     const questions = await Question.findAll({ include: { model: User } });
-    res.json(questions);
+    return res.json(questions);
 }));
 
 router.get('/:id', asyncHandler(async (req, res) => {
     const question = await Question.findByPk(req.params.id,
         { include: { model: User } }
     )
-    res.json(question);
+    return res.json(question);
 }))
 
 router.put('/:id', validateQuestion, asyncHandler(async (req, res) => {
-    const { title, content, userId } = req.body
+    const { title, content, userId, id } = req.body
     let parseUserId = parseInt(userId, 10)
     const question = await Question.update({
         title,
         content,
         userId: parseUserId
-    })
+    },
+        { where: { id } }
+    )
     return res.json(
         question
     );

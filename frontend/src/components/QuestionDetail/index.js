@@ -21,7 +21,7 @@ const QuestionDetail = () => {
   useEffect(() => {
     setShowEditForm(false)
     dispatch(getQuestionById(id))
-  }, [dispatch, id]);
+  }, []);
 
   let content = null;
   if (showEditForm && (user.id === questionObj.userId)) {

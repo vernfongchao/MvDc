@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Redirect } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import { createQuestion } from '../../store/question'
+
 
 import './QuestionForm.css'
 
 const QuestionForm = ({ user }) => {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
+    const history = useHistory()
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [validationErrors, setValidationErrors] = useState([])
