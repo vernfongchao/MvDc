@@ -37,7 +37,7 @@ const QuestionDetail = () => {
       <span>{questionObj?.title}</span>
       <span>{questionObj?.User.username}</span>
       <span>{questionObj?.content}</span>
-      {(!showEditForm && (user.id === questionObj.userId)) &&
+      {(!showEditForm && (user.id === questionObj?.userId)) &&
         (
           <button onClick={() => setShowEditForm(true)}>Edit</button>
         )}

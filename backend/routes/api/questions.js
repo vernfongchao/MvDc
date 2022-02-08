@@ -13,15 +13,7 @@ const validateQuestion = [
         .notEmpty()
         .withMessage('Please provide a question.')
         .isLength({ max: 255 })
-        .withMessage('Your question must be no more than 255 characters long.')
-        .custom((value) => {
-            return Question.findOne({ where: { title: value } })
-                .then((question) => {
-                    if (question) {
-                        return Promise.reject('That question has already been asked');
-                    }
-                })
-        }),
+        .withMessage('Your question must be no more than 255 characters long.'),
     check('content')
         .exists({ checkFalsy: true })
         .withMessage('Please add a description to your question.'),
@@ -52,9 +44,6 @@ router.put('/:id', validateQuestion, asyncHandler(async (req, res) => {
         question
     );
 }))
-
-
-
 
 router.post('', validateQuestion, asyncHandler(async (req, res) => {
     const { title, content, userId } = req.body
