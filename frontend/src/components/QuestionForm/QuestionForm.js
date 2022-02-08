@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelctor } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Redirect } from 'react-router-dom';
-
+import { createQuestion } from '../../store/question'
 
 import './QuestionForm.css'
 
 const QuestionForm = ({ user }) => {
+    const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
@@ -14,7 +15,13 @@ const QuestionForm = ({ user }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         setValidationErrors([])
-
+        console.log(sessionUser)
+        const newQuestion = {
+            title,
+            content,
+            userId: sessionUser.id
+        }
+        dispatch(createQuestion(newQuestion))
     }
     return (
         <div className='question-form-container'>
@@ -33,7 +40,7 @@ const QuestionForm = ({ user }) => {
                             cols='40'
                             value={title}
                             placeholder='Question'
-                            onChange={(event) => setContent(event.target.value)}
+                            onChange={(event) => setTitle(event.target.value)}
                         ></textarea>
                     </label>
                 </div>

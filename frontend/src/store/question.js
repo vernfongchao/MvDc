@@ -1,11 +1,31 @@
 import { csrfFetch } from './csrf';
 
-const ADD_QUESTION = 'question/ADD_Question'
+const LOAD_QUESTIONS = '/question/getQuestions'
+const ADD_QUESTION = 'question/addQuestion'
 
-const addQuestion = (question) => ({
+export const addQuestion = (question) => ({
     type: ADD_QUESTION,
     question
 })
+
+export const loadQuestions = (questions) => {
+    return {
+        type: LOAD_QUESTIONS,
+        questions
+    }
+}
+
+
+
+export const getQuestions = () => async dispatch => {
+    const res = await csrfFetch('/api/questions')
+    if (res.ok) {
+        const questions = await res.json()
+        dispatch(loadQuestions(questions))
+        return questions
+    }
+}
+
 
 export const createQuestion = (payload) => async (dispatch, getstate) => {
     const res = await csrfFetch('/api/questions', {
@@ -15,9 +35,9 @@ export const createQuestion = (payload) => async (dispatch, getstate) => {
     })
     console.log(res)
     if (res.ok) {
-        const newQuestion = await res.json()
-        dispatch(addQuestion(newQuestion))
-        return newQuestion
+        const question = await res.json()
+        dispatch(addQuestion(question))
+        return question
     }
 }
 
@@ -30,7 +50,14 @@ const questionReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_QUESTION: {
             newState = { ...state }
-            newState.questions = { ...newState.entries, [action.newQuestion.id]: action.newQuestion }
+            newState.questions = { ...newState.questions, [action.question.id]: action.question }
+            return newState
+        }
+        case LOAD_QUESTIONS: {
+            newState = { ...state }
+            const questionsList = {}
+            action.questions.forEach(question => questionsList[question.id] = question)
+            newState.questions = questionsList
             return newState
         }
         default:

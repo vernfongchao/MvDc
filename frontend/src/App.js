@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import { useSelector } from 'react-redux'
 import LandingPage from "./components/LandingPage";
 import HomePage from "./components/Home";
+import QuestionDetail from "./components/QuestionDetail";
 
 
 
@@ -28,6 +29,9 @@ function App() {
         <Route path={'/login'}>
           <Navigation isLoaded={isLoaded} />
           <HomePage />
+        </Route>
+        <Route path={`/question/:id`}>
+          <QuestionDetail />
         </Route>
       </Switch>
     </>

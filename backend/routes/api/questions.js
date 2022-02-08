@@ -28,17 +28,24 @@ const validateQuestion = [
     handleValidationErrors
 ];
 
-router.post('/', validateQuestion, asyncHandler(async (req, res) => {
-    const { title, content, user } = req.body
+router.get('', asyncHandler(async (req, res) => {
+    const questions = await Question.findAll();
+    res.json(questions);
+}));
+
+
+router.post('', validateQuestion, asyncHandler(async (req, res) => {
+    const { title, content, userId } = req.body
+    let parseUserId = parseInt(userId, 10)
 
     const question = await Question.create({
         title,
         content,
-        user: user.id
+        userId: parseUserId
     })
-    return res.json({
+    return res.json(
         question
-    });
+    );
 }))
 
 
