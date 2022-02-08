@@ -26,11 +26,8 @@ function App() {
         <Route path exact={'/'}>
           {sessionUser ? [<Navigation isLoaded={isLoaded} />, <HomePage />] : <LandingPage />}
         </Route>
-        <Route path={'/login'}>
-          <Navigation isLoaded={isLoaded} />
-          <HomePage />
-        </Route>
         <Route path={`/questions/:id`}>
+          <Navigation isLoaded={isLoaded} />
           <QuestionDetail />
         </Route>
       </Switch>

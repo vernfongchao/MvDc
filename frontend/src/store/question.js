@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf';
 
 const LOAD_QUESTIONS = '/question/getQuestions'
 const ADD_QUESTION = 'question/addQuestion'
+const LOAD_QUESTION = '/question/loadQuestionDetail'
 
 export const addQuestion = (question) => ({
     type: ADD_QUESTION,
@@ -15,6 +16,12 @@ export const loadQuestions = (questions) => {
     }
 }
 
+export const loadQuestionDetail = (question) => {
+    return {
+        type: LOAD_QUESTION,
+        question
+    }
+}
 
 
 export const getQuestions = () => async dispatch => {
@@ -26,6 +33,14 @@ export const getQuestions = () => async dispatch => {
     }
 }
 
+export const getQuestionById = (id) => async dispatch => {
+    const res = await csrfFetch(`/api/questions/${id}`)
+    if (res.ok) {
+        const question = await res.json()
+        dispatch(loadQuestionDetail(question))
+        return question
+    }
+}
 
 export const createQuestion = (payload) => async (dispatch, getstate) => {
     const res = await csrfFetch('/api/questions', {
@@ -35,9 +50,9 @@ export const createQuestion = (payload) => async (dispatch, getstate) => {
     })
     console.log(res)
     if (res.ok) {
-        const question = await res.json()
-        dispatch(addQuestion(question))
-        return question
+        const questions = await res.json()
+        dispatch(loadQuestions(questions))
+        return questions
     }
 }
 
@@ -54,10 +69,19 @@ const questionReducer = (state = initialState, action) => {
             return newState
         }
         case LOAD_QUESTIONS: {
+            // if (!state[action.questions.id]) {
+            //     newState = { ...state, [action.questions.id]: action.questions }
+            //     return newState
+            // }
             newState = { ...state }
             const questionsList = {}
             action.questions.forEach(question => questionsList[question.id] = question)
             newState.questions = questionsList
+            return newState
+        }
+        case LOAD_QUESTION: {
+            newState = { ...state }
+            newState.questions = { [action.question.id]: action.question }
             return newState
         }
         default:

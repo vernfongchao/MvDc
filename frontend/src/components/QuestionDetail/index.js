@@ -1,18 +1,26 @@
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { getQuestionById } from '../../store/question';
+
+import './QuestionDetail.css'
 
 const QuestionDetail = () => {
   const { id } = useParams()
-  console.log(id)
-  const questionsObj = useSelector((state) => state.questionState.questions[id])
-  // const question = Object.values(questionsObj)
-  const { title, content } = questionsObj
+  const dispatch = useDispatch()
+  const questionObj = useSelector((state) => state.questionState.questions[id])
+  console.log(questionObj)
+
+  useEffect(() => {
+    dispatch(getQuestionById(id))
+  }, [dispatch, id]);
 
   return (
-    <div>
-      <span>{title}</span>
-      <span>{content}</span>
+    <div className='question-detail-container'>
+      <span>{questionObj?.title}</span>
+      <span>{questionObj?.User.username}</span>
+      <span>{questionObj?.content}</span>
     </div>
   );
 };

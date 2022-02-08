@@ -10,7 +10,7 @@ function QuestionFormModal() {
     return (
         <>
             <div className=''>
-                <button id='' onClick={() => setShowModal(true)}>Ask a Question</button>
+                <button id='' onClick={() => setShowModal(true)}><i class="fas fa-plus"></i></button>
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>

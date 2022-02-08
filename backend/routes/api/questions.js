@@ -29,9 +29,16 @@ const validateQuestion = [
 ];
 
 router.get('', asyncHandler(async (req, res) => {
-    const questions = await Question.findAll();
+    const questions = await Question.findAll({ include: { model: User } });
     res.json(questions);
 }));
+
+router.get('/:id', asyncHandler(async (req, res) => {
+    const question = await Question.findByPk(req.params.id,
+        { include: { model: User } }
+    )
+    res.json(question);
+}))
 
 
 router.post('', validateQuestion, asyncHandler(async (req, res) => {
