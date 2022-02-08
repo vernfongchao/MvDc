@@ -16,7 +16,7 @@ const HomePage = () => {
 
     useEffect(() => {
         dispatch(getQuestions())
-    }, [dispatch]);
+    },[]);
 
     return (
         <div className='home-page-container'>

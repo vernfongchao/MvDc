@@ -1,26 +1,27 @@
-import React, { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Redirect } from 'react-router-dom';
-import { createQuestion } from '../../store/question'
 
-import './QuestionForm.css'
+import { editQuestion } from '../../store/question'
 
-const QuestionForm = ({ user }) => {
-    const sessionUser = useSelector(state => state.session.user);
+
+const QuestionEdit = ({ question, hideForm }) => {
     const dispatch = useDispatch()
-    const [title, setTitle] = useState('')
-    const [content, setContent] = useState('')
+    const sessionUser = useSelector(state => state.session.user);
+
+    const [title, setTitle] = useState(question.title)
+    const [content, setContent] = useState(question.content)
     const [validationErrors, setValidationErrors] = useState([])
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         setValidationErrors([])
         const newQuestion = {
             title,
             content,
             userId: sessionUser.id
         }
-        dispatch(createQuestion(newQuestion))
+        dispatch(editQuestion(newQuestion, question.id))
     }
+
     return (
         <div className='question-form-container'>
             <form className='' onSubmit={handleSubmit}>
@@ -69,6 +70,7 @@ const QuestionForm = ({ user }) => {
             </form>
         </div>
     )
+
 }
 
-export default QuestionForm
+export default QuestionEdit

@@ -40,6 +40,21 @@ router.get('/:id', asyncHandler(async (req, res) => {
     res.json(question);
 }))
 
+router.put('/:id', validateQuestion, asyncHandler(async (req, res) => {
+    const { title, content, userId } = req.body
+    let parseUserId = parseInt(userId, 10)
+    const question = await Question.update({
+        title,
+        content,
+        userId: parseUserId
+    })
+    return res.json(
+        question
+    );
+}))
+
+
+
 
 router.post('', validateQuestion, asyncHandler(async (req, res) => {
     const { title, content, userId } = req.body

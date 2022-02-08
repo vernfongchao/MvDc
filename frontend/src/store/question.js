@@ -56,6 +56,20 @@ export const createQuestion = (payload) => async (dispatch, getstate) => {
     }
 }
 
+export const editQuestion = (payload, id) => async (dispatch, getState) => {
+    const res = await csrfFetch(`/api/questions/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+    if (res.okay) {
+        const question = await res.json()
+        dispatch(loadQuestionDetail(question))
+        return question
+    }
+}
+
+
 
 
 const initialState = { questions: {}, isLoading: true }
