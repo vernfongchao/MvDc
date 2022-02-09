@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 import LandingPage from "./components/LandingPage";
 import HomePage from "./components/Home";
 import QuestionDetail from "./components/QuestionDetail";
+import Activity from "./components/Activity";
 
 
 
@@ -25,6 +26,10 @@ function App() {
       <Switch>
         <Route path exact={'/'}>
           {sessionUser ? [<Navigation isLoaded={isLoaded} />, <HomePage />] : <LandingPage />}
+        </Route>
+        <Route path='/activity'>
+          <Navigation isLoaded={isLoaded} />
+          <Activity />
         </Route>
         <Route path={`/questions/:id`}>
           <Navigation isLoaded={isLoaded} />

@@ -82,10 +82,6 @@ const questionReducer = (state = initialState, action) => {
             return newState
         }
         case LOAD_QUESTIONS: {
-            // if (!state[action.questions.id]) {
-            //     newState = { ...state, [action.questions.id]: action.questions }
-            //     return newState
-            // }
             newState = { ...state }
             const questionsList = {}
             action.questions.forEach(question => questionsList[question.id] = question)

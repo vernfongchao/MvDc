@@ -13,7 +13,6 @@ const QuestionDetail = () => {
   const dispatch = useDispatch()
   const questionObj = useSelector((state) => state.questionState.questions[id])
   const user = useSelector(state => state.session.user);
-  console.log(questionObj)
 
   const [showEditForm, setShowEditForm] = useState(false)
 

@@ -14,9 +14,9 @@ const QuestionForm = () => {
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [validationErrors, setValidationErrors] = useState([])
+    const [question, setQuestion] = useState(false)
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
         setValidationErrors([])
         const newQuestion = {
             title,
@@ -25,7 +25,8 @@ const QuestionForm = () => {
         }
         const createdQuestion = await dispatch(createQuestion(newQuestion))
         console.log('Newly CREATED QUESTION -----------------', createQuestion)
-        if (createdQuestion) return <Redirect to={`/questions/${createdQuestion.id}`} />;
+        if (createdQuestion) setQuestion(true)
+        if (question) history.push('/activity');
     };
 
 
