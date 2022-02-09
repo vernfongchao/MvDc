@@ -21,7 +21,7 @@ const validateQuestion = [
 ];
 
 router.get('', asyncHandler(async (req, res) => {
-    const questions = await Question.findAll({ include: { model: User } });
+    const questions = await Question.findAll({ limit: 9, include: { model: User } });
     return res.json(questions);
 }));
 
@@ -48,7 +48,7 @@ router.put('/:id', validateQuestion, asyncHandler(async (req, res) => {
 }))
 
 router.get('/myquestions', asyncHandler(async (req, res) => {
-    const questions = await Question.findAll({ limit:10, where: { userId },});
+    const questions = await Question.findAll({ where: { userId }, });
     return res.json(questions);
 }));
 
