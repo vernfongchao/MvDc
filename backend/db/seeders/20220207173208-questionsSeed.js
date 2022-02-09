@@ -16,7 +16,7 @@ module.exports = {
       { title: 'Who is the strongest character??', content: 'Is it The one above all or The Presence', userId: 3, createdAt: new Date(), updatedAt: new Date() },
       { title: 'Can Ironman beat Superman?', content: 'I think Ironman, just like Batman, would be able to get the job done. I personally think Ironman is stronger than Batman since he has more tools in his belt, but will it go the same way?', userId: 2, createdAt: new Date(), updatedAt: new Date() },
       { title: 'Why are Marvel animation so trash?', content: 'I dont understand why companies keep pumping out these trash animation', userId: 1, createdAt: new Date(), updatedAt: new Date() },
-      { title: 'Why did the Justice League films so trash?', content: 'They need to take a page off of Disney', userId: 3, createdAt: new Date(), updatedAt: new Date() },
+      { title: 'Why are Justice League films so trash?', content: 'They need to take a page off of Disney', userId: 3, createdAt: new Date(), updatedAt: new Date() },
     ], {});
   },
 

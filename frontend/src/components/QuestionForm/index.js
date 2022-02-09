@@ -30,7 +30,7 @@ function QuestionFormModal() {
         console.log('Newly CREATED QUESTION -----------------', createQuestion)
         setShowModal(false)
         reset()
-        if (createdQuestion) history.push('/activity');
+        if (createdQuestion) history.push(`/questions/${createdQuestion.id}`);
     }
 
     const reset = () => {
@@ -41,7 +41,7 @@ function QuestionFormModal() {
     return (
         <>
             <div className=''>
-                <button id='' onClick={() => setShowModal(true)}><i class="fas fa-plus"></i></button>
+                <button id='add-question-button' onClick={() => setShowModal(true)}><i class="fas fa-plus"></i></button>
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
@@ -53,7 +53,7 @@ function QuestionFormModal() {
                                 </span>
                             </div>
                             <div className='question-title-input'>
-                                <label htmlFor='title' required={true}>
+                                <label htmlFor='title' >
                                     <br />
                                     <textarea
                                         id='title'
@@ -62,6 +62,7 @@ function QuestionFormModal() {
                                         value={title}
                                         placeholder='Question'
                                         onChange={(event) => setTitle(event.target.value)}
+                                        required={true}
                                     ></textarea>
                                 </label>
                             </div>

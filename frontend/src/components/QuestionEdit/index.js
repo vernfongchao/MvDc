@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
+import { useHistory } from 'react-router-dom'
 import { editQuestion } from '../../store/question'
 
 
 const QuestionEdit = ({ question, hideForm }) => {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user);
-
+    const history = useHistory()
     const [title, setTitle] = useState(question.title)
     const [content, setContent] = useState(question.content)
     const [validationErrors, setValidationErrors] = useState([])
+    const [questionEdit, setQuestionEdit] = useState(false)
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
         setValidationErrors([])
         const newQuestion = {
             id: question.id,
@@ -22,55 +22,78 @@ const QuestionEdit = ({ question, hideForm }) => {
             userId: sessionUser.id
         }
         dispatch(editQuestion(newQuestion))
+        console.log(question)
+        history.push(`/questions/${question.id}`)
     }
 
-    return (
-        <div className='question-form-container'>
-            <form className='' onSubmit={handleSubmit}>
-                <div className='question-form-title'>
+    const handleClick = (e) => {
+        setQuestionEdit(true)
+    }
+
+    let questionEditForm;
+
+    if (questionEdit) {
+        questionEditForm = null
+    }
+    else {
+        questionEditForm = (
+            <div className='question-form-container'>
+                <form className='' onSubmit={handleSubmit}>
+                    <div className='question-form-title'>
+                        <span>
+                            Question
+                        </span>
+                    </div>
+                    <div className='question-title-input'>
+                        <label htmlFor='title'>
+                            <br />
+                            <textarea
+                                id='title'
+                                rows='3'
+                                cols='40'
+                                value={title}
+                                placeholder='Question'
+                                onChange={(event) => setTitle(event.target.value)}
+                            ></textarea>
+                        </label>
+                    </div>
                     <span>
-                        Question
+                        Description
                     </span>
-                </div>
-                <div className='question-title-input'>
-                    <label htmlFor='title'>
-                        <br />
-                        <textarea
-                            id='title'
-                            rows='3'
-                            cols='40'
-                            value={title}
-                            placeholder='Question'
-                            onChange={(event) => setTitle(event.target.value)}
-                        ></textarea>
-                    </label>
-                </div>
-                <span>
-                    Description
-                </span>
-                <div className='question-form-content'>
-                    <label htmlFor='content'>
-                        <br />
-                        <textarea
-                            id='content'
-                            rows='10'
-                            cols='40'
-                            value={content}
-                            placeholder='enter your description'
-                            onChange={(event) => setContent(event.target.value)}
-                        ></textarea>
-                    </label>
-                </div>
-                <div className='question-content-input'>
+                    <div className='question-form-content'>
+                        <label htmlFor='content'>
+                            <br />
+                            <textarea
+                                id='content'
+                                rows='10'
+                                cols='40'
+                                value={content}
+                                placeholder='enter your description'
+                                onChange={(event) => setContent(event.target.value)}
+                            ></textarea>
+                        </label>
+                    </div>
+                    <div className='question-content-input'>
 
-                </div>
+                    </div>
 
-                <div className='question-button-container'>
-                    <button id='question-button' type='submit'>Submit</button>
+                    <div className='question-button-container'>
+                        <button id='question-button' type='submit'>Submit</button>
+                    </div>
+                </form>
+                <button onClick={handleClick}>cancel</button>
+            </div>
+        )
 
-                </div>
-            </form>
-        </div>
+    }
+
+
+
+
+    return (
+        <>
+            {questionEditForm}
+        </>
     )
 
 }

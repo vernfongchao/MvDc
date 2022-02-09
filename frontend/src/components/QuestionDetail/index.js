@@ -20,15 +20,16 @@ const QuestionDetail = () => {
   useEffect(() => {
     setShowEditForm(false)
     dispatch(getQuestionById(id))
+    window.scrollTo(0, 0);
   }, []);
 
   let content = null;
-  if (showEditForm && (user.id === questionObj.userId)) {
+  if (showEditForm && (user?.id === questionObj.userId)) {
     content = (
       <QuestionEdit
         question={questionObj}
-        hideForm={() => setShowEditForm(false)}
-      />
+        hideForm={() => setShowEditForm(false)}>
+      </QuestionEdit>
     )
   }
   return (
@@ -36,10 +37,14 @@ const QuestionDetail = () => {
       <span>{questionObj?.title}</span>
       <span>{questionObj?.User?.username}</span>
       <span>{questionObj?.content}</span>
-      {(!showEditForm && (user.id === questionObj?.userId)) &&
-        (
-          <button onClick={() => setShowEditForm(true)}>Edit</button>
-        )}
+      <div>
+        {(!showEditForm && (user?.id === questionObj?.userId)) &&
+          (
+            <div>
+              <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button>
+            </div>
+          )}
+      </div>
       {content}
     </div>
   );

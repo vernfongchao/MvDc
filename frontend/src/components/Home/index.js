@@ -16,13 +16,17 @@ const HomePage = () => {
 
     useEffect(() => {
         dispatch(getQuestions())
-    },[]);
+    }, []);
 
     return (
         <div className='home-page-container'>
             <img src="https://i.ytimg.com/vi/x6QYBsUi9rE/maxresdefault.jpg"
                 alt='Batman vs Ironman'
                 className='home-page-background'
+            >
+            </img>
+            <img src='../../../images/comic-page-1.jpg'
+                className='homepage-ol-background'
             >
             </img>
             <ol className='home-page-ol'>

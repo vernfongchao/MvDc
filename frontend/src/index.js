@@ -29,7 +29,7 @@ function Root() {
   return (
     <Provider store={store}>
       <ModalProvider>
-        <BrowserRouter>
+        <BrowserRouter >
           <App />
         </BrowserRouter>
       </ModalProvider>

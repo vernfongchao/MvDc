@@ -1,2 +1,11 @@
-#question-modal-button {
+#add-question-button {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: red;
+}
+
+#add-question-button:hover {
+  background-color: black;
+  color: white;
 }

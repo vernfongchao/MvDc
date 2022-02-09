@@ -47,6 +47,12 @@ router.put('/:id', validateQuestion, asyncHandler(async (req, res) => {
     );
 }))
 
+router.get('/myquestions', asyncHandler(async (req, res) => {
+    const questions = await Question.findAll({ limit:10, where: { userId },});
+    return res.json(questions);
+}));
+
+
 router.post('', validateQuestion, asyncHandler(async (req, res) => {
     const { title, content, userId } = req.body
     let parseUserId = parseInt(userId, 10)
@@ -63,6 +69,13 @@ router.post('', validateQuestion, asyncHandler(async (req, res) => {
         question
     );
 }))
+
+router.delete('/:id', asyncHandler(async (req, res) => {
+    const question = await Question.findByPk(req.params.id)
+    question.destroy()
+
+}))
+
 
 
 
