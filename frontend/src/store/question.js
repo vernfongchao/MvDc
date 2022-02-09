@@ -1,8 +1,9 @@
 import { csrfFetch } from './csrf';
 
-const LOAD_QUESTIONS = '/question/getQuestions'
-const ADD_QUESTION = 'question/addQuestion'
-const LOAD_QUESTION = '/question/loadQuestionDetail'
+const LOAD_QUESTIONS = '/question/LOAD_QUESTIONS'
+const ADD_QUESTION = 'question/ADD_QUESTION'
+const LOAD_QUESTION = '/question/LOAD_QUESTION'
+const EDIT_QUESTION = '/question/EDIT_QUESTION'
 
 export const addQuestion = (question) => ({
     type: ADD_QUESTION,
@@ -22,6 +23,14 @@ export const loadQuestionDetail = (question) => {
         question
     }
 }
+export const edit = (question) => {
+    return {
+        type: EDIT_QUESTION,
+        question
+    }
+}
+
+
 
 
 export const getQuestions = () => async dispatch => {
@@ -89,6 +98,10 @@ const questionReducer = (state = initialState, action) => {
             return newState
         }
         case LOAD_QUESTION: {
+            newState.questions = { [action.question.id]: action.question }
+            return newState
+        }
+        case EDIT_QUESTION: {
             newState = { ...state }
             newState.questions = { [action.question.id]: action.question }
             return newState

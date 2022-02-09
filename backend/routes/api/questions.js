@@ -42,6 +42,9 @@ router.put('/:id', validateQuestion, asyncHandler(async (req, res) => {
     },
         { where: { id } }
     )
+
+    // return res.redirect(`/api/questions/${id}`)
+
     return res.json(
         question
     );

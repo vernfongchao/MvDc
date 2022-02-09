@@ -21,7 +21,7 @@ const QuestionDetail = () => {
     setShowEditForm(false)
     dispatch(getQuestionById(id))
     window.scrollTo(0, 0);
-  }, []);
+  }, [dispatch, id]);
 
   // let content = null;
   // if (showEditForm && (user?.id === questionObj.userId)) {

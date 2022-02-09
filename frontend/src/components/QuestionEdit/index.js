@@ -15,40 +15,17 @@ const QuestionEdit = () => {
     const [title, setTitle] = useState(question?.title)
     const [content, setContent] = useState(question?.content)
     const [questionEdit, setQuestionEdit] = useState(false)
-
-
-    // {(user?.id === questionObj?.userId) && (
-    //     <div>
-    //     <button>Edit</button>
-    //   </div>
-    // )}
-
-    let form;
-
-    if (user?.id !== question?.userId) {
-        form = null
-    }
-
-    else if (questionEdit && user?.id === question?.userId) {
-        setTitle(question?.title)
-        setContent(question?.content)
-        // form = (
-        // )
-    }
-
-
-
-
-
+    const [showForm, setShowForm] = useState(false)
+    const [validationErrors, setValidationErrors] = useState([])
 
 
     useEffect(() => {
         dispatch(getQuestionById(id))
         window.scrollTo(0, 0);
-    }, []);
+    }, [dispatch, id]);
 
-    const [validationErrors, setValidationErrors] = useState([])
     const handleSubmit = async (e) => {
+        e.preventDefault()
         setValidationErrors([])
         const newQuestion = {
             id: question?.id,
@@ -61,60 +38,15 @@ const QuestionEdit = () => {
         history.push(`/questions/${question.id}`)
     }
 
+
     const handleClick = (e) => {
+        setShowForm(false)
     }
 
     const handleForm = (e) => {
-        setTitle(question?.title)
-        setContent(question?.content)
-        form = (<div className='question-form-container'>
-            <form className='' onSubmit={handleSubmit}>
-                <div className='question-form-title'>
-                    <span>
-                        Question
-                    </span>
-                </div>
-                <div className='question-title-input'>
-                    <label htmlFor='title'>
-                        <br />
-                        <textarea
-                            id='title'
-                            rows='3'
-                            cols='40'
-                            value={title}
-                            placeholder='Question'
-                            onChange={(event) => setTitle(event.target.value)}
-                        ></textarea>
-                    </label>
-                </div>
-                <span>
-                    Description
-                </span>
-                <div className='question-form-content'>
-                    <label htmlFor='content'>
-                        <br />
-                        <textarea
-                            id='content'
-                            rows='10'
-                            cols='40'
-                            value={content}
-                            placeholder='enter your description'
-                            onChange={(event) => setContent(event.target.value)}
-                        ></textarea>
-                    </label>
-                </div>
-                <div className='question-content-input'>
-
-                </div>
-
-                <div className='question-button-container'>
-                    <button id='question-button' type='submit'>Submit</button>
-                </div>
-            </form>
-            <button onClick={handleClick}>cancel</button>
-        </div>
-        )
+        setShowForm(true)
     }
+
     return (
         <div>
             {(user?.id === question?.userId) && (
@@ -122,7 +54,54 @@ const QuestionEdit = () => {
                     <button onClick={handleForm}>Edit</button>
                 </div>
             )}
-            {form}
+            {showForm && ((
+                <div className='question-form-container'>
+                    <form className='' onSubmit={handleSubmit}>
+                        <div className='question-form-title'>
+                            <span>
+                                Question
+                            </span>
+                        </div>
+                        <div className='question-title-input'>
+                            <label htmlFor='title'>
+                                <br />
+                                <textarea
+                                    id='title'
+                                    rows='3'
+                                    cols='40'
+                                    value={title}
+                                    placeholder='Question'
+                                    onChange={(event) => setTitle(event.target.value)}
+                                ></textarea>
+                            </label>
+                        </div>
+                        <span>
+                            Description
+                        </span>
+                        <div className='question-form-content'>
+                            <label htmlFor='content'>
+                                <br />
+                                <textarea
+                                    id='content'
+                                    rows='10'
+                                    cols='40'
+                                    value={content}
+                                    placeholder='enter your description'
+                                    onChange={(event) => setContent(event.target.value)}
+                                ></textarea>
+                            </label>
+                        </div>
+                        <div className='question-content-input'>
+
+                        </div>
+
+                        <div className='question-button-container'>
+                            <button id='question-button' type='submit'>Submit</button>
+                        </div>
+                    </form>
+                    <button onClick={handleClick}>cancel</button>
+                </div>
+            ))}
         </div>
     )
 }
