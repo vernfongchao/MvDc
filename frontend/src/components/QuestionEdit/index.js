@@ -44,6 +44,8 @@ const QuestionEdit = () => {
     }
 
     const handleForm = (e) => {
+        setTitle(question?.title)
+        setContent(question?.content)
         setShowForm(true)
     }
 

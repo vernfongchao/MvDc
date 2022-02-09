@@ -35,7 +35,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
 router.put('/:id', validateQuestion, asyncHandler(async (req, res) => {
     const { title, content, userId, id } = req.body
     let parseUserId = parseInt(userId, 10)
-    const question = await Question.update({
+    let question = await Question.update({
         title,
         content,
         userId: parseUserId
@@ -43,8 +43,8 @@ router.put('/:id', validateQuestion, asyncHandler(async (req, res) => {
         { where: { id } }
     )
 
-    // return res.redirect(`/api/questions/${id}`)
-
+    question = await Question.findByPk(parseUserId,
+        { include: { model: User } })
     return res.json(
         question
     );
