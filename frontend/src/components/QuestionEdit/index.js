@@ -2,27 +2,22 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams, } from 'react-router-dom'
 import { editQuestion } from '../../store/question'
-import { getQuestionById } from '../../store/question';
+import { deleteQuestion } from '../../store/question'
 
-const QuestionEdit = () => {
+const QuestionEdit = ({ user, question }) => {
 
     const history = useHistory()
-    const { id } = useParams()
     const dispatch = useDispatch()
-    const question = useSelector((state) => state.questionState.questions[id])
-    const user = useSelector(state => state.session.user);
 
     const [title, setTitle] = useState(question?.title)
     const [content, setContent] = useState(question?.content)
-    const [questionEdit, setQuestionEdit] = useState(false)
     const [showForm, setShowForm] = useState(false)
     const [validationErrors, setValidationErrors] = useState([])
 
 
     useEffect(() => {
-        dispatch(getQuestionById(id))
         window.scrollTo(0, 0);
-    }, [dispatch, id]);
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -35,6 +30,7 @@ const QuestionEdit = () => {
         }
         dispatch(editQuestion(newQuestion))
         console.log(question)
+        setShowForm()
         history.push(`/questions/${question.id}`)
     }
 
@@ -49,13 +45,23 @@ const QuestionEdit = () => {
         setShowForm(true)
     }
 
+    const handleDelete = async (e) => {
+        e.preventDefault()
+        const deletedQuestion = await dispatch(deleteQuestion(question.id))
+        if (deletedQuestion) return history.push('/')
+    }
+
+
     return (
         <div>
-            {(user?.id === question?.userId) && (
-                <div>
-                    <button onClick={handleForm}>Edit</button>
-                </div>
-            )}
+            <div>
+                {!showForm && (user?.id === question?.userId) && (
+                    <div>
+                        <button onClick={handleForm}>Edit</button>
+                        <button onClick={handleDelete}>Delete</button>
+                    </div>
+                )}
+            </div>
             {showForm && ((
                 <div className='question-form-container'>
                     <form className='' onSubmit={handleSubmit}>

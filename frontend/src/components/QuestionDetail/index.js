@@ -45,7 +45,7 @@ const QuestionDetail = () => {
             </div>
           )}
       </div> */}
-      <QuestionEdit />
+      <QuestionEdit user={user} question={questionObj} />
     </div>
   );
 };
