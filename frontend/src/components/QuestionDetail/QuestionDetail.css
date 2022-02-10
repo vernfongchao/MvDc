@@ -1,12 +1,28 @@
-.question-detail-container {
+.question-detail-outer {
+  box-sizing: border-box;
+  min-height: 200px;
+  width: 40%;
+
   margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
+  border: 5px black solid;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.question-detail-container {
+  padding: auto;
+  box-sizing: border-box;
+  margin: auto;
+  min-height: 175px;
+  min-width: 95%;
+  max-height: 85%;
+  height: 85%;
+  border: 2px black solid;
   display: flex;
   flex-direction: column;
-
-  border: 5px black solid;
 }
 
 .question-detail-title {

@@ -12,7 +12,6 @@ const HomePage = () => {
     const dispatch = useDispatch()
     const questionsObj = useSelector((state) => state.questionState.questions)
     const questions = Object.values(questionsObj)
-    console.log(questionsObj)
 
     useEffect(() => {
         dispatch(getQuestions())
@@ -32,7 +31,7 @@ const HomePage = () => {
             <ol className='home-page-ol'>
                 {questions.map(({ id, title, content, userId, User }) => (
                     <li id={`home-page-${count++}`} className={`home-page-li`} key={id} >
-                        <Link to={`/questions/${id}`}  >{title}
+                        <Link to={`/questions/${id}`} key={id} >{title}
                         </Link>
                         <span>{User?.username}</span>
                     </li>

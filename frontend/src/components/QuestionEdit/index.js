@@ -31,7 +31,6 @@ const QuestionEdit = ({ user, question }) => {
             userId: user?.id
         }
         dispatch(editQuestion(newQuestion))
-        console.log(question)
         setShowForm()
         history.push(`/questions/${question.id}`)
     }
@@ -64,7 +63,7 @@ const QuestionEdit = ({ user, question }) => {
                 )}
                 {!showForm && user && (user?.id === question?.userId) && (
                     <div>
-                        <button id='question-delete-button'  onClick={handleDelete}>Delete</button>
+                        <button id='question-delete-button' onClick={handleDelete}>Delete</button>
                     </div>
                 )}
             </div>

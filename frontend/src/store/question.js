@@ -43,12 +43,13 @@ export const getQuestions = () => async dispatch => {
 
 export const getQuestionById = (id) => async dispatch => {
     const res = await csrfFetch(`/api/questions/${id}`)
+
     if (res.ok) {
         const question = await res.json()
+        if (question === null) return null
         dispatch(loadQuestionDetail(question))
         return question
     }
-    return res
 }
 
 export const createQuestion = (payload) => async (dispatch, getstate) => {
@@ -72,7 +73,6 @@ export const editQuestion = (payload) => async (dispatch, getState) => {
     })
     if (res.ok) {
         const question = await res.json()
-        console.log(question)
         dispatch(loadQuestionDetail(question))
         return question
     }

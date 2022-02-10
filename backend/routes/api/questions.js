@@ -29,6 +29,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
     const question = await Question.findByPk(req.params.id,
         { include: { model: User } }
     )
+
     return res.json(question);
 }))
 
@@ -76,7 +77,6 @@ router.post('', validateQuestion, asyncHandler(async (req, res) => {
 
 router.delete('/:id', asyncHandler(async (req, res) => {
     const { id } = req.body
-    console.log(id)
 
     const deletedQuestion = await Question.destroy({ where: { id: req.params.id } })
     return res.json(deletedQuestion)
