@@ -25,6 +25,11 @@ router.get('', asyncHandler(async (req, res) => {
     return res.json(questions);
 }));
 
+router.get('/getmore', asyncHandler(async (req, res) => {
+    const questions = await Question.findAll({ limit: 5, include: { model: User } });
+    return res.json(questions);
+}));
+
 router.get('/:id', asyncHandler(async (req, res) => {
     const question = await Question.findByPk(req.params.id,
         { include: { model: User } }

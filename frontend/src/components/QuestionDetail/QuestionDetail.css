@@ -1,11 +1,16 @@
+.question-detail-page-container {
+  display: flex;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
 .question-detail-outer {
   box-sizing: border-box;
   min-height: 200px;
   width: 40%;
 
-  margin-top: 100px;
-  margin-left: auto;
-  margin-right: auto;
   border: 5px black solid;
   display: flex;
   justify-content: center;
@@ -13,16 +18,17 @@
 }
 
 .question-detail-container {
-  padding: auto;
+  padding-top: 10px;
   box-sizing: border-box;
   margin: auto;
-  min-height: 175px;
+  min-height: 160px;
+  max-height: 95%;
   min-width: 95%;
-  max-height: 85%;
-  height: 85%;
   border: 2px black solid;
+  outline: 5px red solid;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .question-detail-title {

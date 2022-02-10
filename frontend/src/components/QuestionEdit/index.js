@@ -6,14 +6,14 @@ import { deleteQuestion } from '../../store/question'
 
 import './QuestionEdit.css'
 
-const QuestionEdit = ({ user, question }) => {
+const QuestionEdit = ({ user, question, showForm, setShowForm }) => {
 
     const history = useHistory()
     const dispatch = useDispatch()
 
     const [title, setTitle] = useState(question?.title)
     const [content, setContent] = useState(question?.content)
-    const [showForm, setShowForm] = useState(false)
+    // const [showForm, setShowForm] = useState(false)
     const [validationErrors, setValidationErrors] = useState([])
 
 
@@ -31,7 +31,7 @@ const QuestionEdit = ({ user, question }) => {
             userId: user?.id
         }
         dispatch(editQuestion(newQuestion))
-        setShowForm()
+        setShowForm(false)
         history.push(`/questions/${question.id}`)
     }
 

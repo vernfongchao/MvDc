@@ -38,7 +38,6 @@ function App() {
         </Route>
         <Route>
           <Navigation isLoaded={isLoaded} />
-          <h1>Page Not Found</h1>
         </Route>
       </Switch>
     </>
