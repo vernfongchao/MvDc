@@ -49,14 +49,14 @@ function QuestionFormModal() {
     return (
         <>
             <div className=''>
-                <button id='add-question-button' onClick={() => setShowModal(true)}><i class="fas fa-plus"></i></button>
+                <button id='add-question-button' onClick={() => setShowModal(true)}><i className="fas fa-plus"></i></button>
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <div className='question-form-container'>
                         <form className='' >
                             <div className='question-form-title'>
-                                <span>
+                                <span className='question-form-header'>
                                     ASK A NEW QUESTION
                                 </span>
                             </div>

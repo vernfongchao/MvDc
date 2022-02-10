@@ -5,4 +5,16 @@
   width: 40%;
   display: flex;
   flex-direction: column;
+
+  border: 5px black solid;
+}
+
+.question-detail-title {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+
+.question-detail-user {
+  font-size: 0.75rem;
 }

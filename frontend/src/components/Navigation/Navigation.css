@@ -41,16 +41,21 @@
   color: white;
 }
 
-.profile-dropdown {
-  border: black;
-  background-color: rgb(29, 29, 29);
+.profile-dropdown-menu {
+  border: 1px black solid;
+  background-color: white;
   border-radius: 14px;
   padding-left: 0;
   position: absolute;
   margin-top: 55px;
   list-style: none;
   width: 150px;
+  height: 100px;
   right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 #dropdown-logout-button {
@@ -62,4 +67,20 @@
   height: 25px;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+#dropdown-logout-button:hover {
+  background-color: black;
+  color: white;
+}
+.drop-down-user {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: bolder;
+}
+
+.drop-down-user:hover {
+  border: 2px black solid;
+  background-color: black;
+  color: white;
 }

@@ -31,8 +31,8 @@ const HomePage = () => {
             </img>
             <ol className='home-page-ol'>
                 {questions.map(({ id, title, content, userId, User }) => (
-                    <li id={`home-page-${count++}`} className={`home-page-li`}>
-                        <Link to={`/questions/${id}`} key={id} >{title}
+                    <li id={`home-page-${count++}`} className={`home-page-li`} key={id} >
+                        <Link to={`/questions/${id}`}  >{title}
                         </Link>
                         <span>{User?.username}</span>
                     </li>

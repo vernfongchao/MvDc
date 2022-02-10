@@ -4,6 +4,8 @@ import { useHistory, useParams, } from 'react-router-dom'
 import { editQuestion } from '../../store/question'
 import { deleteQuestion } from '../../store/question'
 
+import './QuestionEdit.css'
+
 const QuestionEdit = ({ user, question }) => {
 
     const history = useHistory()
@@ -54,23 +56,28 @@ const QuestionEdit = ({ user, question }) => {
 
     return (
         <div>
-            <div>
-                {!showForm && (user?.id === question?.userId) && (
+            <div className='question-edit-container'>
+                {!showForm && user && (user?.id === question?.userId) && (
                     <div>
-                        <button onClick={handleForm}>Edit</button>
-                        <button onClick={handleDelete}>Delete</button>
+                        <button id='question-edit-button' onClick={handleForm}>Edit</button>
+                    </div>
+                )}
+                {!showForm && user && (user?.id === question?.userId) && (
+                    <div>
+                        <button id='question-delete-button'  onClick={handleDelete}>Delete</button>
                     </div>
                 )}
             </div>
+
             {showForm && ((
-                <div className='question-form-container'>
+                <div className=''>
                     <form className='' onSubmit={handleSubmit}>
-                        <div className='question-form-title'>
+                        <div className=''>
                             <span>
                                 Question
                             </span>
                         </div>
-                        <div className='question-title-input'>
+                        <div className=''>
                             <label htmlFor='title'>
                                 <br />
                                 <textarea
@@ -86,7 +93,7 @@ const QuestionEdit = ({ user, question }) => {
                         <span>
                             Description
                         </span>
-                        <div className='question-form-content'>
+                        <div className=''>
                             <label htmlFor='content'>
                                 <br />
                                 <textarea
@@ -99,12 +106,12 @@ const QuestionEdit = ({ user, question }) => {
                                 ></textarea>
                             </label>
                         </div>
-                        <div className='question-content-input'>
+                        <div className=''>
 
                         </div>
 
-                        <div className='question-button-container'>
-                            <button id='question-button' type='submit'>Submit</button>
+                        <div className=''>
+                            <button id='' type='submit'>Submit</button>
                         </div>
                     </form>
                     <button onClick={handleClick}>cancel</button>

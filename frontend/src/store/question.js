@@ -48,6 +48,7 @@ export const getQuestionById = (id) => async dispatch => {
         dispatch(loadQuestionDetail(question))
         return question
     }
+    return res
 }
 
 export const createQuestion = (payload) => async (dispatch, getstate) => {
@@ -71,6 +72,7 @@ export const editQuestion = (payload) => async (dispatch, getState) => {
     })
     if (res.ok) {
         const question = await res.json()
+        console.log(question)
         dispatch(loadQuestionDetail(question))
         return question
     }

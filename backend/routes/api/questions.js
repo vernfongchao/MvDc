@@ -43,8 +43,9 @@ router.put('/:id', validateQuestion, asyncHandler(async (req, res) => {
         { where: { id } }
     )
 
-    question = await Question.findByPk(parseUserId,
+    question = await Question.findByPk(id,
         { include: { model: User } })
+
     return res.json(
         question
     );

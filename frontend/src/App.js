@@ -36,6 +36,9 @@ function App() {
           <Navigation isLoaded={isLoaded} />
           <QuestionDetail />
         </Route>
+        <Route>
+          <h1>Page Not Found</h1>
+        </Route>
       </Switch>
     </>
   );

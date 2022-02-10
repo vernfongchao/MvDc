@@ -1,9 +1,20 @@
+.question-form-title {
+  display: flex;
+  justify-content: center;
+}
+
+.question-form-header {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+
 .question-title-input {
   display: flex;
   justify-content: center;
 }
 
-.question-input-text{
+.question-input-text {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: bold;
@@ -27,12 +38,11 @@
   color: white;
 }
 
-.question-button-container{
+.question-button-container {
   margin-left: 5%;
 }
 
-
-#question-button{
+#question-button {
   border: 2px #97b4ff solid;
   color: red;
   font-weight: bold;
