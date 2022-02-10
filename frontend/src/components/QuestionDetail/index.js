@@ -23,28 +23,11 @@ const QuestionDetail = () => {
     window.scrollTo(0, 0);
   }, [dispatch, id]);
 
-  // let content = null;
-  // if (showEditForm && (user?.id === questionObj.userId)) {
-  //   content = (
-  //     <QuestionEdit
-  //       question={questionObj}
-  //       hideForm={() => setShowEditForm(false)}>
-  //     </QuestionEdit>
-  //   )
-  // }
   return (
     <div className='question-detail-container'>
       <span>{questionObj?.title}</span>
       <span>{questionObj?.User?.username}</span>
       <span>{questionObj?.content}</span>
-      {/* <div>
-        {(!showEditForm && (user?.id === questionObj?.userId)) &&
-          (
-            <div>
-              <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button>
-            </div>
-          )}
-      </div> */}
       <QuestionEdit user={user} question={questionObj} />
     </div>
   );

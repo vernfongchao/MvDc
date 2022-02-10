@@ -29,6 +29,7 @@
 }
 
 .profile-button {
+  margin-right: 15px;
   color: blue;
   height: 40px;
   width: 40px;
@@ -38,4 +39,27 @@
 .profile-button:hover {
   background-color: black;
   color: white;
+}
+
+.profile-dropdown {
+  border: black;
+  background-color: rgb(29, 29, 29);
+  border-radius: 14px;
+  padding-left: 0;
+  position: absolute;
+  margin-top: 55px;
+  list-style: none;
+  width: 150px;
+  right: 0;
+}
+
+#dropdown-logout-button {
+  border: 2px #97b4ff solid;
+  color: red;
+  font-weight: bold;
+  background-color: white;
+  width: 70px;
+  height: 25px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }

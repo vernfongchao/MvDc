@@ -27,7 +27,7 @@
   border-radius: 7px;
   border: 1px black solid;
   width: 325px;
-  height: 350px;
+  height: 365px;
 }
 
 .modal-cancel {
@@ -42,5 +42,5 @@
   opacity: 0.5;
   position: absolute;
   width: 325px;
-  height: 350px;
+  height: 365px;
 }

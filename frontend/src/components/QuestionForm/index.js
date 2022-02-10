@@ -19,18 +19,26 @@ function QuestionFormModal() {
     const [showModal, setShowModal] = useState(false);
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        setValidationErrors([])
-        const newQuestion = {
-            title,
-            content,
-            userId: sessionUser.id
+        if (title || content) {
+            e.preventDefault()
+            setValidationErrors([])
+            const newQuestion = {
+                title,
+                content,
+                userId: sessionUser.id
+            }
+            const createdQuestion = await dispatch(createQuestion(newQuestion))
+                .catch(async (res) => {
+                    const data = await res.json();
+                    if (data && data.errors) setValidationErrors(data.errors);
+                })
+            if (createdQuestion) {
+                setShowModal(false)
+                reset()
+                history.push(`/questions/${createdQuestion.id}`);
+            }
+
         }
-        const createdQuestion = await dispatch(createQuestion(newQuestion))
-        console.log('Newly CREATED QUESTION -----------------', createQuestion)
-        setShowModal(false)
-        reset()
-        if (createdQuestion) history.push(`/questions/${createdQuestion.id}`);
     }
 
     const reset = () => {
@@ -49,37 +57,41 @@ function QuestionFormModal() {
                         <form className='' >
                             <div className='question-form-title'>
                                 <span>
-                                    Question
+                                    ASK A NEW QUESTION
                                 </span>
                             </div>
+                            <ul className='login-error-ul'>
+                                {validationErrors.map((error, idx) =>
+                                    <li className='error-text' key={idx}>{error}
+                                    </li>)}
+                            </ul>
                             <div className='question-title-input'>
                                 <label htmlFor='title' >
                                     <br />
                                     <textarea
+                                        className='question-input-text'
                                         id='title'
                                         rows='3'
-                                        cols='40'
+                                        cols='37'
                                         value={title}
-                                        placeholder='Question'
+                                        placeholder='Question Title'
                                         onChange={(event) => setTitle(event.target.value)}
-                                        required={true}
+                                        required
                                     ></textarea>
                                 </label>
                             </div>
-                            <span>
-                                Description
-                            </span>
                             <div className='question-form-content'>
                                 <label htmlFor='content'>
                                     <br />
                                     <textarea
+                                        className='question-input-text'
                                         id='content'
-                                        rows='10'
-                                        cols='40'
+                                        rows='8'
+                                        cols='37'
                                         value={content}
-                                        placeholder='enter your description'
+                                        placeholder='Please go in depth here:'
                                         onChange={(event) => setContent(event.target.value)}
-                                        required={true}
+                                        required
                                     ></textarea>
                                 </label>
                             </div>

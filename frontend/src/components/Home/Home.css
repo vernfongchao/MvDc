@@ -23,6 +23,8 @@
   width: 50%;
   height: 95%;
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
     "a b c"
     "d e f"
@@ -62,4 +64,8 @@ a {
   font-size: 1.25em;
   list-style: none;
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
