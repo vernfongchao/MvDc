@@ -13,7 +13,6 @@ const QuestionEdit = ({ user, question, showForm, setShowForm }) => {
 
     const [title, setTitle] = useState(question?.title)
     const [content, setContent] = useState(question?.content)
-    // const [showForm, setShowForm] = useState(false)
     const [validationErrors, setValidationErrors] = useState([])
 
 

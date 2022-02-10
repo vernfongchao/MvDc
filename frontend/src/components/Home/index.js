@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { getQuestions } from '../../store/question';
@@ -12,6 +12,7 @@ const HomePage = () => {
     const dispatch = useDispatch()
     const questionsObj = useSelector((state) => state.questionState.questions)
     const questions = Object.values(questionsObj)
+
 
     useEffect(() => {
         dispatch(getQuestions())

@@ -18,8 +18,9 @@ const QuestionDetail = () => {
   const user = useSelector(state => state.session.user);
   const questions = useSelector((state) => state.questionState.questions)
   const questionVal = Object.values(questions)
-
   const [showForm, setShowForm] = useState(false)
+
+
 
 
   useEffect(() => {
@@ -33,29 +34,32 @@ const QuestionDetail = () => {
     filter = questionVal.filter((question) => question.id !== questionObj.id)
   }
 
+  const hideForm = (e) => {
+    setShowForm(false)
+  }
 
   return (
     <div className='question-detail-page-container'>
       {questionObj && (
         <div className='question-detail-outer'>
-
           <div className='question-detail-container'>
+
             <span className='question-detail-title'>{questionObj?.title}</span>
             <span className='question-detail-user'>Asked by: {questionObj?.User?.username}</span>
-            <span>{questionObj?.content}</span>
-            <QuestionEdit user={user} question={questionObj} />
+            <span className='question-detail-content'>{questionObj?.content}</span>
+            <QuestionEdit user={user} question={questionObj} showForm={showForm} setShowForm={setShowForm} />
           </div>
         </div>
       )}
       <div>
+        <span></span>
         <ul>
           {filter?.map(({ id, title, content }) => (
 
             <li key={id} >
-              <Link to={`/questions/${id}`} key={id} showForm={showForm} setShowForm={setShowForm}>{title}
+              <Link to={`/questions/${id}`} key={id} onClick={hideForm}>{title}
               </Link>
             </li>
-
           ))}
         </ul>
       </div>

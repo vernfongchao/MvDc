@@ -15,6 +15,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
+  background-image: url(https://w.wallhaven.cc/full/1j/wallhaven-1j76kv.jpg);
 }
 
 .question-detail-container {
@@ -25,10 +26,11 @@
   max-height: 95%;
   min-width: 95%;
   border: 2px black solid;
-  outline: 5px red solid;
+
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.755);
 }
 
 .question-detail-title {
@@ -39,4 +41,9 @@
 
 .question-detail-user {
   font-size: 0.75rem;
+}
+
+.question-detail-content {
+  max-width: 575px;
+  overflow-x: auto;
 }
