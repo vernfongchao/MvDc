@@ -16,16 +16,25 @@
   margin-left: auto;
 }
 
-.fas.fa-meteor {
-  border: 1px #97b4ff solid;
-  color: white;
-  background-color: #97b4ff;
-  border-radius: 20px;
-}
-
 .nav-logo {
   height: 50px;
   width: 100px;
+}
+
+.home-button-li {
+  margin-left: 15px;
+}
+
+.home-button {
+  color: rgb(72, 67, 67);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.home-button:hover {
+  background-color: black;
+  color: white;
 }
 
 .profile-button {

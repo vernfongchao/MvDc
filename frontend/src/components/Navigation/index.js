@@ -40,6 +40,14 @@ function Navigation({ isLoaded }) {
                     <img className='nav-logo' src='../../images/MvDc2.png' alt='MvDc Logo' onClick={returnHome}></img>
                 </Link>
             </li>
+            <li className='home-button-li'>
+                <Link to='/'>
+                    <button className='home-button'>
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </button>
+                </Link>
+
+            </li>
             <li className='nav-session' >
                 {isLoaded && sessionLinks}
             </li>
