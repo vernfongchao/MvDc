@@ -1,8 +1,13 @@
-.question-edit-container {
-  display: flex;
+.question-edit-page-container {
+  margin-top: 5%;
 }
 
-#question-edit-button {
+.question-edit-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.question-edit-button {
   border: 2px #97b4ff solid;
   color: red;
   font-weight: bold;
@@ -13,9 +18,10 @@
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-#question-edit-button:hover {
+.question-edit-button:hover {
   background-color: rgb(29, 29, 29);
 }
+
 #question-delete-button {
   border: 2px #97b4ff solid;
   color: red;
@@ -29,4 +35,24 @@
 
 #question-delete-button:hover {
   background-color: rgb(29, 29, 29);
+}
+
+#edit-button-cancel {
+  border: 2px #97b4ff solid;
+  color: red;
+  font-weight: bold;
+  background-color: white;
+  width: 70px;
+  height: 25px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+#edit-button-cancel:hover {
+  background-color: rgb(29, 29, 29);
+}
+.question-edit-title {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: bold;
 }

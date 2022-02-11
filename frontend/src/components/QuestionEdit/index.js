@@ -29,9 +29,13 @@ const QuestionEdit = ({ user, question, showForm, setShowForm }) => {
             content,
             userId: user?.id
         }
-        dispatch(editQuestion(newQuestion))
+        const createdQuestion = await dispatch(editQuestion(newQuestion))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) setValidationErrors(data.errors);
+            })
+
         setShowForm(false)
-        history.push(`/questions/${question.id}`)
     }
 
 
@@ -53,11 +57,18 @@ const QuestionEdit = ({ user, question, showForm, setShowForm }) => {
 
 
     return (
-        <div>
+        <div className='question-edit-page-container'>
+            <div>
+                <ul className='login-error-ul'>
+                    {validationErrors.map((error, idx) =>
+                        <li className='error-text' key={idx}>{error}
+                        </li>)}
+                </ul>
+            </div>
             <div className='question-edit-container'>
                 {!showForm && user && (user?.id === question?.userId) && (
                     <div>
-                        <button id='question-edit-button' onClick={handleForm}>Edit</button>
+                        <button className='question-edit-button' onClick={handleForm}>Edit</button>
                     </div>
                 )}
                 {!showForm && user && (user?.id === question?.userId) && (
@@ -66,12 +77,11 @@ const QuestionEdit = ({ user, question, showForm, setShowForm }) => {
                     </div>
                 )}
             </div>
-
             {showForm && ((
                 <div className=''>
                     <form className='' onSubmit={handleSubmit}>
                         <div className=''>
-                            <span>
+                            <span className='question-edit-title'>
                                 Question
                             </span>
                         </div>
@@ -79,25 +89,27 @@ const QuestionEdit = ({ user, question, showForm, setShowForm }) => {
                             <label htmlFor='title'>
                                 <br />
                                 <textarea
+                                    className='question-input-text'
                                     id='title'
                                     rows='3'
-                                    cols='40'
+                                    cols='67'
                                     value={title}
                                     placeholder='Question'
                                     onChange={(event) => setTitle(event.target.value)}
                                 ></textarea>
                             </label>
                         </div>
-                        <span>
+                        <span className='question-edit-title'>
                             Description
                         </span>
                         <div className=''>
                             <label htmlFor='content'>
                                 <br />
                                 <textarea
+                                    className='question-input-text'
                                     id='content'
                                     rows='10'
-                                    cols='40'
+                                    cols='67'
                                     value={content}
                                     placeholder='enter your description'
                                     onChange={(event) => setContent(event.target.value)}
@@ -109,10 +121,10 @@ const QuestionEdit = ({ user, question, showForm, setShowForm }) => {
                         </div>
 
                         <div className=''>
-                            <button id='' type='submit'>Submit</button>
+                            <button className='question-edit-button' type='submit'>Edit</button>
                         </div>
                     </form>
-                    <button onClick={handleClick}>cancel</button>
+                    <button id='edit-button-cancel' onClick={handleClick}>Cancel</button>
                 </div>
             ))}
         </div>

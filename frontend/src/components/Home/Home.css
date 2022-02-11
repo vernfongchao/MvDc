@@ -58,7 +58,7 @@
   grid-area: a;
 }
 
-a {
+.questions-detail-link {
   font-weight: bolder;
   color: black;
   font-size: 1.25em;
@@ -66,6 +66,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+.questions-detail-link:hover {
   text-decoration: underline;
 }

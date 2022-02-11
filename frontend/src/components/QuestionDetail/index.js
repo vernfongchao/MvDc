@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { getQuestionById } from '../../store/question';
 import { useHistory } from 'react-router-dom';
 import { getFiveQuestions } from '../../store/question';
+import { getAnswerByQuestion } from '../../store/answer';
 
 import QuestionEdit from '../QuestionEdit';
 
@@ -17,17 +18,32 @@ const QuestionDetail = () => {
   const questionObj = useSelector((state) => state.questionState.questions[id])
   const user = useSelector(state => state.session.user);
   const questions = useSelector((state) => state.questionState.questions)
+  const answers = useSelector((state) => state.answerState.answers)
   const questionVal = Object.values(questions)
   const [showForm, setShowForm] = useState(false)
 
+  // const answers = Object.values(questionObj?.Answers)
+  // console.log(questionObj?.Answers)
 
+  // const answer = questionObj?.Answers.map((answer) => (
 
+  // ))
 
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(getQuestionById(id)).then(data => { if (!data) history.push('/404') })
     dispatch(getFiveQuestions())
+    dispatch(getAnswerByQuestion(id))
   }, []);
+
+  const answerArr = Object.values(answers)
+  console.log('================================', answerArr)
+  answerArr.map(({ id, content }) => {
+    console.log('================================', id)
+    console.log('================================', content)
+  })
+
+
 
   let filter;
   if (questionObj) {
@@ -51,16 +67,25 @@ const QuestionDetail = () => {
           </div>
         </div>
       )}
-      <div>
-        <span></span>
-        <ul>
-          {filter?.map(({ id, title, content }) => (
 
-            <li key={id} >
-              <Link to={`/questions/${id}`} key={id} onClick={hideForm}>{title}
+      <div className='related-question-container'>
+        <span className='releated-question-title'>Related Questions</span>
+        <ul className='question-detail-ul'>
+          {filter?.map(({ id, title, content }) => (
+            <li key={id} className='question-detail-li'>
+              <Link to={`/questions/${id}`} className='releated-question-link' key={id} onClick={hideForm}>{title}
               </Link>
             </li>
           ))}
+        </ul>
+      </div>
+      <div>
+        <ul>
+          {answerArr.map(({ id, content }) => {
+            <li key={id}>
+              <span>sdafsdfasdfasd fasdfasdf asdf asdf asdf asdf {content}</span>
+            </li>
+          })}
         </ul>
       </div>
     </div>
