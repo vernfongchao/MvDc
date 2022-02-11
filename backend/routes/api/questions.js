@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie } = require('../../utils/auth');
-const { User, Question } = require('../../db/models');
+const { User, Question, Answer } = require('../../db/models');
 
 const router = express.Router();
 
@@ -26,13 +26,13 @@ router.get('', asyncHandler(async (req, res) => {
 }));
 
 router.get('/getmore', asyncHandler(async (req, res) => {
-    const questions = await Question.findAll({ limit: 5, include: { model: User } });
+    const questions = await Question.findAll({ limit: 5, include: [{ model: User }, { model: Answer }] });
     return res.json(questions);
 }));
 
 router.get('/:id', asyncHandler(async (req, res) => {
     const question = await Question.findByPk(req.params.id,
-        { include: { model: User } }
+        { include: [{ model: User }, { model: Answer }] }
     )
 
     return res.json(question);
@@ -50,7 +50,7 @@ router.put('/:id', validateQuestion, asyncHandler(async (req, res) => {
     )
 
     question = await Question.findByPk(id,
-        { include: { model: User } })
+        { include: [{ model: User }, { model: Answer }] })
 
     return res.json(
         question
