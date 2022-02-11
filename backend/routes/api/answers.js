@@ -8,14 +8,69 @@ const { User, Question, Answer } = require('../../db/models');
 
 const router = express.Router();
 
+
+const validateAnswers = [
+    check('content')
+        .exists({ checkFalsy: true })
+        .withMessage('Please add a description to your question.')
+        .isLength({ max: 5000 })
+        .withMessage('Content must not be more than 5000 characters long'),
+    handleValidationErrors
+];
+
 router.get('/question/:id', asyncHandler(async (req, res) => {
     const answers = await Answer.findAll({ include: User, where: { questionId: req.params.id } });
     return res.json(answers);
 }));
 
 router.get('', asyncHandler(async (req, res) => {
-    const answers = await Answer.findAll({ include: User});
+    const answers = await Answer.findAll({ include: User });
     return res.json(answers)
+}))
+
+
+router.put('/:id', asyncHandler(async (req, res) => {
+    const { id, content, userId, questionId } = req.body
+    let parseUserId = parseInt(userId, 10)
+    let parseQuestionId = parseInt(questionId, 10)
+    const answer = await Answer.update({
+        id,
+        content,
+        userId: parseUserId,
+        questionId: parseQuestionId
+    }, {
+        include: { model: User }
+    })
+    const user = User.findByPk(parseUserId)
+
+    answer.dataValues.User = user
+    return res.json(
+        answer
+    );
+}))
+
+
+
+
+router.post('/question/:id', validateAnswers, asyncHandler(async (req, res) => {
+    const { content, userId, questionId } = req.body
+    let parseUserId = parseInt(userId, 10)
+    let parseQuestionId = parseInt(questionId, 10)
+
+    const answer = await Answer.create({
+        content,
+        userId: parseUserId,
+        questionId: parseQuestionId
+    }, {
+        include: { model: User }
+    })
+
+    const user = User.findByPk(parseUserId)
+
+    answer.dataValues.User = user
+    return res.json(
+        answer
+    );
 }))
 
 module.exports = router;

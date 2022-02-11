@@ -95,10 +95,6 @@ function QuestionFormModal() {
                                     ></textarea>
                                 </label>
                             </div>
-                            <div className='question-content-input'>
-
-                            </div>
-
                             <div className='question-button-container'>
                                 <button id='question-button' onClick={handleSubmit} >Submit</button>
                             </div>

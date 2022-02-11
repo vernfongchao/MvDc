@@ -6,6 +6,7 @@ import { getQuestionById } from '../../store/question';
 import { useHistory } from 'react-router-dom';
 import { getFiveQuestions } from '../../store/question';
 import { getAnswerByQuestion } from '../../store/answer';
+import AnswerEditModal from '../AnswerEdit';
 
 import './Answers.css'
 
@@ -30,14 +31,14 @@ const Answers = () => {
 
     return (
         <div className='answer-page-container'>
-            {answerQuestions?.map(({ User, userId, content }) => (
+            {answerQuestions?.map(({ User, userId, content, id}) => (
                 <div className='each-answer-outer'>
                     <div className='each-answer-container'>
                         <p className='answer-username-text'>{User.username}</p>
                         <p className='answer-content'>{content}</p>
                         <div>
                             {(user?.id === userId) &&
-                                (<button className='open-edit-answer'>edit</button>)
+                                (<AnswerEditModal id={parseId} answerContent={content}/>)
                             }
                         </div>
                     </div>

@@ -42,6 +42,22 @@ export const getAnswerByQuestion = (id) => async dispatch => {
     }
 }
 
+export const postAnswer = (payload) => async dispatch => {
+    const res = await csrfFetch(`/api/answers/question/${payload.id}`, {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+    if (res.ok) {
+        const answer = await res.json()
+        dispatch(addAnswer(answer))
+        return answer
+    }
+}
+
+// newState = { ...state }
+// newState.questions = { ...state.questions, [action.question.id]: action.question }
+// return newState
 
 const initialState = { answers: {}, isLoading: true }
 
@@ -54,7 +70,11 @@ const answerReducer = (state = initialState, action) => {
             action.answers.forEach(answer => answerList[answer.id] = answer)
             newState.answers = answerList
             return newState
-
+        }
+        case ADD_ANSWER: {
+            newState = { ...state }
+            newState.answers = { ...state.answers, [action.answer.id]: action.answer }
+            return newState
         }
         default:
             return state;

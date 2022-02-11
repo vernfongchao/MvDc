@@ -30,6 +30,7 @@
 }
 
 .answer-username-text {
+  margin-top: 0;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: bold;

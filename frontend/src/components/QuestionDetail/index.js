@@ -9,6 +9,7 @@ import { getAnswers } from '../../store/answer';
 
 import QuestionEdit from '../QuestionEdit';
 import Answers from '../Answers';
+import AnswerFormModal from '../AnswerForm';
 
 import './QuestionDetail.css'
 
@@ -63,6 +64,7 @@ const QuestionDetail = () => {
                 validationErrors={validationErrors}
                 setValidationErrors={setValidationErrors}
                 setShowForm={setShowForm} />
+              {(user && (user.id !== questionObj?.userId) && <AnswerFormModal />)}
             </div>
           </div>
         )}

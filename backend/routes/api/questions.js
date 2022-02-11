@@ -16,7 +16,9 @@ const validateQuestion = [
         .withMessage('Your question must be no more than 255 characters long.'),
     check('content')
         .exists({ checkFalsy: true })
-        .withMessage('Please add a description to your question.'),
+        .withMessage('Please add a description to your question.')
+        .isLength({ max: 5000 })
+        .withMessage('Content must not be more than 5000 characters long'),
     handleValidationErrors
 ];
 
@@ -83,7 +85,6 @@ router.post('', validateQuestion, asyncHandler(async (req, res) => {
 router.delete('/:id', asyncHandler(async (req, res) => {
 
     const id = parseInt(req.params.id, 10)
-    console.log(id)
     const question = await Question.findByPk(id)
     await question.destroy()
     return res.json(question)
