@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { getQuestions } from '../../store/question';
@@ -12,6 +12,7 @@ const HomePage = () => {
     const dispatch = useDispatch()
     const questionsObj = useSelector((state) => state.questionState.questions)
     const questions = Object.values(questionsObj)
+    const questionArr = questions.slice(0, 9)
 
 
     useEffect(() => {
@@ -30,9 +31,9 @@ const HomePage = () => {
             >
             </img>
             <ol className='home-page-ol'>
-                {questions.map(({ id, title, content, userId, User }) => (
+                {questionArr.map(({ id, title, content, userId, User }) => (
                     <li id={`home-page-${count++}`} className={`home-page-li`} key={id} >
-                        <Link to={`/questions/${id}`} key={id} className ="questions-detail-link">{title}
+                        <Link to={`/questions/${id}`} key={id} className="questions-detail-link">{title}
                         </Link>
                         <span>{User?.username}</span>
                     </li>

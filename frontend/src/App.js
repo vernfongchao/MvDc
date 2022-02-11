@@ -9,7 +9,6 @@ import HomePage from "./components/Home";
 import QuestionDetail from "./components/QuestionDetail";
 import Activity from "./components/Activity";
 
-import createHistory from 'history/createBrowserHistory'
 
 
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useHistory, useParams, } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { editQuestion } from '../../store/question'
 import { deleteQuestion } from '../../store/question'
 
@@ -29,7 +29,7 @@ const QuestionEdit = ({ user, question, showForm, setShowForm }) => {
             content,
             userId: user?.id
         }
-        const createdQuestion = await dispatch(editQuestion(newQuestion))
+        await dispatch(editQuestion(newQuestion))
             .catch(async (res) => {
                 const data = await res.json();
                 if (data && data.errors) setValidationErrors(data.errors);

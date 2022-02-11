@@ -6,8 +6,10 @@ import { getQuestionById } from '../../store/question';
 import { useHistory } from 'react-router-dom';
 import { getFiveQuestions } from '../../store/question';
 import { getAnswerByQuestion } from '../../store/answer';
+import { getAnswers } from '../../store/answer';
 
 import QuestionEdit from '../QuestionEdit';
+import Answers from '../Answers';
 
 import './QuestionDetail.css'
 
@@ -18,31 +20,16 @@ const QuestionDetail = () => {
   const questionObj = useSelector((state) => state.questionState.questions[id])
   const user = useSelector(state => state.session.user);
   const questions = useSelector((state) => state.questionState.questions)
-  const answers = useSelector((state) => state.answerState.answers)
+  // const answers = useSelector((state) => state.answerState.answers)
   const questionVal = Object.values(questions)
   const [showForm, setShowForm] = useState(false)
-
-  // const answers = Object.values(questionObj?.Answers)
-  // console.log(questionObj?.Answers)
-
-  // const answer = questionObj?.Answers.map((answer) => (
-
-  // ))
 
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(getQuestionById(id)).then(data => { if (!data) history.push('/404') })
     dispatch(getFiveQuestions())
-    dispatch(getAnswerByQuestion(id))
+    dispatch(getAnswers())
   }, []);
-
-  const answerArr = Object.values(answers)
-  console.log('================================', answerArr)
-  answerArr.map(({ id, content }) => {
-    console.log('================================', id)
-    console.log('================================', content)
-  })
-
 
 
   let filter;
@@ -55,40 +42,43 @@ const QuestionDetail = () => {
   }
 
   return (
-    <div className='question-detail-page-container'>
-      {questionObj && (
-        <div className='question-detail-outer'>
-          <div className='question-detail-container'>
+    <>
+      <div className='question-detail-page-container'>
+        <img src="https://static3.srcdn.com/wordpress/wp-content/uploads/2021/03/Darkseid-vs-thanos-Justice-league-snyder-cut-Avengers-infinity-war-.jpg"
+          alt='Batman vs Ironman'
+          className='home-page-background'
+        >
+        </img>
 
-            <span className='question-detail-title'>{questionObj?.title}</span>
-            <span className='question-detail-user'>Asked by: {questionObj?.User?.username}</span>
-            <span className='question-detail-content'>{questionObj?.content}</span>
-            <QuestionEdit user={user} question={questionObj} showForm={showForm} setShowForm={setShowForm} />
+        {questionObj && (
+          <div className='question-detail-outer'>
+            <div className='question-detail-container'>
+
+              <span className='question-detail-title'>{questionObj?.title}</span>
+              <span className='question-detail-user'>Asked by: {questionObj?.User?.username}</span>
+              <span className='question-detail-content'>{questionObj?.content}</span>
+              <QuestionEdit user={user} question={questionObj} showForm={showForm} setShowForm={setShowForm} />
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      <div className='related-question-container'>
-        <span className='releated-question-title'>Related Questions</span>
-        <ul className='question-detail-ul'>
-          {filter?.map(({ id, title, content }) => (
-            <li key={id} className='question-detail-li'>
-              <Link to={`/questions/${id}`} className='releated-question-link' key={id} onClick={hideForm}>{title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className='related-question-container'>
+          <span className='releated-question-title'>Related Questions</span>
+          <ul className='question-detail-ul'>
+            {filter?.map(({ id, title, content }) => (
+              <li key={id} className='question-detail-li'>
+                <Link to={`/questions/${id}`} className='releated-question-link' key={id} onClick={hideForm} id={id}>{title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
       <div>
-        <ul>
-          {answerArr.map(({ id, content }) => {
-            <li key={id}>
-              <span>sdafsdfasdfasd fasdfasdf asdf asdf asdf asdf {content}</span>
-            </li>
-          })}
-        </ul>
+        <Answers id={questionObj?.id} />
       </div>
-    </div>
+
+    </>
   );
 };
 

@@ -1,0 +1,33 @@
+.answer-page-container {
+  margin-top: 50px;
+}
+
+.each-answer-outer {
+  box-sizing: border-box;
+  height: 250px;
+  width: 30%;
+  border: 5px black solid;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-image: url(https://w.wallhaven.cc/full/1j/wallhaven-1j76kv.jpg);
+  margin-left: 25%;
+}
+
+.each-answer-container {
+  padding-top: 10px;
+  box-sizing: border-box;
+  margin: auto;
+  height: 215px;
+  min-width: 95%;
+  max-width: 95%;
+  border: 2px black solid;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.755);
+}
+
+.answer-content {
+  max-width: 95%;
+}

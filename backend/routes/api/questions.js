@@ -81,10 +81,12 @@ router.post('', validateQuestion, asyncHandler(async (req, res) => {
 }))
 
 router.delete('/:id', asyncHandler(async (req, res) => {
-    const { id } = req.body
 
-    const deletedQuestion = await Question.destroy({ where: { id: req.params.id } })
-    return res.json(deletedQuestion)
+    const id = parseInt(req.params.id, 10)
+    console.log(id)
+    const question = await Question.findByPk(id)
+    await question.destroy()
+    return res.json(question)
 
 }))
 

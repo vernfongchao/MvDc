@@ -120,12 +120,12 @@ const questionReducer = (state = initialState, action) => {
         }
         case LOAD_QUESTION: {
             newState = { ...state }
-            newState.questions = { ...state.questions,[action.question.id]: action.question }
+            newState.questions = { ...state.questions, [action.question.id]: action.question }
             return newState
         }
         case DELETE_QUESTION: {
             newState = { ...state }
-            delete newState[action.question.id]
+            delete newState.questions[action.question.id]
             return newState
         }
         default:

@@ -9,7 +9,7 @@ export const addAnswer = (answer) => ({
     answer
 })
 
-export const loadQuestions = (answers) => {
+export const loadAnswers = (answers) => {
     return {
         type: LOAD_ANSWERS,
         answers
@@ -24,23 +24,24 @@ export const removeAnswer = (answer) => {
 }
 
 
-// export const getAnswers = () => async dispatch => {
-//     const res = await csrfFetch('/api/questions')
-//     if (res.ok) {
-//         const questions = await res.json()
-//         dispatch(loadQuestions(questions))
-//         return questions
-//     }
-// }
+export const getAnswers = () => async dispatch => {
+    const res = await csrfFetch('/api/answers')
+    if (res.ok) {
+        const answers = await res.json()
+        dispatch(loadAnswers(answers))
+        return answers
+    }
+}
 
 export const getAnswerByQuestion = (id) => async dispatch => {
     const res = await csrfFetch(`/api/answers/question/${id}`)
     if (res.ok) {
         const answers = await res.json()
-        dispatch(loadQuestions(answers))
+        dispatch(loadAnswers(answers))
         return answers
     }
 }
+
 
 const initialState = { answers: {}, isLoading: true }
 
