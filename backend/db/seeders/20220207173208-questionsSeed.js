@@ -9,7 +9,7 @@ module.exports = {
       Example:
       */
     return queryInterface.bulkInsert('Questions', [
-      { title: 'Who is stronger Batman or Superman?', content: 'Alot of people will say Superman is strong because well, hes superman. However how did Batman beat Superman in the movies and commics? Is his IQ that huge that its able to over come Superman or is it because Superman has a glarying weekness which is Kryptonite?', userId: 1, createdAt: new Date(), updatedAt: new Date() },
+      { title: 'Who is stronger Batman or Superman?', content: 'A lot of people will say Superman is strong because well, he\'s superman. However how did Batman beat Superman in the movies and comics? Is his IQ that huge that its able to over come Superman or is it because Superman has a glaring weakness which is Kryptonite?', userId: 1, createdAt: new Date(), updatedAt: new Date() },
       { title: 'Who is stronger Batman or Ironman?', content: 'Batman and Ironman are very similar it many different ways but who is the stronger person? I feel Batman doesn\'t have the tools in his belt to overcome Ironman\'s arsenal. IQ doesn\'t come into play becase they are both equally smart. ', userId: 2, createdAt: new Date(), updatedAt: new Date() },
       { title: 'Who is DC\'s equivalent to Marvel\'s The one above all?', content: 'I dont know about DC, but I would like to know if there\'s a character equivalent to The one above all.', userId: 3, createdAt: new Date(), updatedAt: new Date() },
       { title: 'Other than Marvel and DC?', content: 'I never got into other comics but I\'d like to venture out into others', userId: 1, createdAt: new Date(), updatedAt: new Date() },

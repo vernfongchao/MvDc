@@ -8,6 +8,7 @@ import LandingPage from "./components/LandingPage";
 import HomePage from "./components/Home";
 import QuestionDetail from "./components/QuestionDetail";
 import Activity from "./components/Activity";
+import ErrorPage from "./components/404";
 
 
 
@@ -37,6 +38,7 @@ function App() {
         </Route>
         <Route>
           <Navigation isLoaded={isLoaded} />
+          <ErrorPage />
         </Route>
       </Switch>
     </>

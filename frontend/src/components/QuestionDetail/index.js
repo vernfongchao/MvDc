@@ -1,11 +1,10 @@
 
-import { useParams, Link } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import React, { useEffect, useState } from 'react'
 import { getQuestionById } from '../../store/question';
 import { useHistory } from 'react-router-dom';
-import { getFiveQuestions } from '../../store/question';
-import { getAnswerByQuestion } from '../../store/answer';
+import { getQuestions } from '../../store/question';
 import { getAnswers } from '../../store/answer';
 
 import QuestionEdit from '../QuestionEdit';
@@ -20,14 +19,14 @@ const QuestionDetail = () => {
   const questionObj = useSelector((state) => state.questionState.questions[id])
   const user = useSelector(state => state.session.user);
   const questions = useSelector((state) => state.questionState.questions)
-  // const answers = useSelector((state) => state.answerState.answers)
   const questionVal = Object.values(questions)
   const [showForm, setShowForm] = useState(false)
+  const [validationErrors, setValidationErrors] = useState([])
 
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(getQuestionById(id)).then(data => { if (!data) history.push('/404') })
-    dispatch(getFiveQuestions())
+    dispatch(getQuestions())
     dispatch(getAnswers())
   }, []);
 
@@ -39,6 +38,7 @@ const QuestionDetail = () => {
 
   const hideForm = (e) => {
     setShowForm(false)
+    setValidationErrors([])
   }
 
   return (
@@ -57,18 +57,23 @@ const QuestionDetail = () => {
               <span className='question-detail-title'>{questionObj?.title}</span>
               <span className='question-detail-user'>Asked by: {questionObj?.User?.username}</span>
               <span className='question-detail-content'>{questionObj?.content}</span>
-              <QuestionEdit user={user} question={questionObj} showForm={showForm} setShowForm={setShowForm} />
+              <QuestionEdit user={user}
+                question={questionObj}
+                showForm={showForm}
+                validationErrors={validationErrors}
+                setValidationErrors={setValidationErrors}
+                setShowForm={setShowForm} />
             </div>
           </div>
         )}
 
         <div className='related-question-container'>
-          <span className='releated-question-title'>Related Questions</span>
+          <span className='releated-question-title'>Related Questions:</span>
           <ul className='question-detail-ul'>
             {filter?.map(({ id, title, content }) => (
               <li key={id} className='question-detail-li'>
-                <Link to={`/questions/${id}`} className='releated-question-link' key={id} onClick={hideForm} id={id}>{title}
-                </Link>
+                <NavLink to={`/questions/${id}`} className='releated-question-link' key={id} onClick={hideForm} id={id}>{title}
+                </NavLink>
               </li>
             ))}
           </ul>

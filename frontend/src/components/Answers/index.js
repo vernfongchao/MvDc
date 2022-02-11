@@ -33,9 +33,13 @@ const Answers = () => {
             {answerQuestions?.map(({ User, userId, content }) => (
                 <div className='each-answer-outer'>
                     <div className='each-answer-container'>
-                        <p> {User.username}</p>
+                        <p className='answer-username-text'>{User.username}</p>
                         <p className='answer-content'>{content}</p>
-                        {(user?.id === userId) && (<button>asdfasdfasdf</button>)}
+                        <div>
+                            {(user?.id === userId) &&
+                                (<button className='open-edit-answer'>edit</button>)
+                            }
+                        </div>
                     </div>
 
                 </div>

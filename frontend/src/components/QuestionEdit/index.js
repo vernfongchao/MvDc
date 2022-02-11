@@ -6,14 +6,14 @@ import { deleteQuestion } from '../../store/question'
 
 import './QuestionEdit.css'
 
-const QuestionEdit = ({ user, question, showForm, setShowForm }) => {
+const QuestionEdit = ({ user, question, showForm, setShowForm, validationErrors, setValidationErrors }) => {
 
     const history = useHistory()
     const dispatch = useDispatch()
 
     const [title, setTitle] = useState(question?.title)
     const [content, setContent] = useState(question?.content)
-    const [validationErrors, setValidationErrors] = useState([])
+    // const [validationErrors, setValidationErrors] = useState([])
 
 
     useEffect(() => {
@@ -72,14 +72,14 @@ const QuestionEdit = ({ user, question, showForm, setShowForm }) => {
                     </div>
                 )}
                 {!showForm && user && (user?.id === question?.userId) && (
-                    <div>
+                    <div className='question-delete-button-container'>
                         <button id='question-delete-button' onClick={handleDelete}>Delete</button>
                     </div>
                 )}
             </div>
             {showForm && ((
                 <div className=''>
-                    <form className='' onSubmit={handleSubmit}>
+                    <form className='' >
                         <div className=''>
                             <span className='question-edit-title'>
                                 Question
@@ -116,15 +116,21 @@ const QuestionEdit = ({ user, question, showForm, setShowForm }) => {
                                 ></textarea>
                             </label>
                         </div>
-                        <div className=''>
 
+
+                        <div className='confirm-edit-container'>
+
+
+                            <div className=''>
+                                <button className='question-edit-button' onClick={handleSubmit}>Edit</button>
+                            </div>
+                            <div>
+
+                                <button id='edit-button-cancel' onClick={handleClick}>Cancel</button>
+                            </div>
                         </div>
 
-                        <div className=''>
-                            <button className='question-edit-button' type='submit'>Edit</button>
-                        </div>
                     </form>
-                    <button id='edit-button-cancel' onClick={handleClick}>Cancel</button>
                 </div>
             ))}
         </div>

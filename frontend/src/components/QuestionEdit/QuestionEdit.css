@@ -4,7 +4,6 @@
 
 .question-edit-container {
   display: flex;
-  flex-direction: column;
 }
 
 .question-edit-button {
@@ -20,6 +19,10 @@
 
 .question-edit-button:hover {
   background-color: rgb(29, 29, 29);
+}
+
+.question-delete-button-container {
+  margin-left: 2%;
 }
 
 #question-delete-button {
@@ -55,4 +58,9 @@
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: bold;
+}
+
+.confirm-edit-container {
+  display: flex;
+  justify-content: space-evenly;
 }

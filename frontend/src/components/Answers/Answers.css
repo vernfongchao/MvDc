@@ -15,6 +15,7 @@
 }
 
 .each-answer-container {
+  padding-left: 2%;
   padding-top: 10px;
   box-sizing: border-box;
   margin: auto;
@@ -28,6 +29,22 @@
   background-color: rgba(255, 255, 255, 0.755);
 }
 
+.answer-username-text {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
 .answer-content {
   max-width: 95%;
+}
+
+.open-edit-answer {
+  border: 2px #97b4ff solid;
+  color: red;
+  font-weight: bold;
+  background-color: white;
+  width: 70px;
+  height: 25px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
