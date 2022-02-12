@@ -21,21 +21,24 @@ const QuestionEdit = ({ user, question, showForm, setShowForm, validationErrors,
     }, []);
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        setValidationErrors([])
-        const newQuestion = {
-            id: question?.id,
-            title,
-            content,
-            userId: user?.id
-        }
-        await dispatch(editQuestion(newQuestion))
-            .catch(async (res) => {
-                const data = await res.json();
-                if (data && data.errors) setValidationErrors(data.errors);
-            })
+        if (title || content) {
 
-        setShowForm(false)
+            e.preventDefault()
+            setValidationErrors([])
+            const newQuestion = {
+                id: question?.id,
+                title,
+                content,
+                userId: user?.id
+            }
+            await dispatch(editQuestion(newQuestion))
+                .catch(async (res) => {
+                    const data = await res.json();
+                    if (data && data.errors) setValidationErrors(data.errors);
+                })
+
+            setShowForm(false)
+        }
     }
 
 
@@ -96,6 +99,7 @@ const QuestionEdit = ({ user, question, showForm, setShowForm, validationErrors,
                                     value={title}
                                     placeholder='Question'
                                     onChange={(event) => setTitle(event.target.value)}
+                                    required
                                 ></textarea>
                             </label>
                         </div>
@@ -113,6 +117,7 @@ const QuestionEdit = ({ user, question, showForm, setShowForm, validationErrors,
                                     value={content}
                                     placeholder='enter your description'
                                     onChange={(event) => setContent(event.target.value)}
+                                    required
                                 ></textarea>
                             </label>
                         </div>

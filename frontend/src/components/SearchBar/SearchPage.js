@@ -13,6 +13,7 @@ const SearchPage = () => {
     const location = useLocation()
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         dispatch(getQuestions())
     }, [dispatch]);
 
@@ -22,24 +23,33 @@ const SearchPage = () => {
 
 
 
-    const searchArr = questionsArr.filter(({ title }) => {
+    const searchArr = questionsArr.filter(({ title, content }) => {
         return title.toLowerCase().includes(location.state.detail.toLowerCase())
+            || content.toLowerCase().includes(location.state.detail.toLowerCase())
     })
 
     console.log('==========================', searchArr)
 
     return (
         <div className='search-page-container'>
+            <img src="https://wallpaperaccess.com/full/152832.jpg"
+                alt='Batman vs Ironman'
+                className='home-page-background'
+            >
+            </img>
             {searchArr?.map(({ title, id, content }) => (
-                <div>
-                    <Link to={`questions/${id}`} key={id}>
-                        <p>
-                            {title}
+                <div className='search-detail-outer'>
+
+                    <div className='search-detail-container'>
+                        <Link to={`questions/${id}`} key={id}>
+                            <p>
+                                {title}
+                            </p>
+                        </Link>
+                        <p className='search-detail-content'>
+                            {content}
                         </p>
-                    </Link>
-                    <p>
-                        {content}
-                    </p>
+                    </div>
                 </div>
             ))}
         </div>
