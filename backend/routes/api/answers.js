@@ -29,21 +29,23 @@ router.get('', asyncHandler(async (req, res) => {
 }))
 
 
-router.put('/:id', asyncHandler(async (req, res) => {
+router.put('/:id', validateAnswers, asyncHandler(async (req, res) => {
     const { id, content, userId, questionId } = req.body
+
+    console.log(id)
     let parseUserId = parseInt(userId, 10)
     let parseQuestionId = parseInt(questionId, 10)
-    const answer = await Answer.update({
-        id,
+    let answer = await Answer.update({
         content,
         userId: parseUserId,
         questionId: parseQuestionId
     }, {
-        include: { model: User }
+        where: { id }
     })
-    const user = User.findByPk(parseUserId)
 
-    answer.dataValues.User = user
+    answer = await Answer.findByPk(id, { include: { model: User } })
+
+    console.log(answer)
     return res.json(
         answer
     );

@@ -3,6 +3,7 @@ import { csrfFetch } from './csrf';
 const LOAD_ANSWERS = '/answer/LOAD_ANSWERS'
 const ADD_ANSWER = 'answer/ADD_ANSWERS'
 const DELETE_ANSWER = '/answer/DELETE_ANSWERS'
+const LOAD_ANSWER = '/answer/LOAD_ANSWER'
 
 export const addAnswer = (answer) => ({
     type: ADD_ANSWER,
@@ -19,6 +20,13 @@ export const loadAnswers = (answers) => {
 export const removeAnswer = (answer) => {
     return {
         type: DELETE_ANSWER,
+        answer
+    }
+}
+
+export const loadAnswer = (answer) => {
+    return {
+        type: LOAD_ANSWER,
         answer
     }
 }
@@ -41,6 +49,20 @@ export const getAnswerByQuestion = (id) => async dispatch => {
         return answers
     }
 }
+
+export const editAnswer = (payload) => async (dispatch) => {
+    const res = await csrfFetch(`/api/answers/${payload.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+    if (res.ok) {
+        const answer = await res.json()
+        dispatch(loadAnswer(answer))
+        return answer
+    }
+}
+
 
 export const postAnswer = (payload) => async dispatch => {
     const res = await csrfFetch(`/api/answers/question/${payload.id}`, {
@@ -72,6 +94,11 @@ const answerReducer = (state = initialState, action) => {
             return newState
         }
         case ADD_ANSWER: {
+            newState = { ...state }
+            newState.answers = { ...state.answers, [action.answer.id]: action.answer }
+            return newState
+        }
+        case LOAD_ANSWER: {
             newState = { ...state }
             newState.answers = { ...state.answers, [action.answer.id]: action.answer }
             return newState

@@ -2,7 +2,9 @@ import React, { useState } from "react"
 import { Modal } from "../../context/Modal"
 import AnswerEdit from "./AnswerEdit"
 
-const AnswerEditModal = ({ id, answerContent }) => {
+// id= {id}questionId={parseId} answerContent={content}
+
+const AnswerEditModal = ({ id, answerContent, questionId }) => {
     const [showModal, setShowModal] = useState(false)
 
     return (
@@ -12,7 +14,7 @@ const AnswerEditModal = ({ id, answerContent }) => {
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <AnswerEdit setShowModal={setShowModal} id={id} answerContent={answerContent} />
+                    <AnswerEdit setShowModal={setShowModal} id={id} answerContent={answerContent} questionId={questionId} />
                 </Modal>
             )}
         </div>

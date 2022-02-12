@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from "react-router-dom";
-import { postAnswer } from '../../store/answer'
+import { editAnswer } from '../../store/answer'
 
-const AnswerEdit = ({ id, setShowModal, answerContent }) => {
+const AnswerEdit = ({ id, setShowModal, answerContent, questionId }) => {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
     const [content, setContent] = useState(answerContent)
@@ -16,10 +16,10 @@ const AnswerEdit = ({ id, setShowModal, answerContent }) => {
             const newAnswer = {
                 id,
                 content,
-                questionId: id,
+                questionId,
                 userId: sessionUser.id,
             }
-            const createdAnswer = await dispatch(postAnswer(newAnswer))
+            const createdAnswer = await dispatch(editAnswer(newAnswer))
                 .catch(async (res) => {
                     const data = await res.json();
                     if (data && data.errors) setValidationErrors(data.errors)

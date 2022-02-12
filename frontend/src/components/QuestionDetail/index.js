@@ -29,7 +29,7 @@ const QuestionDetail = () => {
     dispatch(getQuestionById(id)).then(data => { if (!data) history.push('/404') })
     dispatch(getQuestions())
     dispatch(getAnswers())
-  }, []);
+  }, [dispatch]);
 
 
   let filter;

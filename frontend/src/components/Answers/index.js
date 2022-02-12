@@ -38,7 +38,7 @@ const Answers = () => {
                         <p className='answer-content'>{content}</p>
                         <div>
                             {(user?.id === userId) &&
-                                (<AnswerEditModal id={parseId} answerContent={content}/>)
+                                (<AnswerEditModal id= {id}questionId={parseId} answerContent={content}/>)
                             }
                         </div>
                     </div>
