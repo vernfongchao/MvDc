@@ -1,10 +1,11 @@
 import React from 'react';
-import { NavLink, Link, useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginForm';
 import SignupFormModal from '../SignupForm';
 import QuestionFormModal from '../QuestionForm';
+import SearchBar from '../SearchBar';
 
 import './Navigation.css';
 
@@ -43,11 +44,12 @@ function Navigation({ isLoaded }) {
             <li className='home-button-li'>
                 <Link to='/'>
                     <button className='home-button'>
-                        <i class="fa-solid fa-house-chimney"></i>
+                        <i className="fa-solid fa-house-chimney"></i>
                     </button>
                 </Link>
 
             </li>
+            <SearchBar/>
             <li className='nav-session' >
                 {isLoaded && sessionLinks}
             </li>

@@ -24,15 +24,16 @@ const AnswerForm = ({ setShowModal }) => {
                 userId: sessionUser.id,
             }
             const createdAnswer = await dispatch(postAnswer(newAnswer))
+                .then(() => {
+                    setShowModal(false)
+                    reset()
+                })
                 .catch(async (res) => {
                     const data = await res.json();
                     if (data && data.errors) setValidationErrors(data.errors)
                 })
-            if (createdAnswer) {
-                setShowModal(false)
-                reset()
-            }
         }
+
     }
     const reset = () => {
         setContent('')

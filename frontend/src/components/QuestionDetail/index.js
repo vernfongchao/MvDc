@@ -29,7 +29,8 @@ const QuestionDetail = () => {
     dispatch(getQuestionById(id)).then(data => { if (!data) history.push('/404') })
     dispatch(getQuestions())
     dispatch(getAnswers())
-  }, [dispatch]);
+    setShowForm(false)
+  }, [dispatch, id, history]);
 
 
   let filter;
@@ -74,7 +75,7 @@ const QuestionDetail = () => {
           <ul className='question-detail-ul'>
             {filter?.map(({ id, title, content }) => (
               <li key={id} className='question-detail-li'>
-                <NavLink to={`/questions/${id}`} className='releated-question-link' key={id} onClick={hideForm} id={id}>{title}
+                <NavLink to={`/questions/${id}`} className='releated-question-link' onClick={hideForm} id={id}>{title}
                 </NavLink>
               </li>
             ))}

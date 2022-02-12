@@ -32,7 +32,6 @@ router.get('', asyncHandler(async (req, res) => {
 router.put('/:id', validateAnswers, asyncHandler(async (req, res) => {
     const { id, content, userId, questionId } = req.body
 
-    console.log(id)
     let parseUserId = parseInt(userId, 10)
     let parseQuestionId = parseInt(questionId, 10)
     let answer = await Answer.update({
@@ -45,8 +44,7 @@ router.put('/:id', validateAnswers, asyncHandler(async (req, res) => {
 
     answer = await Answer.findByPk(id, { include: { model: User } })
 
-    console.log(answer)
-    return res.json(
+    return await res.json(
         answer
     );
 }))
@@ -79,7 +77,7 @@ router.delete('/:id', asyncHandler(async (req, res) => {
     const id = parseInt(req.params.id, 10)
     const answer = await Answer.findByPk(id)
     await answer.destroy()
-    return res.json(answer)
+    return res.json(id)
 }))
 
 

@@ -5,26 +5,25 @@ const ADD_ANSWER = 'answer/ADD_ANSWERS'
 const REMOVE_ANSWER = '/answer/REMOVE_ANSWER'
 const LOAD_ANSWER = '/answer/LOAD_ANSWER'
 
-export const addAnswer = (answer) => ({
+const addAnswer = (answer) => ({
     type: ADD_ANSWER,
     answer
 })
 
-export const loadAnswers = (answers) => {
+const loadAnswers = (answers) => {
     return {
         type: LOAD_ANSWERS,
         answers
     }
 }
 
-export const removeAnswer = (answer) => {
+const removeAnswer = (answerId) => {
     return {
         type: REMOVE_ANSWER,
-        answer
+        answerId
     }
 }
-
-export const loadAnswer = (answer) => {
+const loadAnswer = (answer) => {
     return {
         type: LOAD_ANSWER,
         answer
@@ -82,15 +81,11 @@ export const deleteAnswer = (id) => async (dispatch) => {
         method: 'DELETE'
     })
     if (res.ok) {
-        const answer = await res.json()
-        dispatch(removeAnswer(answer))
-        return answer
+        const answerId = await res.json()
+        dispatch(removeAnswer(answerId))
+        return answerId
     }
 }
-
-// newState = { ...state }
-// newState.questions = { ...state.questions, [action.question.id]: action.question }
-// return newState
 
 const initialState = { answers: {}, isLoading: true }
 
@@ -116,7 +111,7 @@ const answerReducer = (state = initialState, action) => {
         }
         case REMOVE_ANSWER: {
             newState = { ...state }
-            delete newState.answers[action.answer.id]
+            delete newState.answers[action.answerId]
             return newState
         }
         default:

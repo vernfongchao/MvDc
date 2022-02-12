@@ -12,12 +12,12 @@ const HomePage = () => {
     const dispatch = useDispatch()
     const questionsObj = useSelector((state) => state.questionState.questions)
     const questions = Object.values(questionsObj)
-    const questionArr = questions.slice(0, 9)
+    const questionArr = questions.slice(0,9)
 
 
     useEffect(() => {
         dispatch(getQuestions())
-    }, []);
+    }, [dispatch]);
 
     return (
         <div className='home-page-container'>

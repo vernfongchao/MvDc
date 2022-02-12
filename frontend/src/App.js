@@ -9,6 +9,7 @@ import HomePage from "./components/Home";
 import QuestionDetail from "./components/QuestionDetail";
 import Activity from "./components/Activity";
 import ErrorPage from "./components/404";
+import SearchPage from "./components/SearchBar/SearchPage";
 
 
 
@@ -32,9 +33,13 @@ function App() {
           <Navigation isLoaded={isLoaded} />
           <Activity />
         </Route>
-        <Route path={`/questions/:id`}>
+        <Route path='/questions/:id'>
           <Navigation isLoaded={isLoaded} />
           <QuestionDetail />
+        </Route>
+        <Route path='/search' >
+          <Navigation isLoaded={isLoaded} />
+          <SearchPage />
         </Route>
         <Route>
           <Navigation isLoaded={isLoaded} />
