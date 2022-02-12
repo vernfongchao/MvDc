@@ -3,11 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation } from 'react-router-dom';
 import { getQuestions } from '../../store/question';
 
+import './SearchBar.css'
+
 
 
 const SearchPage = () => {
-    const dispatch = useDispatch
+    const dispatch = useDispatch()
     const questions = useSelector((state) => state.questionState?.questions)
+    const location = useLocation()
 
     useEffect(() => {
         dispatch(getQuestions())
@@ -17,22 +20,27 @@ const SearchPage = () => {
 
     const questionsArr = Object.values(questions)
 
-    const location = useLocation()
 
 
+    const searchArr = questionsArr.filter(({ title }) => {
+        return title.toLowerCase().includes(location.state.detail.toLowerCase())
+    })
 
-    console.log('======================', location.state.detail)
-
+    console.log('==========================', searchArr)
 
     return (
-        <div>
-            {questionsArr?.map(({ title, id }) => (
-                <Link to={`questions/${id}`} key={id}>
+        <div className='search-page-container'>
+            {searchArr?.map(({ title, id, content }) => (
+                <div>
+                    <Link to={`questions/${id}`} key={id}>
+                        <p>
+                            {title}
+                        </p>
+                    </Link>
                     <p>
-                        {title}
+                        {content}
                     </p>
-
-                </Link>
+                </div>
             ))}
         </div>
     )

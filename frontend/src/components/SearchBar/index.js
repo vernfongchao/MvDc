@@ -23,12 +23,9 @@ const SearchBar = () => {
         )
     }
 
-
-
-
     return (
         <div className='search-bar-page-container'>
-            <form>
+            <form onSubmit={handleSearch}>
                 <input
                     type='text'
                     placeholder='Search....'
@@ -37,7 +34,7 @@ const SearchBar = () => {
                     required
                 >
                 </input>
-                <button onClick={handleSearch}></button>
+                <button ></button>
             </form>
         </div>
     )
