@@ -2,7 +2,7 @@ import { csrfFetch } from './csrf';
 
 const LOAD_ANSWERS = '/answer/LOAD_ANSWERS'
 const ADD_ANSWER = 'answer/ADD_ANSWERS'
-const DELETE_ANSWER = '/answer/DELETE_ANSWERS'
+const REMOVE_ANSWER = '/answer/REMOVE_ANSWER'
 const LOAD_ANSWER = '/answer/LOAD_ANSWER'
 
 export const addAnswer = (answer) => ({
@@ -19,7 +19,7 @@ export const loadAnswers = (answers) => {
 
 export const removeAnswer = (answer) => {
     return {
-        type: DELETE_ANSWER,
+        type: REMOVE_ANSWER,
         answer
     }
 }
@@ -77,6 +77,17 @@ export const postAnswer = (payload) => async dispatch => {
     }
 }
 
+export const deleteAnswer = (id) => async (dispatch) => {
+    const res = await csrfFetch(`/api/answers/${id}`, {
+        method: 'DELETE'
+    })
+    if (res.ok) {
+        const answer = await res.json()
+        dispatch(removeAnswer(answer))
+        return answer
+    }
+}
+
 // newState = { ...state }
 // newState.questions = { ...state.questions, [action.question.id]: action.question }
 // return newState
@@ -101,6 +112,11 @@ const answerReducer = (state = initialState, action) => {
         case LOAD_ANSWER: {
             newState = { ...state }
             newState.answers = { ...state.answers, [action.answer.id]: action.answer }
+            return newState
+        }
+        case REMOVE_ANSWER: {
+            newState = { ...state }
+            delete newState.answers[action.answer.id]
             return newState
         }
         default:

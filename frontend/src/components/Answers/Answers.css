@@ -3,6 +3,7 @@
 }
 
 .each-answer-outer {
+  margin: 50px;
   box-sizing: border-box;
   height: 250px;
   width: 30%;
@@ -39,6 +40,10 @@
   max-width: 95%;
 }
 
+.answer-buttons-container {
+  display: flex;
+}
+
 .open-edit-answer {
   border: 2px #97b4ff solid;
   color: red;
@@ -48,4 +53,23 @@
   height: 25px;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.answer-delete-button-container {
+  margin-left: 2%;
+}
+
+.answer-delete-button {
+  border: 2px #97b4ff solid;
+  color: red;
+  font-weight: bold;
+  background-color: white;
+  width: 70px;
+  height: 25px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.answer-delete-button:hover {
+  background-color: rgb(29, 29, 29);
 }

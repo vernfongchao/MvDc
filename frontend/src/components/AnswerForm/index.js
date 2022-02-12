@@ -7,8 +7,8 @@ const AnswerFormModal = () => {
 
     return (
         <div>
-            <div className="'open-answer-button">
-                <button onClick={() => setShowModal(true)}>Answer</button>
+            <div className="'open-answer-model">
+                <button className='open-answer-button'onClick={() => setShowModal(true)}>Answer</button>
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>

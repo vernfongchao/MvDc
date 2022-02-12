@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { Modal } from "../../context/Modal"
 import AnswerEdit from "./AnswerEdit"
 
+import './AnswerEdit.css'
+
 // id= {id}questionId={parseId} answerContent={content}
 
 const AnswerEditModal = ({ id, answerContent, questionId }) => {
@@ -9,8 +11,8 @@ const AnswerEditModal = ({ id, answerContent, questionId }) => {
 
     return (
         <div>
-            <div className="'open-answer-button">
-                <button onClick={() => setShowModal(true)}>Edit</button>
+            <div >
+                <button className="open-answer-button" onClick={() => setShowModal(true)}>Edit</button>
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>

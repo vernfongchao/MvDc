@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from "react-router-dom";
 import { postAnswer } from '../../store/answer'
 
+import './AnswerForm.css'
+
 const AnswerForm = ({ setShowModal }) => {
     const { id } = useParams()
     const sessionUser = useSelector(state => state.session.user);
@@ -38,10 +40,10 @@ const AnswerForm = ({ setShowModal }) => {
 
     return (
         <div>
-            <div className='question-form-container'>
+            <div className='answer-form-container'>
                 <form className='' >
-                    <div className='question-form-title'>
-                        <span className='question-form-header'>
+                    <div className='answer-form-title'>
+                        <span className='answer-form-header'>
                             Answer This Question
                         </span>
                     </div>
@@ -50,13 +52,13 @@ const AnswerForm = ({ setShowModal }) => {
                             <li className='error-text' key={idx}>{error}
                             </li>)}
                     </ul>
-                    <div className='question-form-content'>
+                    <div className='answer-form-content'>
                         <label htmlFor='content'>
                             <br />
                             <textarea
-                                className='question-input-text'
+                                className='answer-input-text'
                                 id='content'
-                                rows='8'
+                                rows='15'
                                 cols='37'
                                 value={content}
                                 placeholder='Please go in depth here:'
@@ -65,8 +67,8 @@ const AnswerForm = ({ setShowModal }) => {
                             ></textarea>
                         </label>
                     </div>
-                    <div className='question-button-container'>
-                        <button id='question-button' onClick={handleSubmit} >Submit</button>
+                    <div className='answer-button-container'>
+                        <button id='answer-button' onClick={handleSubmit} >Submit</button>
                     </div>
                 </form>
             </div>

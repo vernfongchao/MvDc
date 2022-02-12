@@ -67,12 +67,20 @@ router.post('/question/:id', validateAnswers, asyncHandler(async (req, res) => {
         include: { model: User }
     })
 
-    const user = User.findByPk(parseUserId)
-
+    const user = await User.findByPk(parseUserId)
     answer.dataValues.User = user
     return res.json(
         answer
     );
 }))
+
+
+router.delete('/:id', asyncHandler(async (req, res) => {
+    const id = parseInt(req.params.id, 10)
+    const answer = await Answer.findByPk(id)
+    await answer.destroy()
+    return res.json(answer)
+}))
+
 
 module.exports = router;

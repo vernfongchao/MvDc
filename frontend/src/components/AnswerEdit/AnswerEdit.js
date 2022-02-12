@@ -54,7 +54,7 @@ const AnswerEdit = ({ id, setShowModal, answerContent, questionId }) => {
                             <textarea
                                 className='question-input-text'
                                 id='content'
-                                rows='8'
+                                rows='15'
                                 cols='37'
                                 value={content}
                                 placeholder='Please go in depth here:'

@@ -1,0 +1,42 @@
+.answer-form-title {
+  display: flex;
+  justify-content: center;
+}
+
+.answer-form-header {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+
+.answer-title-input {
+  display: flex;
+  justify-content: center;
+}
+
+.answer-input-text {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  resize: none;
+}
+
+.answer-form-content {
+  display: flex;
+  justify-content: center;
+}
+
+.answer-button-container {
+  margin-left: 5%;
+}
+
+#answer-button {
+  border: 2px #97b4ff solid;
+  color: red;
+  font-weight: bold;
+  background-color: white;
+  width: 70px;
+  height: 25px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
