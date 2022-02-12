@@ -7,11 +7,13 @@
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: bold;
+  color: white;
 }
 
 .question-title-input {
   display: flex;
   justify-content: center;
+  max-width: 95%;
 }
 
 .question-input-text {
@@ -19,6 +21,7 @@
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: bold;
   resize: none;
+  max-width: 95%;
 }
 
 .question-form-content {

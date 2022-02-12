@@ -47,13 +47,18 @@ function QuestionFormModal() {
     }
 
     return (
-        <>
+        <div className='question-form-page-container'>
             <div className=''>
                 <button id='add-question-button' onClick={() => setShowModal(true)}><i className="fa-solid fa-plus"></i></button>
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <div className='question-form-container'>
+                        <img
+                            className="modal-background-img"
+                            src="https://c4.wallpaperflare.com/wallpaper/907/35/593/spiderman-hd-4k-5k-wallpaper-preview.jpg"
+                            alt=''
+                        />
                         <form className='' >
                             <div className='question-form-title'>
                                 <span className='question-form-header'>
@@ -102,7 +107,7 @@ function QuestionFormModal() {
                     </div>
                 </Modal>
             )}
-        </>
+        </div>
     );
 }
 

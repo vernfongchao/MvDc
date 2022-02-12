@@ -21,7 +21,7 @@ const QuestionEdit = ({ user, question, showForm, setShowForm, validationErrors,
     }, []);
 
     const handleSubmit = async (e) => {
-        if (title || content) {
+        if (title && content.length > 0) {
 
             e.preventDefault()
             setValidationErrors([])
