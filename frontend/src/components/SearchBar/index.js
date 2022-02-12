@@ -27,6 +27,7 @@ const SearchBar = () => {
         <div className='search-bar-page-container'>
             <form onSubmit={handleSearch}>
                 <input
+                    className='search-bar-input-text'
                     type='text'
                     placeholder='Search....'
                     value={searchValue}
@@ -34,7 +35,12 @@ const SearchBar = () => {
                     required
                 >
                 </input>
-                <button ></button>
+
+
+                <button className='search-bar-button' >
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                </button>
+
             </form>
         </div>
     )

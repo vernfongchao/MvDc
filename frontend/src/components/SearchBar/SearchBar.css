@@ -1,3 +1,16 @@
+.search-bar-page-container {
+  margin: auto;
+}
+.search-bar-input-text {
+  min-width: 600px;
+  min-height: 2rem;
+  font-weight: bold;
+}
+
+.search-bar-button {
+  min-height: 38px;
+}
+
 .search-page-container {
   display: flex;
   flex-direction: column;
