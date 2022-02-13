@@ -21,7 +21,7 @@
   resize: none;
   max-width: 300px;
   min-width: 300px;
-  max-height: 350px;
+  min-height: 275px;
 }
 
 .answer-form-content {

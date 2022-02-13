@@ -64,7 +64,7 @@ const AnswerForm = ({ setShowModal }) => {
                             <textarea
                                 className='answer-input-text'
                                 id='content'
-                                rows='15'
+                                rows='10'
                                 cols='37'
                                 value={content}
                                 placeholder='Please go in depth here:'
