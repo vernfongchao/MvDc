@@ -56,7 +56,7 @@ const AnswerEdit = ({ id, setShowModal, answerContent, questionId }) => {
                         <label htmlFor='content'>
                             <br />
                             <textarea
-                                className='question-input-text'
+                                className='answer-input-text'
                                 id='content'
                                 rows='15'
                                 cols='37'

@@ -92,7 +92,7 @@ const QuestionEdit = ({ user, question, showForm, setShowForm, validationErrors,
                             <label htmlFor='title'>
                                 <br />
                                 <textarea
-                                    className='question-input-text'
+                                    className='question-edit-input-text'
                                     id='title'
                                     rows='3'
                                     cols='67'
@@ -110,7 +110,7 @@ const QuestionEdit = ({ user, question, showForm, setShowForm, validationErrors,
                             <label htmlFor='content'>
                                 <br />
                                 <textarea
-                                    className='question-input-text'
+                                    className='question-edit-input-text'
                                     id='content'
                                     rows='10'
                                     cols='67'
