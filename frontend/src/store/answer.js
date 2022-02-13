@@ -1,14 +1,16 @@
 import { csrfFetch } from './csrf';
 
 const LOAD_ANSWERS = '/answer/LOAD_ANSWERS'
-const ADD_ANSWER = 'answer/ADD_ANSWERS'
+const ADD_ANSWER = 'answer/ADD_ANSWER'
 const REMOVE_ANSWER = '/answer/REMOVE_ANSWER'
 const LOAD_ANSWER = '/answer/LOAD_ANSWER'
 
-const addAnswer = (answer) => ({
-    type: ADD_ANSWER,
-    answer
-})
+const addAnswer = (answer) => {
+    return {
+        type: ADD_ANSWER,
+        answer
+    }
+}
 
 const loadAnswers = (answers) => {
     return {
@@ -69,6 +71,7 @@ export const postAnswer = (payload) => async dispatch => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
     })
+    console.log(res)
     if (res.ok) {
         const answer = await res.json()
         dispatch(addAnswer(answer))

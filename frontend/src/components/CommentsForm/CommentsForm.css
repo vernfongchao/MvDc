@@ -1,0 +1,19 @@
+.show-comments-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.show-comments-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.show-comments-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.comments-display-container {
+  margin-top: 10px;
+}
