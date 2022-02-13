@@ -8,7 +8,8 @@
 .question-detail-outer {
   box-sizing: border-box;
   min-height: 200px;
-  width: 30%;
+  min-width: 30%;
+  width: 575px;
   border: 5px black solid;
   display: flex;
   justify-content: center;

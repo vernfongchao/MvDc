@@ -15,7 +15,7 @@ const CommentsPage = ({ answerId, content, userId, User }) => {
 
     return (
         <div className='comments-content-container'>
-            <p>{content}</p>
+            <p className='comments-content-text'>{content}</p>
             <p>{User.username}</p>
             {/* {user.id === userId && (
                 <div>

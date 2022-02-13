@@ -120,16 +120,11 @@ const QuestionEdit = ({ user, question, showForm, setShowForm, validationErrors,
                                 ></textarea>
                             </label>
                         </div>
-
-
                         <div className='confirm-edit-container'>
-
-
                             <div className=''>
-                                <button className='question-edit-button' onClick={handleSubmit}>Edit</button>
+                                <button className='question-edit-button' onClick={handleSubmit}>Submit</button>
                             </div>
                             <div>
-
                                 <button id='edit-button-cancel' onClick={handleClick}>Cancel</button>
                             </div>
                         </div>

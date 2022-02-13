@@ -17,3 +17,35 @@
 .comments-display-container {
   margin-top: 10px;
 }
+
+.comment-form-container {
+  display: flex;
+  flex-direction: column;
+}
+.comment-input-text {
+  min-width: 500px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  resize: none;
+}
+
+.comment-button-container {
+  margin-left: auto;
+  margin-right: 2%;
+}
+
+#comment-submit-button {
+  border: 2px #97b4ff solid;
+  color: red;
+  font-weight: bold;
+  background-color: white;
+  width: 70px;
+  height: 25px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+#comment-submit-button:hover {
+  background-color: rgb(29, 29, 29);
+}

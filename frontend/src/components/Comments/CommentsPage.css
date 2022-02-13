@@ -1,3 +1,7 @@
 .comments-content-container {
   border-top: 1px black solid;
 }
+
+.comments-content-text {
+  overflow-x: hidden;
+}

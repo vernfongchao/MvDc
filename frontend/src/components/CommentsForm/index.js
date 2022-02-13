@@ -62,11 +62,11 @@ const CommentsForm = ({ id }) => {
                             <li className='error-text' key={idx}>{error}
                             </li>)}
                     </ul>
-                    <div className=''>
+                    <div className='comment-form-container'>
                         <label htmlFor='title'>
                             <br />
                             <textarea
-                                className='question-edit-input-text'
+                                className='comment-input-text'
                                 id='title'
                                 rows='3'
                                 cols='60'
@@ -76,8 +76,8 @@ const CommentsForm = ({ id }) => {
                                 required
                             ></textarea>
                         </label>
-                        <div className='answer-button-container'>
-                            <button id='answer-button' onClick={handleSubmit} >Submit</button>
+                        <div className='comment-button-container'>
+                            <button id='comment-submit-button' onClick={handleSubmit} >Submit</button>
                         </div>
                     </div>
 
