@@ -40,8 +40,12 @@ router.post('/answer/:id', validateComments, asyncHandler(async (req, res) => {
     );
 }))
 
-
-
+router.delete('/:id', asyncHandler(async (req, res) => {
+    const parseId = parseInt(req.params.id, 10)
+    const comment = await Comment.findByPk(parseId)
+    await comment.destroy()
+    return res.json(parseId)
+}))
 
 
 module.exports = router;

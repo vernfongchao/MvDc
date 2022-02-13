@@ -7,7 +7,7 @@ import CommentsPage from '../Comments';
 import './CommentsForm.css'
 
 
-const CommentsForm = ({ id }) => {
+const CommentsForm = ({ paramId }) => {
     const dispatch = useDispatch()
     const user = useSelector((state) => state.session.user)
     const [content, setContent] = useState('')
@@ -25,7 +25,7 @@ const CommentsForm = ({ id }) => {
             setValidationErrors([])
             const newComment = {
                 userId: user.id,
-                answerId: id,
+                answerId: paramId,
                 content
             }
             await dispatch(postComment(newComment))
@@ -85,9 +85,10 @@ const CommentsForm = ({ id }) => {
             }
             {showComments && (
                 <div className='comments-display-container'>
-                    {showComments && commentsValues?.map(({ answerId, userId, content, User }) => (
-                        ((answerId === id) && (
+                    {showComments && commentsValues?.map(({ answerId, userId, content, User, id }) => (
+                        ((answerId === paramId) && (
                             <CommentsPage
+                                id={id}
                                 answerId={answerId}
                                 userId={userId}
                                 content={content}

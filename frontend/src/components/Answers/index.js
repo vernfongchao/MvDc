@@ -39,7 +39,7 @@ const Answers = () => {
                                 }
                             </div>
                         </div>
-                            <CommentsForm id={id} />
+                            <CommentsForm paramId={id} />
                     </div>
                 </div>
             ))}
