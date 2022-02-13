@@ -62,6 +62,10 @@
 
 .question-edit-input-text {
   min-width: 475px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  resize: none;
 }
 
 .confirm-edit-container {

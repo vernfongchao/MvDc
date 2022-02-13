@@ -9,7 +9,7 @@ const AnswerEdit = ({ id, setShowModal, answerContent, questionId }) => {
     const [validationErrors, setValidationErrors] = useState([])
 
     const handleSubmit = async (e) => {
-        if (content) {
+        if (content ) {
             e.preventDefault()
             setValidationErrors([])
             const newAnswer = {

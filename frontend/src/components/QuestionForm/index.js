@@ -19,7 +19,7 @@ function QuestionFormModal() {
     const [showModal, setShowModal] = useState(false);
 
     const handleSubmit = async (e) => {
-        if (title || content) {
+        if (title && content) {
             e.preventDefault()
             setValidationErrors([])
             const newQuestion = {
@@ -39,11 +39,17 @@ function QuestionFormModal() {
             }
 
         }
+        setValidationErrors([])
     }
 
     const reset = () => {
         setTitle('')
         setContent('')
+    }
+
+    const handleClose = (e) => {
+        setShowModal(false)
+        reset()
     }
 
     return (
@@ -52,7 +58,7 @@ function QuestionFormModal() {
                 <button id='add-question-button' onClick={() => setShowModal(true)}><i className="fa-solid fa-plus"></i></button>
             </div>
             {showModal && (
-                <Modal onClose={() => setShowModal(false)}>
+                <Modal onClose={handleClose}>
                     <div className='question-form-container'>
                         <img
                             className="modal-background-img"
