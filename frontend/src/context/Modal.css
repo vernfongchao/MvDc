@@ -28,9 +28,8 @@
   position: absolute;
   background-color: white;
   border-radius: 7px;
-
-  width: 17.25%;
-  height: 37%;
+  width: 325px;
+  height: 365px;
 }
 
 .modal-cancel {
@@ -43,6 +42,6 @@
   border-radius: 7px;
   z-index: -1;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 325px;
+  height: 365px;
 }

@@ -76,8 +76,7 @@ function QuestionFormModal() {
                                     <textarea
                                         className='question-input-text'
                                         id='title'
-                                        rows='3'
-                                        cols='37'
+
                                         value={title}
                                         placeholder='Question Title'
                                         onChange={(event) => setTitle(event.target.value)}

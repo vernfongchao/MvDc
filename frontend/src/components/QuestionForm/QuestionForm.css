@@ -13,7 +13,6 @@
 .question-title-input {
   display: flex;
   justify-content: center;
-  max-width: 95%;
 }
 
 .question-input-text {
@@ -21,7 +20,8 @@
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: bold;
   resize: none;
-  max-width: 95%;
+  max-width: 275px;
+  min-width: 275px
 }
 
 .question-form-content {
