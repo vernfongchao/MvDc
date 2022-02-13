@@ -20,8 +20,8 @@
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: bold;
   resize: none;
-  max-width: 275px;
-  min-width: 275px
+  max-width: 300px;
+  min-width: 300px;
 }
 
 .question-form-content {
@@ -43,7 +43,8 @@
 }
 
 .question-button-container {
-  margin-left: 5%;
+  margin-top: 1%;
+  margin-left: 3%;
 }
 
 #question-button {

@@ -64,6 +64,9 @@
   font-size: 1.25em;
   list-style: none;
   text-decoration: none;
+  overflow-x: hidden;
+
+  max-width: 150px;
 }
 
 .questions-detail-link:hover {

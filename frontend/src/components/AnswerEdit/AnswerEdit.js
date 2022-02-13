@@ -36,6 +36,11 @@ const AnswerEdit = ({ id, setShowModal, answerContent, questionId }) => {
     return (
         <div>
             <div className='question-form-container'>
+                <img
+                    className="modal-background-img"
+                    src="https://mcdn.wallpapersafari.com/medium/71/85/PmvI3y.jpg"
+                    alt=''
+                />
                 <form className='' >
                     <div className='question-form-title'>
                         <span className='question-form-header'>

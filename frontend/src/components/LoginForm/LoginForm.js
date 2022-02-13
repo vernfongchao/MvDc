@@ -35,14 +35,19 @@ const LoginForm = () => {
     return (
         <>
             <div className='login-container'>
+                <img
+                    className="modal-background-img"
+                    src="https://mcdn.wallpapersafari.com/medium/95/3/WLzDBx.jpg"
+                    alt=''
+                />
                 <form className='login-form-container' onSubmit={handleSubmit}>
                     <div className='login-title'>
                         <h4 className='login-title-text'>Login</h4>
                     </div>
                     <ul className='login-error-ul'>
-                        {validationErrors.map((error, idx) => 
+                        {validationErrors.map((error, idx) =>
                             <li className='error-text' key={idx}>{error}
-                        </li>)}
+                            </li>)}
                     </ul>
                     <div className='login-text-container'>
                         <span className='login-text-font'>Username or Email</span>

@@ -19,6 +19,8 @@
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: bold;
   resize: none;
+  max-width: 300px;
+  min-width: 300px;
 }
 
 .answer-form-content {
@@ -27,7 +29,7 @@
 }
 
 .answer-button-container {
-  margin-left: 5%;
+  margin-left: 3%;
 }
 
 #answer-button {

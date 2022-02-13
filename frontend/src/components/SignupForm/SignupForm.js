@@ -37,6 +37,11 @@ const SignupForm = () => {
 
     return (
         <div className='signup-container'>
+            <img
+                className="modal-background-img"
+                src="https://cdn.wallpapersafari.com/37/47/tB1cwU.jpg"
+                alt=''
+            />
             <form className="signup-form-container" onSubmit={handleSubmit}>
                 <div className='signup-title'>
                     <h4 className='signup-title-text'>Sign Up</h4>

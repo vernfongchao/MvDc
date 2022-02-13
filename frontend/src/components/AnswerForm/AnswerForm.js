@@ -42,7 +42,11 @@ const AnswerForm = ({ setShowModal }) => {
     return (
         <div>
             <div className='answer-form-container'>
-                
+                <img
+                    className="modal-background-img"
+                    src="https://mcdn.wallpapersafari.com/medium/11/11/0sAWLv.jpg"
+                    alt=''
+                />
                 <form className='' >
                     <div className='answer-form-title'>
                         <span className='answer-form-header'>
