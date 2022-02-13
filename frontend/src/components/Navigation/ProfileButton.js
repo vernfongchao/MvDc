@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, useHistory } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import * as sessionActions from '../../store/session';
 
 
@@ -42,7 +42,9 @@ function ProfileButton() {
             </button>
             {showMenu && (
                 <ul className="profile-dropdown-menu">
-                    <li className="drop-down-user">{user.username}</li>
+                    <Link to='/activity'>
+                        <li className="drop-down-user">{user.username}</li>
+                    </Link>
                     <li>{user.email}</li>
                     <li>
                         <button id='dropdown-logout-button' onClick={logout}>Log Out</button>
