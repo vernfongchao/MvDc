@@ -6,6 +6,7 @@ import { getQuestionById } from '../../store/question';
 import { useHistory } from 'react-router-dom';
 import { getQuestions } from '../../store/question';
 import { getAnswers } from '../../store/answer';
+import { getComments } from '../../store/comment';
 
 import QuestionEdit from '../QuestionEdit';
 import Answers from '../Answers';
@@ -21,6 +22,7 @@ const QuestionDetail = () => {
   const user = useSelector(state => state.session.user);
   const questions = useSelector((state) => state.questionState.questions)
   const questionVal = Object.values(questions)
+
   const [showForm, setShowForm] = useState(false)
   const [validationErrors, setValidationErrors] = useState([])
 
@@ -29,6 +31,7 @@ const QuestionDetail = () => {
     dispatch(getQuestionById(id)).then(data => { if (!data) history.push('/404') })
     dispatch(getQuestions())
     dispatch(getAnswers())
+    dispatch(getComments())
     setShowForm(false)
   }, [dispatch, id, history]);
 

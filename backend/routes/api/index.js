@@ -6,6 +6,7 @@ const sessionRouter = require('./session')
 const usersRouter = require('./user')
 const questionRouter = require('./questions');
 const answerRouter = require('./answers')
+const commentRouter = require('./comments')
 
 router.use('/session', sessionRouter);
 
@@ -14,6 +15,8 @@ router.use('/users', usersRouter);
 router.use('/questions', questionRouter)
 
 router.use('/answers', answerRouter)
+
+router.use('/comments', commentRouter)
 
 router.get('/set-token-cookie', asyncHandler(async (_req, res) => {
     const user = await User.findOne({

@@ -1,9 +1,10 @@
 
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux'
-import React from 'react'
+import React, { useState } from 'react'
 
 import AnswerEditModal from '../AnswerEdit';
+import CommentsPage from '../Comments';
 
 import './Answers.css'
 
@@ -14,10 +15,19 @@ const Answers = () => {
     const answers = useSelector((state) => state.answerState.answers)
     const answerArr = Object.values(answers)
 
+    const comments = useSelector(state => state.commentState.comments)
+    const commentsValues = Object.values(comments)
+    console.log(commentsValues, '<=============================')
+
+    const [showComments, setShowComments] = useState(false)
+
 
     const answerQuestions = answerArr?.filter((answer) => answer.questionId === parseId
     )
 
+    const openComments = (e) => {
+        setShowComments(!showComments)
+    }
 
     return (
         <div className='answer-page-container'>
@@ -33,6 +43,25 @@ const Answers = () => {
                                 }
                             </div>
                         </div>
+
+
+                        <div>
+                            <button onClick={openComments}>
+                                <i className="fa-solid fa-comments"></i>
+                            </button>
+                        </div>
+
+
+                        {showComments && commentsValues?.map(({ answerId, userId, content, User }) => (
+                            ((answerId === id) && (
+                                <CommentsPage
+                                    answerId={answerId}
+                                    userId={userId}
+                                    content={content}
+                                    User={User}
+                                />
+                            )
+                            )))}
                     </div>
                 </div>
             ))}

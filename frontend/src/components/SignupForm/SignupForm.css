@@ -78,5 +78,5 @@
   z-index: -1;
   position: absolute;
   width: 325px;
-  height: 365px;
+  min-height: 365px;
 }

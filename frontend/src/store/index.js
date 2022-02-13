@@ -3,12 +3,14 @@ import thunk from 'redux-thunk';
 import sessionReducer from './session';
 import questionReducer from './question';
 import answerReducer from './answer';
+import commentReducer from './comment';
 
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   questionState: questionReducer,
-  answerState: answerReducer
+  answerState: answerReducer,
+  commentState: commentReducer
 });
 
 let enhancer;

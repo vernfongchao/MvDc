@@ -30,11 +30,11 @@ export function Modal({ onClose, children }) {
         <div id="modal">
             <div id="modal-background" onClick={onClose} />
             <div id="modal-content">
-                {/* <img
+                <img
                     className="modal-background-img"
                     src="https://estaticos.megainteresting.com/media/cache/1140x_thumb/uploads/images/gallery/5da5a5fa5bafe827843c9877/marvel-heroes_0.jpg"
                     alt=''
-                /> */}
+                />
                 {children}
             </div>
             <div className="modal-cancel">
