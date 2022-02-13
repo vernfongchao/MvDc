@@ -35,8 +35,8 @@ const Activity = () => {
 
     return (
         <div className='search-page-container'>
-            <div className='Activity-page-header'>
-                <h1>My Questions</h1>
+            <div className='activity-page-header'>
+                <h1 className='activity-page-header-text'>My Questions</h1>
 
             </div>
             <img src="https://wallpaperaccess.com/full/441416.jpg"

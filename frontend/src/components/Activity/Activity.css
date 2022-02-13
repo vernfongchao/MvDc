@@ -1,4 +1,11 @@
-.Activity-page-header {
-  margin-top: 50px;
+.activity-page-header {
+  margin-top: 100px;
   background-color: white;
+  border: 5px solid black;
+}
+
+.activity-page-header-text {
+  margin: 0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
