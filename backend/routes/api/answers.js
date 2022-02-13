@@ -61,8 +61,6 @@ router.post('/question/:id', validateAnswers, asyncHandler(async (req, res) => {
         content,
         userId: parseUserId,
         questionId: parseQuestionId
-    }, {
-        include: { model: User }
     })
 
     const user = await User.findByPk(parseUserId)

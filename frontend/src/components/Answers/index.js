@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import React, { useState } from 'react'
 
 import AnswerEditModal from '../AnswerEdit';
-import CommentsPage from '../Comments';
+import CommentsForm from '../CommentsForm';
 
 import './Answers.css'
 
@@ -14,10 +14,6 @@ const Answers = () => {
     const user = useSelector((state) => state.session.user)
     const answers = useSelector((state) => state.answerState.answers)
     const answerArr = Object.values(answers)
-
-    const comments = useSelector(state => state.commentState.comments)
-    const commentsValues = Object.values(comments)
-    console.log(commentsValues, '<=============================')
 
     const [showComments, setShowComments] = useState(false)
 
@@ -36,32 +32,14 @@ const Answers = () => {
                     <div className='each-answer-container'>
                         <p className='answer-username-text'>{User.username}</p>
                         <p className='answer-content'>{content}</p>
-                        <div >
+                        <div className='answer-buttons-container'>
                             <div>
                                 {(user?.id === userId) &&
                                     (<AnswerEditModal id={id} questionId={parseId} answerContent={content} />)
                                 }
                             </div>
                         </div>
-
-
-                        <div>
-                            <button onClick={openComments}>
-                                <i className="fa-solid fa-comments"></i>
-                            </button>
-                        </div>
-
-
-                        {showComments && commentsValues?.map(({ answerId, userId, content, User }) => (
-                            ((answerId === id) && (
-                                <CommentsPage
-                                    answerId={answerId}
-                                    userId={userId}
-                                    content={content}
-                                    User={User}
-                                />
-                            )
-                            )))}
+                            <CommentsForm id={id} />
                     </div>
                 </div>
             ))}

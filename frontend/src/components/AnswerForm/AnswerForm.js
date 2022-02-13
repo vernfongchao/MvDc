@@ -39,7 +39,6 @@ const AnswerForm = ({ setShowModal }) => {
     }
 
     return (
-        <div>
             <div className='answer-form-container'>
                 <img
                     className="modal-background-img"
@@ -77,7 +76,6 @@ const AnswerForm = ({ setShowModal }) => {
                     </div>
                 </form>
             </div>
-        </div>
     )
 
 }
