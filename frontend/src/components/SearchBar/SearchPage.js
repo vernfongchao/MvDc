@@ -39,10 +39,9 @@ const SearchPage = () => {
             </img>
             {searchArr?.map(({ title, id, content }) => (
                 <div className='search-detail-outer'>
-
                     <div className='search-detail-container'>
                         <Link to={`questions/${id}`} key={id}>
-                            <p>
+                            <p className='search-page-title'>
                                 {title}
                             </p>
                         </Link>

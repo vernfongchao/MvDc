@@ -36,7 +36,7 @@ const LoginForm = () => {
         <>
             <div className='login-container'>
                 <img
-                    className="modal-background-img"
+                    className="login-background-img"
                     src="https://mcdn.wallpapersafari.com/medium/95/3/WLzDBx.jpg"
                     alt=''
                 />

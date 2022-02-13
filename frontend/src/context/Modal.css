@@ -12,7 +12,6 @@
 
 #modal-background {
   z-index: 1;
-
   position: fixed;
   top: 0;
   right: 0;
@@ -28,6 +27,7 @@
   position: absolute;
   background-color: white;
   border-radius: 7px;
+  border: 5px black solid;
   width: 325px;
   height: 365px;
 }
@@ -39,7 +39,6 @@
 }
 
 .modal-background-img {
-  border-radius: 7px;
   z-index: -1;
   position: absolute;
   width: 325px;

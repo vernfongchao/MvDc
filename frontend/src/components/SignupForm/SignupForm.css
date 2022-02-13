@@ -73,3 +73,10 @@
 .nav-signup-button {
   padding-right: 20px;
 }
+
+.signup-background-img {
+  z-index: -1;
+  position: absolute;
+  width: 325px;
+  height: 365px;
+}

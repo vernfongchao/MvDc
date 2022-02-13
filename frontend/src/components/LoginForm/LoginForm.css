@@ -6,6 +6,13 @@
 .login-error-ul {
   margin-top: 10px;
   margin-bottom: 0px;
+  list-style: none;
+}
+
+.error-text {
+  color: red;
+  padding-right: 15px;
+  background-color: white;
 }
 
 .login-title {
@@ -82,10 +89,7 @@
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
-.error-text {
-  color: red;
-  padding-right: 15px;
-}
+
 .login-footer-container {
   display: flex;
   margin-top: auto;
@@ -123,4 +127,11 @@
 
 .nav-login-button {
   padding-right: 20px;
+}
+
+.login-background-img {
+  z-index: -1;
+  position: absolute;
+  width: 325px;
+  height: 365px;
 }

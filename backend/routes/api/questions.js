@@ -23,7 +23,7 @@ const validateQuestion = [
 ];
 
 router.get('', asyncHandler(async (req, res) => {
-    const questions = await Question.findAll({include: { model: User } });
+    const questions = await Question.findAll({ include: [{ model: User }, { model: Answer }] });
     return res.json(questions);
 }));
 

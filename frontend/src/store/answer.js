@@ -17,10 +17,10 @@ const loadAnswers = (answers) => {
     }
 }
 
-const removeAnswer = (answerId) => {
+const removeAnswer = (answer) => {
     return {
         type: REMOVE_ANSWER,
-        answerId
+        answer
     }
 }
 const loadAnswer = (answer) => {
@@ -81,9 +81,9 @@ export const deleteAnswer = (id) => async (dispatch) => {
         method: 'DELETE'
     })
     if (res.ok) {
-        const answerId = await res.json()
-        dispatch(removeAnswer(answerId))
-        return answerId
+        const answer = await res.json()
+        dispatch(removeAnswer(answer))
+        return answer
     }
 }
 
@@ -111,7 +111,7 @@ const answerReducer = (state = initialState, action) => {
         }
         case REMOVE_ANSWER: {
             newState = { ...state }
-            delete newState.answers[action.answerId]
+            delete newState.answers[action.answer.id]
             return newState
         }
         default:

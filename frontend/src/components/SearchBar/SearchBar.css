@@ -45,6 +45,13 @@
   overflow-y: auto;
   overflow-x: hidden;
 }
+.search-page-title {
+  text-decoration: none;
+}
+
+/* .search-page-title:hover{
+    t
+} */
 
 .search-detail-content {
   margin-top: 2%;

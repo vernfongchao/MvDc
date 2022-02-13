@@ -38,7 +38,7 @@ const SignupForm = () => {
     return (
         <div className='signup-container'>
             <img
-                className="modal-background-img"
+                className="signup-background-img"
                 src="https://cdn.wallpapersafari.com/37/47/tB1cwU.jpg"
                 alt=''
             />
