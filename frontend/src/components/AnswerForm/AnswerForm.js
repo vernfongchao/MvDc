@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { postAnswer } from '../../store/answer'
 
 import './AnswerForm.css'
@@ -9,7 +9,6 @@ const AnswerForm = ({ setShowModal }) => {
     const { id } = useParams()
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
-    const history = useHistory()
     const [content, setContent] = useState('')
     const [validationErrors, setValidationErrors] = useState([])
 
@@ -23,7 +22,7 @@ const AnswerForm = ({ setShowModal }) => {
                 questionId: id,
                 userId: sessionUser.id,
             }
-            const createdAnswer = await dispatch(postAnswer(newAnswer))
+            await dispatch(postAnswer(newAnswer))
                 .then(() => {
                     setShowModal(false)
                     reset()

@@ -60,6 +60,10 @@
   font-weight: bold;
 }
 
+.question-edit-input-text {
+  min-width: 475px;
+}
+
 .confirm-edit-container {
   display: flex;
   justify-content: space-evenly;

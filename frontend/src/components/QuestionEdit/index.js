@@ -95,7 +95,7 @@ const QuestionEdit = ({ user, question, showForm, setShowForm, validationErrors,
                                     className='question-edit-input-text'
                                     id='title'
                                     rows='3'
-                                    cols='67'
+                                    cols='60'
                                     value={title}
                                     placeholder='Question'
                                     onChange={(event) => setTitle(event.target.value)}
@@ -113,7 +113,7 @@ const QuestionEdit = ({ user, question, showForm, setShowForm, validationErrors,
                                     className='question-edit-input-text'
                                     id='content'
                                     rows='10'
-                                    cols='67'
+                                    cols='60'
                                     value={content}
                                     placeholder='enter your description'
                                     onChange={(event) => setContent(event.target.value)}
