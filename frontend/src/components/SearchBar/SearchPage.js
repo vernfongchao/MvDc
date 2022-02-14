@@ -28,7 +28,6 @@ const SearchPage = () => {
             || content.toLowerCase().includes(location.state.detail.toLowerCase())
     })
 
-    console.log('==========================', searchArr)
 
     return (
         <div className='search-page-container'>

@@ -10,7 +10,6 @@ const SearchBar = () => {
     const history = useHistory()
     const [searchValue, setSearchValue] = useState('')
     const questions = useSelector((state) => state.questionState.questions)
-    console.log(questions)
 
     const handleSearch = (e) => {
         e.preventDefault()

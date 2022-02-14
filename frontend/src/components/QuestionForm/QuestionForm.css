@@ -57,3 +57,7 @@
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
+
+#question-button:hover {
+  background-color: rgb(29, 29, 29);
+}

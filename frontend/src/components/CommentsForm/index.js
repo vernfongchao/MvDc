@@ -17,7 +17,6 @@ const CommentsForm = ({ paramId }) => {
 
     const comments = useSelector(state => state.commentState.comments)
     const commentsValues = Object.values(comments)
-    console.log(commentsValues, '<=============================')
 
     const handleSubmit = async (e) => {
         if (content) {

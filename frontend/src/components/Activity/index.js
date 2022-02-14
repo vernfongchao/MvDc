@@ -16,12 +16,7 @@ const Activity = () => {
         return userId === user.id
     })
 
-    console.log(user)
-    console.log(questionsArr)
-    console.log(myQuestions)
-
-
-
+    
     useEffect(() => {
         dispatch(getQuestions())
     }, [dispatch])

@@ -71,7 +71,6 @@ export const postAnswer = (payload) => async dispatch => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
     })
-    console.log(res)
     if (res.ok) {
         const answer = await res.json()
         dispatch(addAnswer(answer))

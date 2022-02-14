@@ -44,11 +44,8 @@ export const postComment = (payload) => async (dispatch) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
     })
-    console.log(res)
-    console.log(res.ok)
     if (res) {
         const comment = await res.json()
-        console.log(comment)
         dispatch(addComment(comment))
         return comment
     }
