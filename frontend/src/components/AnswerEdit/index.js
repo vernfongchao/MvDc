@@ -12,9 +12,8 @@ const AnswerEditModal = ({ id, answerContent, questionId }) => {
     const [showModal, setShowModal] = useState(false)
     const dispatch = useDispatch()
 
-    const handleDelete = async (e) => {
-        await dispatch(deleteAnswer(id))
-        await dispatch(getAnswers())
+    const handleDelete = (e) => {
+        dispatch(deleteAnswer(id))
     }
 
     return (

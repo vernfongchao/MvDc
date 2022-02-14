@@ -113,7 +113,7 @@ const answerReducer = (state = initialState, action) => {
             return newState
         }
         case REMOVE_ANSWER: {
-            newState = { ...state }
+            newState = { ...state, answers:{...state.answers} }
             delete newState.answers[action.answer.id]
             return newState
         }
