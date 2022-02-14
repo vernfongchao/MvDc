@@ -4,7 +4,7 @@ import { csrfFetch } from './csrf';
 const LOAD_COMMENTS = '/answer/LOAD_COMMENTS'
 const ADD_COMMENT = 'answer/ADD_COMMENT'
 const REMOVE_COMMENT = '/answer/REMOVE_COMMENT'
-// const LOAD_COMMENT = '/answer/COMMENT'
+const LOAD_COMMENT = '/answer/COMMENT'
 
 const addComment = (comment) => {
     return {
@@ -24,6 +24,13 @@ const removeComment = (commentId) => {
     return {
         type: REMOVE_COMMENT,
         commentId
+    }
+}
+
+const loadComment = (comment) => {
+    return {
+        type: LOAD_COMMENT,
+        comment
     }
 }
 
@@ -79,11 +86,15 @@ const commentReducer = (state = initialState, action) => {
             newState.comments = { ...state.comments, [action.comment.id]: action.comment }
             return newState
         }
+        case LOAD_COMMENT: {
+            newState = { ...state }
+            newState.comments = { ...state.comments, [action.comment.id]: action.comment }
+            return newState
+        }
         case REMOVE_COMMENT: {
-            newState = { ...state, comments:{...state.comments} }
+            newState = { ...state, comments: { ...state.comments } }
             delete newState.comments[action.commentId]
             return newState
-
         }
         default:
             return state;

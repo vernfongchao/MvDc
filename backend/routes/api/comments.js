@@ -40,6 +40,21 @@ router.post('/answer/:id', validateComments, asyncHandler(async (req, res) => {
     );
 }))
 
+router.put('/:id', validateComments,asyncHandler(async(req,res)=> {
+    const {id, content,userId,answerId} = req.body
+
+    let comment = await Comment.update({
+        content,
+        answerId,
+        userId
+    }, {where : {id}})
+    comment = await Comment.findByPk(id,{include:{model:User}})
+    return await res.json(comment)
+}))
+
+
+
+
 router.delete('/:id', asyncHandler(async (req, res) => {
     const parseId = parseInt(req.params.id, 10)
     const comment = await Comment.findByPk(parseId)

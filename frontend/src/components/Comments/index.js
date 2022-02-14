@@ -26,7 +26,9 @@ const CommentsPage = ({ answerId, content, userId, User, id }) => {
             {user?.id === userId && (
                 <div className='comment-delete-button-container'>
                     <button className='commente-delete-button' onClick={handleDelete}>Delete</button>
-                </div>)}
+                </div>
+
+                )}
         </div>
     )
 
