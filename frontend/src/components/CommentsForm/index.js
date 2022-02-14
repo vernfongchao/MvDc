@@ -55,7 +55,7 @@ const CommentsForm = ({ paramId }) => {
                     <i className="fa-solid fa-comments"></i>
                 </button>
             </div>
-            {showComments &&
+            {showComments && user &&
                 (<form className=''>
                     <ul className='login-error-ul'>
                         {validationErrors.map((error, idx) =>

@@ -1,7 +1,30 @@
 .comments-content-container {
   border-top: 1px black solid;
+  display: flex;
+  flex-direction: column;
 }
 
 .comments-content-text {
   overflow-x: hidden;
+}
+
+.comment-delete-button-container {
+  margin-left: auto;
+  margin-right: 5%;
+  padding-bottom: 5px;
+}
+
+.commente-delete-button {
+  border: 2px #97b4ff solid;
+  color: red;
+  font-weight: bold;
+  background-color: white;
+  width: 70px;
+  height: 25px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.commente-delete-button:hover {
+  background-color: rgb(29, 29, 29);
 }
