@@ -6,7 +6,7 @@
 
    - `npm install`
 
-3. Cerate a `PostgreSQL` user with `CREATEDB` and `Password` 
+3. Create a `PostgreSQL` user with `CREATEDB` and `Password` 
 
    - `CREATE USER <name> with CREATEDB PASSWORD <'password'>`
 
