@@ -35,7 +35,6 @@ const QuestionEdit = ({ user, question, showForm, setShowForm, validationErrors,
                     const data = await res.json();
                     if (data && data.errors) setValidationErrors(data.errors);
                 })
-
             setShowForm(false)
         }
     }
