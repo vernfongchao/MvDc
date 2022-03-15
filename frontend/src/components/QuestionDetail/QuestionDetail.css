@@ -10,6 +10,7 @@
   min-height: 200px;
   min-width: 30%;
   width: 575px;
+  max-width: 575px;
   border: 5px black solid;
   display: flex;
   justify-content: center;

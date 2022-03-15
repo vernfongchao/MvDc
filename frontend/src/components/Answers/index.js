@@ -15,15 +15,12 @@ const Answers = () => {
     const answers = useSelector((state) => state.answerState.answers)
     const answerArr = Object.values(answers)
 
-    const [showComments, setShowComments] = useState(false)
 
 
     const answerQuestions = answerArr?.filter((answer) => answer.questionId === parseId
     )
 
-    const openComments = (e) => {
-        setShowComments(!showComments)
-    }
+
 
     return (
         <div className='answer-page-container'>
