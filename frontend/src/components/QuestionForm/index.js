@@ -9,7 +9,7 @@ import './QuestionForm.css'
 
 
 function QuestionFormModal() {
-
+    // console.log("rerenders?")
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
     const history = useHistory()
@@ -116,5 +116,6 @@ function QuestionFormModal() {
         </div>
     );
 }
+
 
 export default QuestionFormModal;

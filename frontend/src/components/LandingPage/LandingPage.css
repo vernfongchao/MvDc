@@ -17,7 +17,7 @@ div.Player__container___f3NHe {
   margin-right: auto;
   justify-content: center;
   width: 650px;
-  height: 900;
+  height: 400px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100px 325px;
@@ -49,9 +49,6 @@ div.Player__container___f3NHe {
   border-left: 5px black solid;
   border-bottom: 5px black solid;
   border-right: 0.5px black solid;
-
-  width: 325px;
-  height: 365px;
 }
 
 .landing-signup-container {
@@ -64,6 +61,4 @@ div.Player__container___f3NHe {
   border-right: 5px black solid;
   border-bottom: 5px black solid;
   border-left: 0.5px black solid;
-  width: 325px;
-  height: 365px;
 }

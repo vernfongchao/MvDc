@@ -12,6 +12,25 @@ const HomePage = () => {
     const dispatch = useDispatch()
     const questionsObj = useSelector((state) => state.questionState.questions)
     const questions = Object.values(questionsObj)
+
+
+    const shuffle = arr => {
+
+        let index = arr.length;
+
+        while (index != 0){
+            let randomIndex = Math.floor(Math.random()*index)
+            index--
+
+            [arr[index],arr[randomIndex]] = [arr[randomIndex],arr[index]]
+        }
+
+        return arr
+    }
+
+    shuffle(questions)
+    console.log(questions)
+
     const questionArr = questions.slice(0,9)
 
 

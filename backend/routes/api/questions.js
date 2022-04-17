@@ -27,10 +27,6 @@ router.get('', asyncHandler(async (req, res) => {
     return res.json(questions);
 }));
 
-router.get('/getmore', asyncHandler(async (req, res) => {
-    const questions = await Question.findAll({ limit: 5, include: [{ model: User }, { model: Answer }] });
-    return res.json(questions);
-}));
 
 router.get('/:id', asyncHandler(async (req, res) => {
     const question = await Question.findByPk(req.params.id,
@@ -39,6 +35,11 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
     return res.json(question);
 }))
+
+router.get('/getmore', asyncHandler(async (req, res) => {
+    const questions = await Question.findAll({ limit: 5, include: [{ model: User }, { model: Answer }] });
+    return res.json(questions);
+}));
 
 router.put('/:id', validateQuestion, asyncHandler(async (req, res) => {
     const { title, content, userId, id } = req.body

@@ -4,6 +4,8 @@
 }
 
 .login-error-ul {
+  display: flex;
+  justify-content: center;
   margin-top: 10px;
   margin-bottom: 0px;
   list-style: none;
@@ -67,6 +69,23 @@
 }
 
 #login-button {
+  cursor: pointer;
+  border: 2px #97b4ff solid;
+  color: red;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 15px;
+  width: 60px;
+  height: 30px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+#login-button:hover {
+  background-color: black;
+}
+
+#demo-button {
+  cursor: pointer;
   border: 2px #97b4ff solid;
   color: red;
   font-weight: bold;
@@ -78,16 +97,8 @@
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-#demo-button {
-  border: 2px #97b4ff solid;
-  color: red;
-  font-weight: bold;
-  background-color: white;
-  border-radius: 15px;
-  width: 60px;
-  height: 30px;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+#demo-button:hover{
+  background-color: black;
 }
 
 .login-footer-container {
@@ -132,6 +143,6 @@
 .login-background-img {
   z-index: -1;
   position: absolute;
-  width: 325px;
-  height: 365px;
+  /* width: 325px; */
+  height: 320px;
 }

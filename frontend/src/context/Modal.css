@@ -28,8 +28,7 @@
   background-color: white;
   border-radius: 7px;
   border: 5px black solid;
-  width: 325px;
-  height: 365px;
+
 }
 
 .modal-cancel {
@@ -41,6 +40,4 @@
 .modal-background-img {
   z-index: -1;
   position: absolute;
-  width: 325px;
-  height: 365px;
 }
