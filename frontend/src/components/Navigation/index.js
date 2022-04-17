@@ -36,7 +36,7 @@ function Navigation({ isLoaded }) {
 
     return (
         <ul className='nav-ul'>
-            <li>
+            <li className='nav-logo-container'>
                 <Link to="/">
                     <img className='nav-logo' src='../../images/MvDc2.png' alt='MvDc Logo' onClick={returnHome}></img>
                 </Link>

@@ -74,7 +74,7 @@ const LoginForm = () => {
                         />
                     </label>
                     <div className="login-button-container">
-                        <button id='demo-button' onClick={handleClick}>Demo</button>
+                        <button id='demo-button' type="button" onClick={handleClick}>Demo</button>
                         <button id='login-button' type="submit">Login</button>
                     </div>
                 </div>

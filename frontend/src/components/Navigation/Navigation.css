@@ -16,6 +16,7 @@
 }
 
 .nav-logo {
+  border: 3px solid black;
   height: 50px;
   width: 100px;
 }
@@ -25,6 +26,9 @@
 }
 
 .home-button {
+  border: none;
+  border: 3px solid black;
+  cursor: pointer;
   color: rgb(72, 67, 67);
   height: 40px;
   width: 40px;
@@ -35,6 +39,11 @@
   background-color: black;
   color: white;
 }
+
+.fa-solid.fa-house-chimney{
+  font-size: large;
+}
+
 
 .profile-button {
   margin-right: 15px;

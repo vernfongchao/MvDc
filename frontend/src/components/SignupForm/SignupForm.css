@@ -1,6 +1,8 @@
 .signup-form-container {
   display: flex;
   flex-direction: column;
+  width: 325px;
+  height: 320px;
 }
 .signup-title {
   margin: 0px;

@@ -2,13 +2,24 @@
   margin: auto;
 }
 .search-bar-input-text {
+  border: none;
+  border: 1px solid black;
   min-width: 600px;
   min-height: 2rem;
   font-weight: bold;
+  /* height: 24px; */
 }
 
 .search-bar-button {
-  min-height: 38px;
+  border: none;
+  border: .1px solid black;
+  cursor: pointer;
+  height: 36px;
+}
+
+.search-bar-button:hover{
+  background-color: black;
+color: white;
 }
 
 .search-page-container {

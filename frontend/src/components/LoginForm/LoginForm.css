@@ -1,6 +1,8 @@
 .login-form-container {
   display: flex;
   flex-direction: column;
+    width: 325px;
+    height: 320px;
 }
 
 .login-error-ul {
@@ -143,6 +145,6 @@
 .login-background-img {
   z-index: -1;
   position: absolute;
-  /* width: 325px; */
+  width: 325px;
   height: 320px;
 }
