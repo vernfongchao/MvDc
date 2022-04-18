@@ -1,3 +1,9 @@
+.answer-form-container{
+        width: 325px;
+        min-height: 330px;
+}
+
+
 .answer-form-title {
   display: flex;
   justify-content: center;
@@ -19,9 +25,8 @@
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: bold;
   resize: none;
-  max-width: 300px;
-  min-width: 300px;
-  min-height: 275px;
+  width: 300px;
+  min-height: 230px;
 }
 
 .answer-form-content {
@@ -30,10 +35,13 @@
 }
 
 .answer-button-container {
-  margin-left: 3%;
+  padding: 5px 10px 5px 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
 #answer-button {
+  cursor: pointer;
   border: 2px #97b4ff solid;
   color: red;
   font-weight: bold;
@@ -42,4 +50,8 @@
   height: 25px;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+#answer-button:hover {
+  background-color: black;
 }

@@ -46,11 +46,18 @@
 
 
 .profile-button {
+  border: none;
+  border: 3px black solid;
+  cursor: pointer;
   margin-right: 15px;
   color: blue;
   height: 40px;
   width: 40px;
   border-radius: 50%;
+}
+
+.fa-solid.fa-mask{
+  font-size: large;
 }
 
 .profile-button:hover {

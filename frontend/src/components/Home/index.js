@@ -28,15 +28,7 @@ const HomePage = () => {
         return arr
     }
 
-    shuffle(questions)
-    console.log(questions)
-
-    const questionArr = questions.slice(0,9)
-
-
-    useEffect(() => {
-        dispatch(getQuestions())
-    }, [dispatch]);
+    const questionArr = shuffle(questions).slice(0,9)
 
     return (
         <div className='home-page-container'>

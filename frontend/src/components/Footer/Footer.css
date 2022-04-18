@@ -1,0 +1,44 @@
+.footer-page-container {
+  height: 40px;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(29, 29, 29);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-right: 50px;
+  z-index: 1;
+}
+
+.team-member-name{
+  color: white;
+}
+
+.footer-page-container a {
+  text-decoration: none;
+  color: white;
+}
+
+.team-member-github {
+  font-size: larger;
+}
+
+.linkedin-icon-container {
+  font-size: larger;
+}
+
+.portfolio-link:hover 
+ {
+  color: red
+}
+
+.team-member-github:hover {
+  color: red
+}
+
+.linkedin-icon-container:hover{
+color: red
+}
+

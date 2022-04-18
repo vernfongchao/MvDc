@@ -18,10 +18,10 @@
   background-image: url(https://w.wallhaven.cc/full/1j/wallhaven-1j76kv.jpg);
   margin-left: 25%;
 }
-
 .question-detail-container {
   padding-left: 2%;
   padding-top: 10px;
+  padding-bottom: 10px;
   box-sizing: border-box;
   margin: auto;
   min-height: 90%;

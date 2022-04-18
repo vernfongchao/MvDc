@@ -3,7 +3,7 @@
 }
 .search-bar-input-text {
   border: none;
-  border: 1px solid black;
+  border: 3px solid black;
   min-width: 600px;
   min-height: 2rem;
   font-weight: bold;
@@ -11,10 +11,12 @@
 }
 
 .search-bar-button {
+  /* font-size:  */
   border: none;
-  border: .1px solid black;
+  border: 3px solid black;
+  border-left: none;
   cursor: pointer;
-  height: 36px;
+  height: 40px;
 }
 
 .search-bar-button:hover{

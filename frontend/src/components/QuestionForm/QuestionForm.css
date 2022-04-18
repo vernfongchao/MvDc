@@ -1,3 +1,12 @@
+.question-form-container{
+      width: 325px;
+      min-height: 325px;
+}
+.modal-background-img{
+        width: 325px;
+        min-height: 330px;
+}
+
 .question-form-title {
   display: flex;
   justify-content: center;
@@ -29,12 +38,24 @@
   justify-content: center;
 }
 
+.question-button-container{
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 10px 5px 0;
+}
+
 #add-question-button {
+  cursor: pointer;
+  border: none;
+  border: 3px solid black;
   height: 40px;
   width: 40px;
   border-radius: 50%;
   color: red;
   margin-right: 15px;
+}
+.fa-solid.fa-plus{
+    font-size: large;
 }
 
 #add-question-button:hover {
@@ -42,12 +63,9 @@
   color: white;
 }
 
-.question-button-container {
-  margin-top: 1%;
-  margin-left: 3%;
-}
 
 #question-button {
+    cursor: pointer;
   border: 2px #97b4ff solid;
   color: red;
   font-weight: bold;

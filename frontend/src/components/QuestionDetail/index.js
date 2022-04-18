@@ -2,11 +2,7 @@
 import { useParams, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import React, { useEffect, useState } from 'react'
-import { getQuestionById } from '../../store/question';
 import { useHistory } from 'react-router-dom';
-import { getQuestions } from '../../store/question';
-import { getAnswers } from '../../store/answer';
-import { getComments } from '../../store/comment';
 
 import QuestionEdit from '../QuestionEdit';
 import Answers from '../Answers';
@@ -16,30 +12,38 @@ import './QuestionDetail.css'
 
 const QuestionDetail = () => {
   const { id } = useParams()
-  const dispatch = useDispatch()
   const history = useHistory()
   const questionObj = useSelector((state) => state.questionState.questions[id])
   const user = useSelector(state => state.session.user);
   const questions = useSelector((state) => state.questionState.questions)
-  const questionVal = Object.values(questions)
 
   const [showForm, setShowForm] = useState(false)
   const [validationErrors, setValidationErrors] = useState([])
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    dispatch(getQuestionById(id)).then(data => { if (!data) history.push('/404') })
-    dispatch(getQuestions())
-    dispatch(getAnswers())
-    dispatch(getComments())
-    setShowForm(false)
-  }, [dispatch, id, history]);
-
-
-  let filter;
-  if (questionObj) {
-    filter = questionVal.filter((question) => question.id !== questionObj.id)
+  if (!questions[id]){
+    history.push('/404')
   }
+
+  // const shuffle = arr => {
+
+  //   let index = arr.length;
+
+  //   while (index != 0) {
+  //     let randomIndex = Math.floor(Math.random() * index)
+  //     index--
+
+  //     [arr[index], arr[randomIndex]] = [arr[randomIndex], arr[index]]
+  //   }
+
+  //   return arr
+  // }
+
+  let filter = Object.values(questions).filter((question) => question?.id !== questionObj?.id).slice(0,9)
+
+  // useEffect(() => {
+  //   if(questions)
+  //   shuffle(filter).slice(0, 9)
+  // }, [questions])
 
   const hideForm = (e) => {
     setShowForm(false)

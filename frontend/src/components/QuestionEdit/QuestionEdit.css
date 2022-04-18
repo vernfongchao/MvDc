@@ -7,6 +7,7 @@
 }
 
 .question-edit-button {
+  cursor: pointer;
   border: 2px #97b4ff solid;
   color: red;
   font-weight: bold;
@@ -26,6 +27,7 @@
 }
 
 #question-delete-button {
+  cursor: pointer;
   border: 2px #97b4ff solid;
   color: red;
   font-weight: bold;
@@ -41,6 +43,7 @@
 }
 
 #edit-button-cancel {
+  cursor: pointer;
   border: 2px #97b4ff solid;
   color: red;
   font-weight: bold;
@@ -70,6 +73,7 @@
 }
 
 .confirm-edit-container {
+
   display: flex;
   justify-content: space-evenly;
 }

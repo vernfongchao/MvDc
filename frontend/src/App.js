@@ -10,6 +10,11 @@ import QuestionDetail from "./components/QuestionDetail";
 import Activity from "./components/Activity";
 import ErrorPage from "./components/404";
 import SearchPage from "./components/SearchBar/SearchPage";
+import Footer from "./components/Footer";
+
+import { getQuestions } from "./store/question";
+import { getAnswers } from "./store/answer";
+import { getComments } from "./store/comment";
 
 
 
@@ -18,6 +23,9 @@ function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
+    dispatch(getQuestions())
+    dispatch(getAnswers())
+    dispatch(getComments())
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
   const sessionUser = useSelector(state => state.session.user);
@@ -25,6 +33,7 @@ function App() {
 
   return isLoaded && (
     <>
+      <Footer />
       <Switch>
         <Route path exact={'/'}>
           {sessionUser ? [<Navigation isLoaded={isLoaded} />, <HomePage />] : <LandingPage />}

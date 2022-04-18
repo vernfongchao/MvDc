@@ -62,6 +62,7 @@
 }
 
 .answer-delete-button {
+  cursor: pointer;
   border: 2px #97b4ff solid;
   color: red;
   font-weight: bold;
