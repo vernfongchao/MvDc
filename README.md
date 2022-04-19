@@ -1,3 +1,16 @@
+Welcome to the MvDc wiki!
+This project is based off of [Quora](https://www.quora.com/)
+
+MvDc, a [Quora](https://www.quora.com/) clone, is a social media, forum application that allows enthusiast of superheroes to openly share their opinions whether its movies, comics, or animation.
+
+## [Feature List](https://github.com/vernfongchao/MvDc/wiki/MVP-Feature-List)
+
+List of features needed for the Minimum Viable Product (MVP) and its CRUD features
+
+## [Database Schema](https://github.com/vernfongchao/MvDc/wiki/Database-Schema)
+
+Schema of how our PostgreSQL database will be set up
+
 1. Clone this repo
 
    - `git clone https://github.com/vernfongchao/MvDc.git`
