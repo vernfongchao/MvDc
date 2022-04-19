@@ -25,6 +25,7 @@ color: white;
 }
 
 .search-page-container {
+  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
