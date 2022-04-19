@@ -34,6 +34,28 @@ Schema of how my PostgreSQL database will be set up
 ### 404:
 ![image](https://user-images.githubusercontent.com/91238232/163906669-0fc6ba11-f237-400a-bed6-6f7525eb8b19.png)
 
+## Features
+
+- Full CRUD Features for Questions
+- Full CRUD Features for Answers to a Question
+- Full CRUD features for Comments to an Answer
+- SearchBar CRUD feature
+
+### Future Features
+
+- CRUD features for upvote and downvotes on question,answers, and comments
+- Setup AWS for Images for Answer and Questions
+- Rich Text Libraries for fancy text fields
+
+
+## Technologies Used
+
+- React.js
+- Node.js
+- Express
+- PostgreSQL
+
+## Local Installation
 
 1. Clone this repo
 
