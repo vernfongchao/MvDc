@@ -7,7 +7,7 @@ MvDc, a [Quora](https://www.quora.com/) clone, is a social media, forum applicat
 
 ## Live Site
 
-A Live deployment of [Stay-The-Night](https://stay-the-night.herokuapp.com/) is hosted on [heroku](https://heroku.com)
+A Live deployment of [MvDc](https://Mvdc-vc.herokuapp.com/) is hosted on [heroku](https://heroku.com)
 
 ## [Feature List](https://github.com/vernfongchao/MvDc/wiki/MVP-Feature-List)
 
@@ -18,6 +18,22 @@ List of features needed for the Minimum Viable Product (MVP) and its CRUD featur
 Schema of how my PostgreSQL database will be set up
 
 ## Screenshots
+
+### Welcome:
+![image](https://user-images.githubusercontent.com/91238232/163906009-e2b713d4-df1f-41ae-bd73-a16d61bbc47c.png)
+
+### Home:
+![image](https://user-images.githubusercontent.com/91238232/163906093-b826310f-51f0-46d0-b50c-6a57508ee9ef.png)
+
+### Question Detail's:
+![image](https://user-images.githubusercontent.com/91238232/163906197-f88cbb87-3811-4232-8fc3-3c6eb682378c.png)
+
+### Search:
+![image](https://user-images.githubusercontent.com/91238232/163906301-6676bdf4-f019-4576-a6c1-2c1a0e0fa25e.png)
+
+### 404:
+![image](https://user-images.githubusercontent.com/91238232/163906669-0fc6ba11-f237-400a-bed6-6f7525eb8b19.png)
+
 
 1. Clone this repo
 
