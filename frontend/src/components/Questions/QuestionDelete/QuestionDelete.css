@@ -1,0 +1,45 @@
+#question-delete-button {
+    cursor: pointer;
+    border: 2px #97b4ff solid;
+    color: red;
+    font-weight: bold;
+    background-color: white;
+    width: 70px;
+    height: 25px;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+#question-delete-button:hover {
+    background-color: rgb(29, 29, 29);
+}
+
+.delete-question-page-container{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 400px;
+}
+
+.delete-question-header-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 1px solid black;
+    background-color: black;
+}
+
+.delete-question-header{
+    color: white;
+}
+.delete-question-button-containers{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.delete-question-warning-message{
+    color: red;
+}

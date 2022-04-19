@@ -13,7 +13,7 @@ const validateQuestion = [
         .notEmpty()
         .withMessage('Please provide a question.')
         .isLength({ max: 255 })
-        .withMessage('Your question must be no more than 255 characters long.'),
+        .withMessage('Question Title must be no more than 255 characters long.'),
     check('content')
         .exists({ checkFalsy: true })
         .withMessage('Please add a description to your question.')
@@ -44,6 +44,7 @@ router.get('/getmore', asyncHandler(async (req, res) => {
 router.put('/:id', validateQuestion, asyncHandler(async (req, res) => {
     const { title, content, userId, id } = req.body
     let parseUserId = parseInt(userId, 10)
+
     let question = await Question.update({
         title,
         content,

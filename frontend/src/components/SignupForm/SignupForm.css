@@ -68,6 +68,7 @@
 }
 
 #nav-signup-button {
+  cursor: pointer;
   border: 2px #97b4ff solid;
   color: red;
   font-weight: bold;
@@ -76,6 +77,10 @@
   height: 30px;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+#nav-signup-button:hover{
+  background-color: black;
 }
 
 .nav-signup-button {

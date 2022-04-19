@@ -6,16 +6,23 @@
 }
 
 .login-error-ul {
-  display: flex;
-  justify-content: center;
   margin-top: 10px;
-  margin-bottom: 0px;
+  margin-right: 0;
   list-style: none;
+}
+.error-text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  padding-top: 1px;
+
 }
 
 .error-text {
+  padding-top: 2px;
+  width: 95%;
   color: red;
-  padding-right: 15px;
   background-color: white;
 }
 
@@ -128,6 +135,7 @@
 }
 
 #nav-login-button {
+  cursor: pointer;
   border: 2px #97b4ff solid;
   color: red;
   font-weight: bold;
@@ -136,6 +144,10 @@
   height: 30px;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+#nav-login-button:hover{
+  background-color: black;
 }
 
 .nav-login-button {

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import React, { useState } from 'react'
 
 import AnswerEditModal from '../AnswerEdit';
-import CommentsForm from '../CommentsForm';
+import CommentsForm from '../../Comments/CommentsForm';
 
 import './Answers.css'
 
@@ -17,10 +17,7 @@ const Answers = () => {
 
 
 
-    const answerQuestions = answerArr?.filter((answer) => answer.questionId === parseId
-    )
-
-
+    const answerQuestions = answerArr?.filter((answer) => answer.questionId === parseId).reverse()
 
     return (
         <div className='answer-page-container'>
@@ -32,11 +29,11 @@ const Answers = () => {
                         <div className='answer-buttons-container'>
                             <div>
                                 {(user?.id === userId) &&
-                                    (<AnswerEditModal id={id} questionId={parseId} answerContent={content} />)
-                                }
+                                    (<AnswerEditModal id={id} questionId={parseId} answerContent={content} />
+                                    )}
                             </div>
                         </div>
-                            <CommentsForm paramId={id} />
+                        <CommentsForm paramId={id} />
                     </div>
                 </div>
             ))}

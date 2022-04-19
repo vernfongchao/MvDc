@@ -1,0 +1,15 @@
+.comments-content-container {
+  border-top: 1px black solid;
+  display: flex;
+  flex-direction: column;
+}
+
+.comments-content-text {
+  overflow-x: hidden;
+}
+
+.comment-delete-button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0px 10px 10px 0;
+}

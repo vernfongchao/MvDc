@@ -4,8 +4,13 @@
 }
 .modal-background-img{
         width: 325px;
-        min-height: 330px;
+        height: 100%;
 }
+
+/* .question-form-page-container{
+  display: flex;
+  flex-direction: column;
+} */
 
 .question-form-title {
   display: flex;

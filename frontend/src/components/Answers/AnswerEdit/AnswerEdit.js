@@ -1,62 +1,61 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from "react-router-dom";
-import { postAnswer } from '../../store/answer'
+import { editAnswer } from '../../../store/answer'
 
-import './AnswerForm.css'
-
-const AnswerForm = ({ setShowModal }) => {
-    const { id } = useParams()
+const AnswerEdit = ({ id, setShowModal, answerContent, questionId }) => {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
-    const [content, setContent] = useState('')
+    const [content, setContent] = useState(answerContent)
     const [validationErrors, setValidationErrors] = useState([])
 
     const handleSubmit = async (e) => {
-        if (content) {
+        if (content ) {
             e.preventDefault()
             setValidationErrors([])
             const newAnswer = {
                 id,
                 content,
-                questionId: id,
+                questionId,
                 userId: sessionUser.id,
             }
-            await dispatch(postAnswer(newAnswer))
-                .then(() => {
-                    setShowModal(false)
-                    reset()
-                })
+            const createdAnswer = await dispatch(editAnswer(newAnswer))
                 .catch(async (res) => {
                     const data = await res.json();
                     if (data && data.errors) setValidationErrors(data.errors)
                 })
+            if (createdAnswer) {
+                setShowModal(false)
+                reset()
+            }
         }
-
     }
     const reset = () => {
         setContent('')
     }
 
     return (
-            <div className='answer-form-container'>
+        <div>
+            <div className='question-form-container'>
                 <img
                     className="modal-background-img"
-                    src="https://mcdn.wallpapersafari.com/medium/11/11/0sAWLv.jpg"
+                    src="https://mcdn.wallpapersafari.com/medium/71/85/PmvI3y.jpg"
                     alt=''
                 />
                 <form className='' >
-                    <div className='answer-form-title'>
-                        <span className='answer-form-header'>
-                            Answer This Question
+                    <div className='question-form-title'>
+                        <span className='question-form-header'>
+                            Edit Answer
                         </span>
                     </div>
-                    <ul className='login-error-ul'>
+                    <div className='login-error-ul'>
                         {validationErrors.map((error, idx) =>
-                            <li className='error-text' key={idx}>{error}
-                            </li>)}
-                    </ul>
-                    <div className='answer-form-content'>
+                            <div className='error-text-container' key={idx}>
+                                <span className='error-text' >{error}
+                                </span>
+                            </div>
+                        )}
+                    </div>
+                    <div className='question-form-content'>
                         <label htmlFor='content'>
                             <br />
                             <textarea
@@ -71,13 +70,14 @@ const AnswerForm = ({ setShowModal }) => {
                             ></textarea>
                         </label>
                     </div>
-                    <div className='answer-button-container'>
-                        <button id='answer-button' onClick={handleSubmit} >Submit</button>
+                    <div className='question-button-container'>
+                        <button id='question-button' onClick={handleSubmit} >Submit</button>
                     </div>
                 </form>
             </div>
+        </div>
     )
 
 }
 
-export default AnswerForm
+export default AnswerEdit

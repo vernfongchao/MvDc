@@ -1,22 +1,24 @@
 .question-detail-page-container {
+  display: flex;
+  justify-content: center;
   margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
+  padding-bottom: 50px;
+}
+.question-detail-answer-container{
+  padding-left: 20%;
 }
 
 .question-detail-outer {
   box-sizing: border-box;
-  min-height: 200px;
-  min-width: 30%;
+  height: 200px;
   width: 575px;
-  max-width: 575px;
   border: 5px black solid;
   display: flex;
   justify-content: center;
   align-content: center;
   background-image: url(https://w.wallhaven.cc/full/1j/wallhaven-1j76kv.jpg);
-  margin-left: 25%;
 }
 .question-detail-container {
   padding-left: 2%;
@@ -52,19 +54,21 @@
   max-width: 500px;
   height: 100%;
 }
+
+.related-question-container {
+  margin-left: 100px;
+  overflow-wrap: break-word;
+  width: 25vw;
+  background-color: white;
+  max-height: 350px;
+  overflow-y: hidden;
+}
+
 .releated-question-title {
+  /* padding-left: 5px; */
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: bold;
-}
-
-.related-question-container {
-  position: fixed;
-  right: 0;
-  margin-left: auto;
-  margin-right: 10%;
-  min-width: 500px;
-  background-color: white;
 }
 
 .question-detail-ul {

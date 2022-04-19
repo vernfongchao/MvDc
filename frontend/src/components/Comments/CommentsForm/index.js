@@ -1,8 +1,8 @@
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
-import React, { useState } from 'react'
-import { postComment } from '../../store/comment';
-import CommentsPage from '../Comments';
+import { postComment } from '../../../store/comment';
+import CommentsPage from '../CommentsDetails';
 
 import './CommentsForm.css'
 
@@ -36,7 +36,6 @@ const CommentsForm = ({ paramId }) => {
                     if (data && data.errors) setValidationErrors(data.errors)
                 })
         }
-
     }
 
     const reset = () => {
@@ -87,6 +86,7 @@ const CommentsForm = ({ paramId }) => {
                     {showComments && commentsValues?.map(({ answerId, userId, content, User, id }) => (
                         ((answerId === paramId) && (
                             <CommentsPage
+                                key={id}
                                 id={id}
                                 answerId={answerId}
                                 userId={userId}

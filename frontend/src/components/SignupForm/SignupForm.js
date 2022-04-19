@@ -46,9 +46,13 @@ const SignupForm = () => {
                 <div className='signup-title'>
                     <h4 className='signup-title-text'>Sign Up</h4>
                 </div>
-                <ul>
-                    {validationErrors.map((error, idx) => <li className='error-text' key={idx}>{error}</li>)}
-                </ul>
+                <div className='login-error-ul'>
+                    {validationErrors.map((error, idx) =>
+                        <div className='error-text-container' key={idx}>
+                            <span className='error-text'>{error}</span>
+                        </div>
+                    )}
+                </div>
                 <div className='signup-text-container'>
                     <label >
                         <input

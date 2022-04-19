@@ -1,8 +1,7 @@
 import React, { useState } from "react"
-import { Modal } from "../../context/Modal"
+import { Modal } from "../../../context/Modal"
 import AnswerEdit from "./AnswerEdit"
-import { useDispatch } from "react-redux"
-import { deleteAnswer, getAnswers } from "../../store/answer"
+import AnswerDeleteModal from '../AnswerDelete'
 
 import './AnswerEdit.css'
 
@@ -10,11 +9,7 @@ import './AnswerEdit.css'
 
 const AnswerEditModal = ({ id, answerContent, questionId }) => {
     const [showModal, setShowModal] = useState(false)
-    const dispatch = useDispatch()
 
-    const handleDelete = (e) => {
-        dispatch(deleteAnswer(id))
-    }
 
     return (
         <div className='answer-buttons-container'>
@@ -26,9 +21,7 @@ const AnswerEditModal = ({ id, answerContent, questionId }) => {
                     <AnswerEdit setShowModal={setShowModal} id={id} answerContent={answerContent} questionId={questionId} />
                 </Modal>
             )}
-            <div className='answer-delete-button-container'>
-                <button onClick={handleDelete} className='answer-delete-button'> Delete</button>
-            </div>
+            <AnswerDeleteModal id={id} />
         </div>
     )
 

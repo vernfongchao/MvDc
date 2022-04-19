@@ -1,20 +1,18 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Link, useLocation } from 'react-router-dom';
-import { getQuestions } from '../../store/question';
 
 import './SearchBar.css'
 
 
 
 const SearchPage = () => {
-    const dispatch = useDispatch()
     const questions = useSelector((state) => state.questionState?.questions)
     const location = useLocation()
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [dispatch]);
+    }, []);
 
 
 
@@ -36,9 +34,9 @@ const SearchPage = () => {
             >
             </img>
             {searchArr?.map(({ title, id, content }) => (
-                <div className='search-detail-outer'>
+                <div className='search-detail-outer' key={id}>
                     <div className='search-detail-container'>
-                        <Link to={`questions/${id}`} key={id}>
+                        <Link to={`questions/${id}`}>
                             <p className='search-page-title'>
                                 {title}
                             </p>

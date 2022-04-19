@@ -6,7 +6,7 @@ import * as sessionActions from "./store/session";
 import { useSelector } from 'react-redux'
 import LandingPage from "./components/LandingPage";
 import HomePage from "./components/Home";
-import QuestionDetail from "./components/QuestionDetail";
+import QuestionDetail from "./components/Questions/QuestionDetail";
 import Activity from "./components/Activity";
 import ErrorPage from "./components/404";
 import SearchPage from "./components/SearchBar/SearchPage";

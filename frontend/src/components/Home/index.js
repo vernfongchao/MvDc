@@ -1,15 +1,12 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
-import { getQuestions } from '../../store/question';
 
 
 import './Home.css'
 
 
 const HomePage = () => {
-    let count = 0
-    const dispatch = useDispatch()
     const questionsObj = useSelector((state) => state.questionState.questions)
     const questions = Object.values(questionsObj)
 
@@ -18,7 +15,7 @@ const HomePage = () => {
 
         let index = arr.length;
 
-        while (index != 0){
+        while (index !== 0){
             let randomIndex = Math.floor(Math.random()*index)
             index--
 
@@ -39,11 +36,12 @@ const HomePage = () => {
             </img>
             <img src='../../../images/comic-page-1.jpg'
                 className='homepage-ol-background'
+                alt='comic-strip'
             >
             </img>
             <ol className='home-page-ol'>
-                {questionArr.map(({ id, title, content, userId, User }) => (
-                    <li id={`home-page-${count++}`} className="home-page-li" key={id} >
+                {questionArr.map(({ id, title, content, userId, User },idx) => (
+                    <li id={`home-page-${idx++}`} className="home-page-li" key={id} >
                         <Link to={`/questions/${id}`} className="questions-detail-link">{title}
                         </Link>
                         <span>{User?.username}</span>

@@ -1,9 +1,35 @@
 .question-edit-page-container {
-  margin-top: 5%;
+        width: 325px;
+        min-height: 325px;
 }
 
-.question-edit-container {
+
+.question-edit-form-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question-edit-header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.question-edit-title {
+  color: white;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+
+
+.question-edit-input-text {
+  max-width: 300px;
+  min-width: 300px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  resize: none;
 }
 
 .question-edit-button {
@@ -57,23 +83,12 @@
 #edit-button-cancel:hover {
   background-color: rgb(29, 29, 29);
 }
-.question-edit-title {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-weight: bold;
-}
 
-.question-edit-input-text {
-  min-width: 500px;
-  max-width: 500px;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-weight: bold;
-  resize: none;
-}
 
 .confirm-edit-container {
-
+  width: 80%;
   display: flex;
   justify-content: space-evenly;
+  padding-top: 4px;
+  padding-bottom: 5px;
 }

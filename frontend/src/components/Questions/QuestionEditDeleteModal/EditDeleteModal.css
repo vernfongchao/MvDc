@@ -1,0 +1,18 @@
+.edit-delete-modal-container{
+    display: flex;
+    justify-content: flex-end;
+    /* position: absolute; */
+}
+
+.edit-delete-button-container{
+    display: flex;
+    justify-content: flex-end;
+    position:absolute;
+}
+
+.edit-delete-modal-button{
+    cursor: pointer;
+    font-size: xx-large;
+    position: relative;
+    right: 10px;
+}

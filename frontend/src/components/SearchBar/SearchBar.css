@@ -4,7 +4,7 @@
 .search-bar-input-text {
   border: none;
   border: 3px solid black;
-  min-width: 600px;
+  width: 40vw;
   min-height: 2rem;
   font-weight: bold;
   /* height: 24px; */
