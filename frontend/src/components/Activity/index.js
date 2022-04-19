@@ -42,10 +42,10 @@ const Activity = () => {
             {myQuestions?.map(({ title, id, content }) => (
                 <div className='search-detail-outer' key={id}>
                     <div className='search-detail-container' >
-                        <Link to={`questions/${id}`}>
-                            <p className='search-page-title'>
+                        <Link to={`questions/${id}`} className='search-page-question-links'>
+                            <span className='search-page-title'>
                                 {title}
-                            </p>
+                            </span>
                         </Link>
                         <p className='search-detail-content'>
                             {content}

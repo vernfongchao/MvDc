@@ -59,15 +59,40 @@ color: white;
   overflow-y: auto;
   overflow-x: hidden;
 }
-.search-page-title {
+
+.search-page-question-links{
+  color: inherit;
   text-decoration: none;
 }
+
+.search-page-title {
+  font-weight: bold;
+  text-decoration: none;
+    font-family: -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
+
+}
+
+.search-page-title:hover{
+    border-bottom: 1px solid black;
+    
+}
+
 
 /* .search-page-title:hover{
     t
 } */
 
 .search-detail-content {
+  
   margin-top: 2%;
   max-width: 500px;
   height: 100%;
