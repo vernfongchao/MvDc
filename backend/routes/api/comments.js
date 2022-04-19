@@ -13,7 +13,7 @@ const validateComments = [
         .exists({ checkFalsy: true })
         .withMessage('Please add a description to your question.')
         .isLength({ max: 1000 })
-        .withMessage('Content must not be more than 1000 characters long'),
+        .withMessage('Comments must not be more than 1000 characters long'),
     handleValidationErrors
 ];
 
