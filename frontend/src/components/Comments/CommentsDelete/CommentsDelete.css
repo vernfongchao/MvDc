@@ -1,4 +1,17 @@
-.commente-delete-button {
+.comment-delete-edit-container{
+    position: relative;
+}
+
+.comment-delete-button-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+}
+.comment-delete-button {
+    position: relative;
     cursor: pointer;
     border: 2px #97b4ff solid;
     color: red;
@@ -10,6 +23,6 @@
         Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-.commente-delete-button:hover {
+.comment-delete-button:hover {
     background-color: rgb(29, 29, 29);
 }

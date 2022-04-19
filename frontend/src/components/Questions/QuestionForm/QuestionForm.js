@@ -48,15 +48,14 @@ const QuestionForm = ({ setShowModal }) => {
                     alt=''
                 />
                 <div className='question-form-title'>
-
-                    <span className='question-form-header'>
-                        ASK A NEW QUESTION
-                    </span>
+                    <h1 className='question-form-header'>
+                        ASK A QUESTION
+                    </h1>
                 </div>
-                <div className='login-error-ul'>
+                <div className='question-error-ul'>
                     {validationErrors.map((error, idx) =>
-                        <div className='error-text-container' key={idx}>
-                            <span className='error-text'>{error}
+                        <div className='question-error-text-container' key={idx}>
+                            <span className='question-error-text'>{error}
                             </span>
                         </div>
                     )}
@@ -68,7 +67,7 @@ const QuestionForm = ({ setShowModal }) => {
                             className='question-input-text'
                             id='title'
                             rows='4'
-                            cols='37'
+                            cols='60'
                             value={title}
                             placeholder='Question Title'
                             onChange={(event) => setTitle(event.target.value)}
@@ -83,7 +82,7 @@ const QuestionForm = ({ setShowModal }) => {
                             className='question-input-text'
                             id='content'
                             rows='8'
-                            cols='37'
+                            cols='60'
                             value={content}
                             placeholder='Please go in depth here:'
                             onChange={(event) => setContent(event.target.value)}

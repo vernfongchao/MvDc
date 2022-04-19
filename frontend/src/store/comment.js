@@ -27,14 +27,18 @@ const removeComment = (commentId) => {
     }
 }
 
-const loadComment = (comment) => {
-    return {
-        type: LOAD_COMMENT,
-        comment
+export const editComment = (payload) => async dispatch => {
+    const res = await csrfFetch(`/api/comments/${payload.id}`,{
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+    if (res.ok){
+        const comment = await res.json()
+        dispatch(addComment(comment))
+        return comment
     }
 }
-
-
 
 export const getComments = () => async dispatch => {
     const res = await csrfFetch('/api/comments')

@@ -83,15 +83,10 @@ const CommentsForm = ({ paramId }) => {
             }
             {showComments && (
                 <div className='comments-display-container'>
-                    {showComments && commentsValues?.map(({ answerId, userId, content, User, id }) => (
-                        ((answerId === paramId) && (
+                    {showComments && commentsValues?.map((comment) => (
+                        ((comment?.answerId === paramId) && (
                             <CommentsPage
-                                key={id}
-                                id={id}
-                                answerId={answerId}
-                                userId={userId}
-                                content={content}
-                                User={User}
+                                comment={comment}
                             />
                         )
                         )))}

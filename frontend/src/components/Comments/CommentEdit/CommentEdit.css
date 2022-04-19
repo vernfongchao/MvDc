@@ -1,0 +1,35 @@
+
+.comment-edit-modal-container{
+    padding-right: 10px;
+}
+
+.comment-edit-button {
+    cursor: pointer;
+    border: 2px #97b4ff solid;
+    color: red;
+    font-weight: bold;
+    background-color: white;
+    width: 70px;
+    height: 25px;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.comment-edit-button:hover {
+    background-color: rgb(29, 29, 29);
+}
+
+.comment-edit-form-page-container {
+    width: 500px;
+    min-height: 325px;
+}
+
+.comment-edit-form-header{
+    color: white;
+}
+.comment-edit-cancel-container{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}

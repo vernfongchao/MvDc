@@ -4,7 +4,7 @@
 
 
 .answer-form-container{
-        width: 325px;
+        width: 500px;
         min-height: 330px;
 }
 
@@ -15,6 +15,7 @@
 }
 
 .answer-form-header {
+  color: white;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: bold;
@@ -30,7 +31,7 @@
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: bold;
   resize: none;
-  width: 300px;
+  width: 450px;
   min-height: 230px;
 }
 
@@ -40,7 +41,7 @@
 }
 
 .answer-button-container {
-  padding: 5px 10px 5px 0;
+  padding: 5px 21px 5px 0;
   display: flex;
   justify-content: flex-end;
 }

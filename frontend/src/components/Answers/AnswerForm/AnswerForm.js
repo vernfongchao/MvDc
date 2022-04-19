@@ -43,14 +43,14 @@ const AnswerForm = ({ setShowModal }) => {
                 />
                 <form className='' >
                     <div className='answer-form-title'>
-                        <span className='answer-form-header'>
+                        <h1 className='answer-form-header'>
                             Answer This Question
-                        </span>
+                        </h1>
                     </div>
-                <div className='login-error-ul'>
+                <div className='question-error-ul'>
                     {validationErrors.map((error, idx) =>
-                        <div className='error-text-container' key={idx}>
-                            <span className='error-text' >{error}
+                        <div className='question-error-text-container' key={idx}>
+                            <span className='question-error-text' >{error}
                             </span>
                         </div>
                     )}

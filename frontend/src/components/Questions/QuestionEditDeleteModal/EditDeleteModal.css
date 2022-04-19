@@ -16,3 +16,7 @@
     position: relative;
     right: 10px;
 }
+
+.edit-delete-modal-button:hover{
+    color: red;
+}

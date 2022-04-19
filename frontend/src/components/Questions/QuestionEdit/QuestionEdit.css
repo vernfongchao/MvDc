@@ -1,5 +1,5 @@
 .question-edit-page-container {
-        width: 325px;
+        width: 500px;
         min-height: 325px;
 }
 
@@ -15,6 +15,25 @@
   justify-content: center;
 }
 
+.question-error-ul {
+  margin-right: 0;
+  list-style: none;
+}
+
+.question-error-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1px;
+}
+
+.question-error-text {
+  padding-top: 2px;
+  width: 91%;
+  color: red;
+  background-color: white;
+}
 .question-edit-title {
   color: white;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -24,7 +43,7 @@
 
 
 .question-edit-input-text {
-  max-width: 300px;
+  max-width: 450px;
   min-width: 300px;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;

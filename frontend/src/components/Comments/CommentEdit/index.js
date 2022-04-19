@@ -1,43 +1,26 @@
-import React,{useState} from "react";
-import {useDispatch,useSelector} from 'react-redux'
+import React, {useState} from 'react'
+import { Modal } from '../../../context/Modal'
+import CommentEdit from './CommentEdit'
 
-const CommentEdit = ({answerId,content,userId,User,id}) => {
-
-
-    const [newContent, setNewContent] = useState(content)
-    const [validationErrors, setValidationErrors] = useState([])
-
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        const comment = {
-            id
-        }
-
-    }
+import './CommentEdit.css'
 
 
-    return(
-        <div>
 
+const CommentEditModal = ({comment}) => {
+    const [showModal, setShowModal] = useState(false);
+
+    return (
+        <div className='comment-edit-modal-container'>
+            <div>
+                <button className='comment-edit-button' onClick={() => setShowModal(true)}>Edit</button>
+            </div>
+            {showModal && (
+                <Modal onClose={() => setShowModal(false)}>
+                    <CommentEdit setShowModal={setShowModal} comment={comment}/>
+                </Modal>
+            )}
         </div>
     )
 }
 
-export default CommentEdit
-
-
-{/* <div className=''>
-<label htmlFor='title'>
-    <br />
-    <textarea
-        className='question-edit-input-text'
-        id='title'
-        rows='3'
-        cols='60'
-        value={title}
-        placeholder='Question'
-        onChange={(event) => setTitle(event.target.value)}
-        required
-    ></textarea>
-</label>
-</div> */}
+export default CommentEditModal

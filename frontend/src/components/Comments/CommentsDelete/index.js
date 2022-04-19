@@ -1,19 +1,21 @@
 import React, { useState } from 'react'
 import { Modal } from '../../../context/Modal'
 import CommentsDelete from './CommentsDelete'
+import CommentEditModal from '../CommentEdit'
 
 import './CommentsDelete.css'
 
-const CommentDeleteModal = ({id}) => {
+const CommentDeleteModal = ({comment}) => {
     const [showModal, setShowModal] = useState(false);
     return (
-        <div>
+        <div className='comment-delete-edit-container'>
             <div className='comment-delete-button-container'>
-                <button className='commente-delete-button' onClick={()=> setShowModal(true)}>Delete</button>
+                <CommentEditModal comment={comment} />
+                <button className='comment-delete-button' onClick={() => setShowModal(true)}>Delete</button>
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <CommentsDelete setShowModal={setShowModal} id={id}/>
+                    <CommentsDelete setShowModal={setShowModal} comment={comment} />
                 </Modal>
             )}
         </div>

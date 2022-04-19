@@ -4,17 +4,16 @@ import { deleteComment } from "../../../store/comment";
 
 
 
-const CommentsDelete = ({ id, setShowModal }) => {
+const CommentsDelete = ({ comment, setShowModal }) => {
     const dispatch = useDispatch()
 
     const handleDelete = (e) => {
-        dispatch(deleteComment(id))
+        dispatch(deleteComment(comment.id))
     }
     return (
         <div className="delete-question-page-container">
             <div className="delete-question-header-container">
                 <h1 className="delete-question-header"> Warning </h1>
-
             </div>
             <p className="delete-question-warning-message">Warning, This action is irreversible! Please confirm to delete.</p>
 

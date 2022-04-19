@@ -45,12 +45,6 @@ const QuestionEdit = ({ setShowModal }) => {
         setShowModal(false)
     }
 
-    // const handleDelete = async (e) => {
-    //     e.preventDefault()
-    //     const deletedQuestion = await dispatch(deleteQuestion(question.id))
-    //     if (deletedQuestion) return history.push('/')
-    // }
-
 
     return (
         <div className='question-edit-page-container'>
@@ -61,14 +55,14 @@ const QuestionEdit = ({ setShowModal }) => {
                     alt=''
                 />
                 <div className='question-edit-header-container'>
-                    <span className='question-edit-title'>
+                    <h1 className='question-edit-title'>
                         Edit Question
-                    </span>
+                    </h1>
                 </div>
-                <div className='login-error-ul'>
+                <div className='question-error-ul'>
                     {validationErrors.map((error, idx) =>
-                        <div className='error-text-container' key={idx}>
-                            <span className='error-text' >{error}
+                        <div className='question-error-text-container' key={idx}>
+                            <span className='question-error-text' >{error}
                             </span>
                         </div>
                     )}

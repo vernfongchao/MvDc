@@ -1,4 +1,4 @@
-import React, {} from 'react'
+import React, { } from 'react'
 
 import { useSelector } from 'react-redux'
 
@@ -7,18 +7,21 @@ import CommentDeleteModal from '../CommentsDelete';
 
 
 
-const CommentsPage = ({ answerId, content, userId, User, id }) => {
+const CommentsPage = ({comment}) => {
 
 
     const user = useSelector((state) => state.session.user)
 
+
     return (
         <div className='comments-content-container'>
-            <p className='comments-content-text'>{content}</p>
-            <p>{User.username}</p>
-            {user?.id === userId && (
-                <CommentDeleteModal id={id} />
-                )}
+            <p className='comments-content-text'>{comment?.content}</p>
+            <p>{comment.User.username}</p>
+            {user?.id === comment?.userId && (
+                <>
+                    <CommentDeleteModal comment={comment}/>
+                </>
+            )}
         </div>
     )
 

@@ -43,14 +43,14 @@ const AnswerEdit = ({ id, setShowModal, answerContent, questionId }) => {
                 />
                 <form className='' >
                     <div className='question-form-title'>
-                        <span className='question-form-header'>
+                        <h1 className='answer-edit-form-header'>
                             Edit Answer
-                        </span>
+                        </h1>
                     </div>
-                    <div className='login-error-ul'>
+                    <div className='question-error-ul'>
                         {validationErrors.map((error, idx) =>
-                            <div className='error-text-container' key={idx}>
-                                <span className='error-text' >{error}
+                            <div className='question-error-text-container' key={idx}>
+                                <span className='question-error-text' >{error}
                                 </span>
                             </div>
                         )}

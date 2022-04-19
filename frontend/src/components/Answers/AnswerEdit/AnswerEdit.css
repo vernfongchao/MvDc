@@ -1,3 +1,7 @@
+.answer-edit-form-header{
+  color: red;
+}
+
 .open-answer-button {
   cursor: pointer;
   border: 2px #97b4ff solid;
