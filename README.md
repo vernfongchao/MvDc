@@ -5,13 +5,19 @@ This project is based off of [Quora](https://www.quora.com/)
 
 MvDc, a [Quora](https://www.quora.com/) clone, is a social media, forum application that allows enthusiast of superheroes to openly share their opinions whether its movies, comics, or animation.
 
+## Live Site
+
+A Live deployment of [Stay-The-Night](https://stay-the-night.herokuapp.com/) is hosted on [heroku](https://heroku.com)
+
 ## [Feature List](https://github.com/vernfongchao/MvDc/wiki/MVP-Feature-List)
 
 List of features needed for the Minimum Viable Product (MVP) and its CRUD features
 
 ## [Database Schema](https://github.com/vernfongchao/MvDc/wiki/Database-Schema)
 
-Schema of how our PostgreSQL database will be set up
+Schema of how my PostgreSQL database will be set up
+
+## Screenshots
 
 1. Clone this repo
 
