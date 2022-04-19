@@ -1,7 +1,7 @@
 
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux'
-import React, { useState } from 'react'
+import React from 'react'
 
 import AnswerEditModal from '../AnswerEdit';
 import CommentsForm from '../../Comments/CommentsForm';

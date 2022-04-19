@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { postComment } from '../../../store/comment';
 import CommentsPage from '../CommentsDetails';
@@ -13,8 +12,6 @@ const CommentsForm = ({ paramId }) => {
     const [content, setContent] = useState('')
     const [validationErrors, setValidationErrors] = useState([])
     const [showComments, setShowComments] = useState(false)
-    const answers = useSelector((state) => state.answerState.answers)
-
     const comments = useSelector(state => state.commentState.comments)
     const commentsValues = Object.values(comments)
 
@@ -86,6 +83,7 @@ const CommentsForm = ({ paramId }) => {
                     {showComments && commentsValues?.map((comment) => (
                         ((comment?.answerId === paramId) && (
                             <CommentsPage
+                                key={comment.id}
                                 comment={comment}
                             />
                         )

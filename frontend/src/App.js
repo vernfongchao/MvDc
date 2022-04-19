@@ -35,8 +35,8 @@ function App() {
     <>
       <Footer />
       <Switch>
-        <Route path exact={'/'}>
-          {sessionUser ? [<Navigation isLoaded={isLoaded} />, <HomePage />] : <LandingPage />}
+        <Route exact path={'/'}>
+          {sessionUser ? [<Navigation isLoaded={isLoaded} key={0} />, <HomePage key={1}/>] : <LandingPage />}
         </Route>
         <Route path='/activity'>
           <Navigation isLoaded={isLoaded} />

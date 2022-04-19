@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
 import { editQuestion } from '../../../store/question'
 
 import { useEditDeleteModal } from '../QuestionEditDeleteModal'
 
 const QuestionEdit = ({ setShowModal }) => {
 
-    const { editDeleteModal, setEditDeleteModal, question } = useEditDeleteModal()
+    const { setEditDeleteModal, question } = useEditDeleteModal()
 
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
