@@ -25,7 +25,7 @@ const QuestionDetail = () => {
 
     let index = arr.length;
 
-    while (index != 0) {
+    while (index !== 0) {
       let randomIndex = Math.floor(Math.random() * index)
       index--
 

@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link, Redirect } from 'react-router-dom';
-import { getQuestions } from '../../store/question';
+
 
 import './Activity.css'
 
 const Activity = () => {
-    const dispatch = useDispatch()
     const user = useSelector((state) => state.session.user)
     const questions = useSelector((state) => state.questionState.questions)
 
@@ -17,10 +16,6 @@ const Activity = () => {
     })
 
     
-    useEffect(() => {
-        dispatch(getQuestions())
-    }, [dispatch])
-
 
     if (!user) {
         return (<Redirect to='/' />)
