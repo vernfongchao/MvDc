@@ -17,7 +17,7 @@ const QuestionDetail = () => {
   const questions = useSelector((state) => state.questionState.questions)
 
 
-  if (!questionObj) {
+  if (questionObj === undefined) {
     history.push('/404')
   }
 
