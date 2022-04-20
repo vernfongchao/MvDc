@@ -25,7 +25,7 @@ Schema of how my PostgreSQL database will be set up
 ### Home:
 ![image](https://user-images.githubusercontent.com/91238232/163906093-b826310f-51f0-46d0-b50c-6a57508ee9ef.png)
 
-### Question Detail's:
+### Question's Detail:
 ![image](https://user-images.githubusercontent.com/91238232/163906197-f88cbb87-3811-4232-8fc3-3c6eb682378c.png)
 
 ### Search:
