@@ -7,6 +7,7 @@ import AnswerEditModal from '../AnswerEdit';
 import CommentsForm from '../../Comments/CommentsForm';
 
 import './Answers.css'
+import parse from 'html-react-parser';
 
 const Answers = () => {
     const { id } = useParams()
@@ -25,7 +26,7 @@ const Answers = () => {
                 <div className='each-answer-outer' key={id}>
                     <div className='each-answer-container'>
                         <p className='answer-username-text'>{User.username}</p>
-                        <p className='answer-content'>{content}</p>
+                        <p className='answer-content'>{parse(content)}</p>
                         <div className='answer-buttons-container'>
                             <div>
                                 {(user?.id === userId) &&

@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -8,7 +6,7 @@ import { deleteQuestion } from "../../../store/question";
 import { useEditDeleteModal } from '../QuestionEditDeleteModal'
 
 const QuestionDelete = ({ setShowModal }) => {
-    const { editDeleteModal, setEditDeleteModal, question } = useEditDeleteModal()
+    const { question } = useEditDeleteModal()
 
     const dispatch = useDispatch()
     const history = useHistory()

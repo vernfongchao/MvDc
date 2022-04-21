@@ -14,11 +14,7 @@ const SearchPage = () => {
         window.scrollTo(0, 0);
     }, []);
 
-
-
     const questionsArr = Object.values(questions)
-
-
 
     const searchArr = questionsArr.filter(({ title, content }) => {
         return title.toLowerCase().includes(location.state.detail.toLowerCase())

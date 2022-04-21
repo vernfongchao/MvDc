@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { editAnswer } from '../../../store/answer'
+
+import ReactQuill from 'react-quill';
+
 
 const AnswerEdit = ({ id, setShowModal, answerContent, questionId }) => {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
     const [content, setContent] = useState(answerContent)
     const [validationErrors, setValidationErrors] = useState([])
+    const [delta, setDelta] = useState(answerContent)
 
     const handleSubmit = async (e) => {
         if (content ) {
@@ -14,7 +18,7 @@ const AnswerEdit = ({ id, setShowModal, answerContent, questionId }) => {
             setValidationErrors([])
             const newAnswer = {
                 id,
-                content,
+                content: delta,
                 questionId,
                 userId: sessionUser.id,
             }
@@ -25,12 +29,13 @@ const AnswerEdit = ({ id, setShowModal, answerContent, questionId }) => {
                 })
             if (createdAnswer) {
                 setShowModal(false)
-                reset()
             }
         }
     }
-    const reset = () => {
-        setContent('')
+
+    const handleChange = (content, delta, source, editor) => {
+        setContent(content)
+        setDelta(editor.getHTML(content))
     }
 
     return (
@@ -55,8 +60,17 @@ const AnswerEdit = ({ id, setShowModal, answerContent, questionId }) => {
                             </div>
                         )}
                     </div>
-                    <div className='question-form-content'>
-                        <label htmlFor='content'>
+                    <div className='answer-form-content'>
+                        <ReactQuill theme="snow"
+                            value={content}
+                            onChange={handleChange}
+                            style={
+                                {
+                                    width: '450px',
+                                    height: '150px',
+                                }
+                            } />
+                        {/* <label htmlFor='content'>
                             <br />
                             <textarea
                                 className='answer-input-text'
@@ -68,7 +82,7 @@ const AnswerEdit = ({ id, setShowModal, answerContent, questionId }) => {
                                 onChange={(event) => setContent(event.target.value)}
                                 required
                             ></textarea>
-                        </label>
+                        </label> */}
                     </div>
                     <div className='question-button-container'>
                         <button id='question-button' onClick={handleSubmit} >Submit</button>

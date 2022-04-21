@@ -4,10 +4,13 @@
 
 
 .answer-form-container{
-        width: 500px;
-        min-height: 330px;
+  width: 500px;
+  height: 330px;
 }
 
+.ql-snow{
+  background-color: white;
+}
 
 .answer-form-title {
   display: flex;
@@ -38,6 +41,7 @@
 .answer-form-content {
   display: flex;
   justify-content: center;
+    height: 200px;
 }
 
 .answer-button-container {

@@ -10,12 +10,7 @@ const router = express.Router();
 const validateSignup = [
     check('email')
         .exists({ checkFalsy: true })
-        .isEmail()
         .withMessage('Please provide a valid email.'),
-    // check('email')
-    //     .exists({ checkFalsy: true })
-    //     .isLength({max:256})
-    //     .withMessage('Email must not be longer than 256 characters'),
     check('username')
         .exists({ checkFalsy: true })
         .isLength({ min: 4 })

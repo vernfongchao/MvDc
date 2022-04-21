@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from "react-router-dom";
 import { postAnswer } from '../../../store/answer'
 
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import './AnswerForm.css'
 
 const AnswerForm = ({ setShowModal }) => {
@@ -10,14 +12,16 @@ const AnswerForm = ({ setShowModal }) => {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
     const [content, setContent] = useState('')
+    const [delta, setDelta] = useState('')
     const [validationErrors, setValidationErrors] = useState([])
+
 
     const handleSubmit = async (e) => {
         if (content) {
             e.preventDefault()
             setValidationErrors([])
             const newAnswer = {
-                content,
+                content:delta,
                 questionId: id,
                 userId: sessionUser.id,
             }
@@ -31,9 +35,12 @@ const AnswerForm = ({ setShowModal }) => {
                     if (data && data.errors) setValidationErrors(data.errors)
                 })
         }
-
     }
 
+    const handleChange = (content, delta, source, editor) => {
+        setContent(content)
+        setDelta(editor.getHTML(content))
+    }
     return (
             <div className='answer-form-container'>
                 <img
@@ -56,9 +63,17 @@ const AnswerForm = ({ setShowModal }) => {
                     )}
                 </div>
                     <div className='answer-form-content'>
-                        <label htmlFor='content'>
-                            <br />
-                            <textarea
+                        <ReactQuill theme="snow" 
+                        value={content} 
+                        onChange={handleChange} 
+                        style={
+                            {
+                            width: '450px',
+                            height: '150px',
+                        }
+                        }/>
+                            {/* <br /> */}
+                            {/* <textarea
                                 className='answer-input-text'
                                 id='content'
                                 rows='10'
@@ -67,8 +82,7 @@ const AnswerForm = ({ setShowModal }) => {
                                 placeholder='Please go in depth here:'
                                 onChange={(event) => setContent(event.target.value)}
                                 required
-                            ></textarea>
-                        </label>
+                            ></textarea> */}
                     </div>
                     <div className='answer-button-container'>
                         <button id='answer-button' onClick={handleSubmit} >Submit</button>

@@ -12,7 +12,7 @@ const router = express.Router();
 const validateAnswers = [
     check('content')
         .exists({ checkFalsy: true })
-        .withMessage('Please add a description to your question.')
+        .withMessage('Please add a description to your answer.')
         .isLength({ max: 5000 })
         .withMessage('Answer must not be more than 5000 characters long'),
     handleValidationErrors

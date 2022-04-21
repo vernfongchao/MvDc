@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
 import './SearchBar.css'
@@ -9,7 +9,6 @@ const SearchBar = () => {
 
     const history = useHistory()
     const [searchValue, setSearchValue] = useState('')
-    const questions = useSelector((state) => state.questionState.questions)
 
     const handleSearch = (e) => {
         e.preventDefault()
