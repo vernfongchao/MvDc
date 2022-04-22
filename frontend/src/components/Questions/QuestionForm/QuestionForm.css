@@ -25,7 +25,8 @@
   color: white;
 }
 
-/* .question-error-ul {
+.question-error-ul {
+  width: 100%;
   margin-right: 0;
   list-style: none;
 }
@@ -37,12 +38,13 @@
   align-items: center;
   padding-top: 1px;
 }
+
 .question-error-text {
   padding-top: 2px;
   width: 91%;
   color: red;
   background-color: white;
-} */
+}
 
 .question-title-input {
   display: flex;

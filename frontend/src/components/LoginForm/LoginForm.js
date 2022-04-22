@@ -59,7 +59,6 @@ const LoginForm = () => {
                             type="text"
                             value={credential}
                             onChange={(e) => setCredential(e.target.value)}
-                            required
                             placeholder='Username'
                         />
                     </label>
@@ -72,7 +71,6 @@ const LoginForm = () => {
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            required
                             placeholder='Password'
                         />
                     </label>

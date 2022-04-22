@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { editAnswer } from '../../../store/answer'
 
@@ -13,23 +13,23 @@ const AnswerEdit = ({ id, setShowModal, answerContent, questionId }) => {
     const [delta, setDelta] = useState(answerContent)
 
     const handleSubmit = async (e) => {
-        if (content ) {
-            e.preventDefault()
-            setValidationErrors([])
-            const newAnswer = {
-                id,
-                content: delta,
-                questionId,
-                userId: sessionUser.id,
-            }
-            const createdAnswer = await dispatch(editAnswer(newAnswer))
-                .catch(async (res) => {
-                    const data = await res.json();
-                    if (data && data.errors) setValidationErrors(data.errors)
-                })
-            if (createdAnswer) {
-                setShowModal(false)
-            }
+
+        e.preventDefault()
+        setValidationErrors([])
+        const newAnswer = {
+            id,
+            content: delta,
+            questionId,
+            userId: sessionUser.id,
+        }
+        const createdAnswer = await dispatch(editAnswer(newAnswer))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) setValidationErrors(data.errors)
+            })
+        if (createdAnswer) {
+            setShowModal(false)
+
         }
     }
 

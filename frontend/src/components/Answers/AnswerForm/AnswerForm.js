@@ -14,27 +14,26 @@ const AnswerForm = ({ setShowModal }) => {
     const [content, setContent] = useState('')
     const [delta, setDelta] = useState('')
     const [validationErrors, setValidationErrors] = useState([])
+    console.log(content.length)
 
 
     const handleSubmit = async (e) => {
-        if (content) {
-            e.preventDefault()
-            setValidationErrors([])
-            const newAnswer = {
-                content:delta,
-                questionId: id,
-                userId: sessionUser.id,
-            }
-            await dispatch(postAnswer(newAnswer))
-                .then(() => {
-                    setShowModal(false)
-                    setContent('')
-                })
-                .catch(async (res) => {
-                    const data = await res.json();
-                    if (data && data.errors) setValidationErrors(data.errors)
-                })
+        e.preventDefault()
+        const newAnswer = {
+            content: delta,
+            questionId: id,
+            userId: sessionUser.id,
         }
+        await dispatch(postAnswer(newAnswer))
+            .then(() => {
+                setShowModal(false)
+                setContent('')
+            })
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) setValidationErrors(data.errors)
+            })
+
     }
 
     const handleChange = (content, delta, source, editor) => {
@@ -42,18 +41,18 @@ const AnswerForm = ({ setShowModal }) => {
         setDelta(editor.getHTML(content))
     }
     return (
-            <div className='answer-form-container'>
-                <img
-                    className="modal-background-img"
-                    src="https://mcdn.wallpapersafari.com/medium/11/11/0sAWLv.jpg"
-                    alt=''
-                />
-                <form className='' >
-                    <div className='answer-form-title'>
-                        <h1 className='answer-form-header'>
-                            Answer This Question
-                        </h1>
-                    </div>
+        <div className='answer-form-container'>
+            <img
+                className="modal-background-img"
+                src="https://mcdn.wallpapersafari.com/medium/11/11/0sAWLv.jpg"
+                alt=''
+            />
+            <form className='' >
+                <div className='answer-form-title'>
+                    <h1 className='answer-form-header'>
+                        Answer This Question
+                    </h1>
+                </div>
                 <div className='question-error-ul'>
                     {validationErrors.map((error, idx) =>
                         <div className='question-error-text-container' key={idx}>
@@ -62,18 +61,18 @@ const AnswerForm = ({ setShowModal }) => {
                         </div>
                     )}
                 </div>
-                    <div className='answer-form-content'>
-                        <ReactQuill theme="snow" 
-                        value={content} 
-                        onChange={handleChange} 
+                <div className='answer-form-content'>
+                    <ReactQuill theme="snow"
+                        value={content}
+                        onChange={handleChange}
                         style={
                             {
-                            width: '450px',
-                            height: '150px',
-                        }
-                        }/>
-                            {/* <br /> */}
-                            {/* <textarea
+                                width: '455px',
+                                height: '150px',
+                            }
+                        } />
+                    {/* <br /> */}
+                    {/* <textarea
                                 className='answer-input-text'
                                 id='content'
                                 rows='10'
@@ -83,12 +82,12 @@ const AnswerForm = ({ setShowModal }) => {
                                 onChange={(event) => setContent(event.target.value)}
                                 required
                             ></textarea> */}
-                    </div>
-                    <div className='answer-button-container'>
-                        <button id='answer-button' onClick={handleSubmit} >Submit</button>
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div className='answer-button-container'>
+                    <button id='answer-button' onClick={handleSubmit} >Submit</button>
+                </div>
+            </form>
+        </div>
     )
 
 }

@@ -14,7 +14,7 @@ const validateAnswers = [
         .exists({ checkFalsy: true })
         .withMessage('Please add a description to your answer.')
         .isLength({ max: 5000 })
-        .withMessage('Answer must not be more than 5000 characters long'),
+        .withMessage('Answer is too long'),
     handleValidationErrors
 ];
 

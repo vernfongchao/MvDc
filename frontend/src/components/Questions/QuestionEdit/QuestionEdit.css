@@ -5,6 +5,7 @@
 
 
 .question-edit-form-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +16,7 @@
   justify-content: center;
 }
 
-.question-error-ul {
+/* .question-error-ul {
   margin-right: 0;
   list-style: none;
 }
@@ -33,7 +34,7 @@
   width: 91%;
   color: red;
   background-color: white;
-}
+} */
 .question-edit-title {
   color: white;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,

@@ -13,25 +13,25 @@ const QuestionForm = ({ setShowModal }) => {
     const [validationErrors, setValidationErrors] = useState([])
 
     const handleSubmit = async (e) => {
-        if (title && content) {
-            e.preventDefault()
-            setValidationErrors([])
-            const newQuestion = {
-                title,
-                content,
-                userId: sessionUser.id
-            }
-            const createdQuestion = await dispatch(createQuestion(newQuestion))
-                .catch(async (res) => {
-                    const data = await res.json();
-                    if (data && data.errors) setValidationErrors([...data.errors]);
-                })
-            if (createdQuestion) {
-                setShowModal(false)
-                reset()
-                history.push(`/questions/${createdQuestion.id}`);
-            }
+
+        e.preventDefault()
+        setValidationErrors([])
+        const newQuestion = {
+            title,
+            content,
+            userId: sessionUser.id
         }
+        const createdQuestion = await dispatch(createQuestion(newQuestion))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) setValidationErrors([...data.errors]);
+            })
+        if (createdQuestion) {
+            setShowModal(false)
+            reset()
+            history.push(`/questions/${createdQuestion.id}`);
+        }
+
     }
 
     const reset = () => {
@@ -71,7 +71,6 @@ const QuestionForm = ({ setShowModal }) => {
                             value={title}
                             placeholder='Question Title'
                             onChange={(event) => setTitle(event.target.value)}
-                            required
                         ></textarea>
                     </label>
                 </div>
@@ -86,7 +85,6 @@ const QuestionForm = ({ setShowModal }) => {
                             value={content}
                             placeholder='Please go in depth here:'
                             onChange={(event) => setContent(event.target.value)}
-                            required
                         ></textarea>
                     </label>
                 </div>

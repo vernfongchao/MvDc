@@ -13,11 +13,11 @@ const validateQuestion = [
         .withMessage('Please provide a question.')
         .isLength({ max: 255 })
         .withMessage('Question Title must be no more than 255 characters long.'),
-    // check('content')
-        // .exists({ checkFalsy: true })
-        // .withMessage('Please add a description to your question.'),
-        // .isLength({ max: 5000 })
-        // .withMessage('Content must not be more than 5000 characters long'),
+    check('content')
+        .exists({ checkFalsy: true })
+        .withMessage('Please add a description to your question.')
+        .isLength({ max: 5000 })
+        .withMessage('Content must not be more than 5000 characters long'),
     handleValidationErrors
 ];
 

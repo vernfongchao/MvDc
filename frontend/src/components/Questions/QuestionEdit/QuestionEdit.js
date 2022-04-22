@@ -18,7 +18,6 @@ const QuestionEdit = ({ setShowModal }) => {
 
 
     const handleSubmit = async (e) => {
-        if (title && content) {
             e.preventDefault()
             setValidationErrors([])
             const newQuestion = {
@@ -36,8 +35,7 @@ const QuestionEdit = ({ setShowModal }) => {
                 setShowModal(false)
                 setEditDeleteModal(false)
             }
-
-        }
+    
     }
 
     const handleCancel = () => {
@@ -77,7 +75,6 @@ const QuestionEdit = ({ setShowModal }) => {
                             value={title}
                             placeholder='Question'
                             onChange={(event) => setTitle(event.target.value)}
-                            required
                         ></textarea>
                     </label>
                 </div>
@@ -95,7 +92,6 @@ const QuestionEdit = ({ setShowModal }) => {
                             value={content}
                             placeholder='enter your description'
                             onChange={(event) => setContent(event.target.value)}
-                            required
                         ></textarea>
                     </label>
                 </div>

@@ -5,7 +5,7 @@
 
 .answer-form-container{
   width: 500px;
-  height: 330px;
+  min-height: 330px;
 }
 
 .ql-snow{
@@ -35,17 +35,18 @@
   font-weight: bold;
   resize: none;
   width: 450px;
-  min-height: 230px;
+  min-height: 220px;
 }
 
 .answer-form-content {
+  padding: 5px;
   display: flex;
   justify-content: center;
-    height: 200px;
+    height: 195px;
 }
 
 .answer-button-container {
-  padding: 5px 21px 5px 0;
+  padding: 5px 22px 10px 0;
   display: flex;
   justify-content: flex-end;
 }
