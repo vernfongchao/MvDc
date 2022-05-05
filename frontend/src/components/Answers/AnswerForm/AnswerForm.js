@@ -14,7 +14,6 @@ const AnswerForm = ({ setShowModal }) => {
     const [content, setContent] = useState('')
     const [delta, setDelta] = useState('')
     const [validationErrors, setValidationErrors] = useState([])
-    console.log(content.length)
 
 
     const handleSubmit = async (e) => {
