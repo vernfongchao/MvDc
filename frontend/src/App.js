@@ -22,11 +22,13 @@ import { getComments } from "./store/comment";
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
-  useEffect(() => {
-    dispatch(getQuestions())
-    dispatch(getAnswers())
-    dispatch(getComments())
-    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+  useEffect(() => { (async() => {
+    await dispatch(getQuestions())
+    await dispatch(getAnswers())
+    await dispatch(getComments())
+    await dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+
+  })()
   }, [dispatch]);
   const sessionUser = useSelector(state => state.session.user);
 
