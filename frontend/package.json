@@ -44,6 +44,5 @@
   },
   "devDependencies": {
     "redux-logger": "^3.0.6"
-  },
-  "proxy" : "https://mvdc-api.onrender.com"
+  }
 }
