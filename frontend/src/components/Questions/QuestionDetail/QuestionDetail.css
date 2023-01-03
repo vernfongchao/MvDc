@@ -8,18 +8,17 @@
 }
 .question-detail-answer-container{
   padding-left: 20%;
-  background-color: lightblue;
 }
 
 .question-detail-outer {
   box-sizing: border-box;
+  background-color: lightblue;
   height: 200px;
   width: 575px;
   border: 5px black solid;
   display: flex;
   justify-content: center;
   align-content: center;
-  background-image: url(https://w.wallhaven.cc/full/1j/wallhaven-1j76kv.jpg);
 }
 .question-detail-container {
   padding-left: 2%;
