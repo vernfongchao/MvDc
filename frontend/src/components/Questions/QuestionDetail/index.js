@@ -50,7 +50,6 @@ const QuestionDetail = () => {
       >
       </img>
       <div className='question-detail-answer-container'>
-
         {questionObj && (
           <div className='question-detail-outer'>
             <div className='question-detail-container'>
