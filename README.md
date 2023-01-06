@@ -7,7 +7,7 @@ MvDc, a [Quora](https://www.quora.com/) clone, is a social media, forum applicat
 
 ## Live Site
 
-A Live deployment of [MvDc](https://Mvdc-vc.herokuapp.com/) is hosted on [heroku](https://heroku.com)
+A Live deployment of [MvDc](https://mvdc.onrender.com/) is hosted on [render](https://render.com)
 
 ## [Feature List](https://github.com/vernfongchao/MvDc/wiki/MVP-Feature-List)
 
